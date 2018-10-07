@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -36,6 +37,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_gnss_5fstatus_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_gnss_5fstatus_2eproto() {
   protobuf_AddDesc_gnss_5fstatus_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -50,16 +52,15 @@ void protobuf_AssignDesc_gnss_5fstatus_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StreamStatus, rtk_stream_out_type_),
   };
   StreamStatus_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       StreamStatus_descriptor_,
-      StreamStatus::default_instance_,
+      StreamStatus::internal_default_instance(),
       StreamStatus_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StreamStatus, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StreamStatus, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StreamStatus, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(StreamStatus));
+      -1,
+      sizeof(StreamStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StreamStatus, _internal_metadata_));
   StreamStatus_Type_descriptor_ = StreamStatus_descriptor_->enum_type(0);
   InsStatus_descriptor_ = file->message_type(1);
   static const int InsStatus_offsets_[2] = {
@@ -67,16 +68,15 @@ void protobuf_AssignDesc_gnss_5fstatus_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InsStatus, type_),
   };
   InsStatus_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       InsStatus_descriptor_,
-      InsStatus::default_instance_,
+      InsStatus::internal_default_instance(),
       InsStatus_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InsStatus, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InsStatus, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InsStatus, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(InsStatus));
+      -1,
+      sizeof(InsStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(InsStatus, _internal_metadata_));
   InsStatus_Type_descriptor_ = InsStatus_descriptor_->enum_type(0);
   GnssStatus_descriptor_ = file->message_type(2);
   static const int GnssStatus_offsets_[5] = {
@@ -87,54 +87,68 @@ void protobuf_AssignDesc_gnss_5fstatus_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssStatus, num_sats_),
   };
   GnssStatus_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       GnssStatus_descriptor_,
-      GnssStatus::default_instance_,
+      GnssStatus::internal_default_instance(),
       GnssStatus_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssStatus, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssStatus, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssStatus, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(GnssStatus));
+      -1,
+      sizeof(GnssStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssStatus, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_gnss_5fstatus_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    StreamStatus_descriptor_, &StreamStatus::default_instance());
+      StreamStatus_descriptor_, StreamStatus::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    InsStatus_descriptor_, &InsStatus::default_instance());
+      InsStatus_descriptor_, InsStatus::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    GnssStatus_descriptor_, &GnssStatus::default_instance());
+      GnssStatus_descriptor_, GnssStatus::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_gnss_5fstatus_2eproto() {
-  delete StreamStatus::default_instance_;
+  StreamStatus_default_instance_.Shutdown();
   delete StreamStatus_reflection_;
-  delete InsStatus::default_instance_;
+  InsStatus_default_instance_.Shutdown();
   delete InsStatus_reflection_;
-  delete GnssStatus::default_instance_;
+  GnssStatus_default_instance_.Shutdown();
   delete GnssStatus_reflection_;
 }
 
-void protobuf_AddDesc_gnss_5fstatus_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_gnss_5fstatus_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_header_2eproto();
+  StreamStatus_default_instance_.DefaultConstruct();
+  InsStatus_default_instance_.DefaultConstruct();
+  GnssStatus_default_instance_.DefaultConstruct();
+  StreamStatus_default_instance_.get_mutable()->InitAsDefaultInstance();
+  InsStatus_default_instance_.get_mutable()->InitAsDefaultInstance();
+  GnssStatus_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_gnss_5fstatus_2eproto_once_);
+void protobuf_InitDefaults_gnss_5fstatus_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_gnss_5fstatus_2eproto_once_,
+                 &protobuf_InitDefaults_gnss_5fstatus_2eproto_impl);
+}
+void protobuf_AddDesc_gnss_5fstatus_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_gnss_5fstatus_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\021gnss_status.proto\022\016gnss_driver.pb\032\014hea"
     "der.proto\"\304\002\n\014StreamStatus\022&\n\006header\030\001 \001"
@@ -156,21 +170,31 @@ void protobuf_AddDesc_gnss_5fstatus_2eproto() {
     "num_sats\030\005 \001(\005:\0010", 697);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "gnss_status.proto", &protobuf_RegisterTypes);
-  StreamStatus::default_instance_ = new StreamStatus();
-  InsStatus::default_instance_ = new InsStatus();
-  GnssStatus::default_instance_ = new GnssStatus();
-  StreamStatus::default_instance_->InitAsDefaultInstance();
-  InsStatus::default_instance_->InitAsDefaultInstance();
-  GnssStatus::default_instance_->InitAsDefaultInstance();
+  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_gnss_5fstatus_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_gnss_5fstatus_2eproto_once_);
+void protobuf_AddDesc_gnss_5fstatus_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_gnss_5fstatus_2eproto_once_,
+                 &protobuf_AddDesc_gnss_5fstatus_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_gnss_5fstatus_2eproto {
   StaticDescriptorInitializer_gnss_5fstatus_2eproto() {
     protobuf_AddDesc_gnss_5fstatus_2eproto();
   }
 } static_descriptor_initializer_gnss_5fstatus_2eproto_;
+
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
 
 // ===================================================================
 
@@ -179,7 +203,7 @@ const ::google::protobuf::EnumDescriptor* StreamStatus_Type_descriptor() {
   return StreamStatus_Type_descriptor_;
 }
 bool StreamStatus_Type_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1:
       return true;
@@ -188,44 +212,45 @@ bool StreamStatus_Type_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const StreamStatus_Type StreamStatus::DISCONNECTED;
 const StreamStatus_Type StreamStatus::CONNECTED;
 const StreamStatus_Type StreamStatus::Type_MIN;
 const StreamStatus_Type StreamStatus::Type_MAX;
 const int StreamStatus::Type_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int StreamStatus::kHeaderFieldNumber;
 const int StreamStatus::kInsStreamTypeFieldNumber;
 const int StreamStatus::kRtkStreamInTypeFieldNumber;
 const int StreamStatus::kRtkStreamOutTypeFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 StreamStatus::StreamStatus()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gnss_5fstatus_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.StreamStatus)
 }
 
 void StreamStatus::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
 }
 
 StreamStatus::StreamStatus(const StreamStatus& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.StreamStatus)
 }
 
 void StreamStatus::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
-  ins_stream_type_ = 0;
-  rtk_stream_in_type_ = 0;
-  rtk_stream_out_type_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&ins_stream_type_, 0, reinterpret_cast<char*>(&rtk_stream_out_type_) -
+    reinterpret_cast<char*>(&ins_stream_type_) + sizeof(rtk_stream_out_type_));
 }
 
 StreamStatus::~StreamStatus() {
@@ -234,7 +259,7 @@ StreamStatus::~StreamStatus() {
 }
 
 void StreamStatus::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &StreamStatus_default_instance_.get()) {
     delete header_;
   }
 }
@@ -250,44 +275,57 @@ const ::google::protobuf::Descriptor* StreamStatus::descriptor() {
 }
 
 const StreamStatus& StreamStatus::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gnss_5fstatus_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gnss_5fstatus_2eproto();
+  return *internal_default_instance();
 }
 
-StreamStatus* StreamStatus::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<StreamStatus> StreamStatus_default_instance_;
 
-StreamStatus* StreamStatus::New() const {
-  return new StreamStatus;
+StreamStatus* StreamStatus::New(::google::protobuf::Arena* arena) const {
+  StreamStatus* n = new StreamStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void StreamStatus::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<StreamStatus*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.StreamStatus)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(StreamStatus, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<StreamStatus*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
-  if (_has_bits_[0 / 32] & 15) {
+  if (_has_bits_[0 / 32] & 15u) {
     ZR_(ins_stream_type_, rtk_stream_out_type_);
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
   }
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool StreamStatus::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.StreamStatus)
   for (;;) {
@@ -395,7 +433,7 @@ void StreamStatus::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional .gnss_driver.pb.StreamStatus.Type ins_stream_type = 2 [default = DISCONNECTED];
@@ -416,21 +454,22 @@ void StreamStatus::SerializeWithCachedSizes(
       4, this->rtk_stream_out_type(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.StreamStatus)
 }
 
-::google::protobuf::uint8* StreamStatus::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* StreamStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.StreamStatus)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional .gnss_driver.pb.StreamStatus.Type ins_stream_type = 2 [default = DISCONNECTED];
@@ -451,7 +490,7 @@ void StreamStatus::SerializeWithCachedSizes(
       4, this->rtk_stream_out_type(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -459,15 +498,16 @@ void StreamStatus::SerializeWithCachedSizes(
   return target;
 }
 
-int StreamStatus::ByteSize() const {
-  int total_size = 0;
+size_t StreamStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.StreamStatus)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 15u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional .gnss_driver.pb.StreamStatus.Type ins_stream_type = 2 [default = DISCONNECTED];
@@ -489,31 +529,44 @@ int StreamStatus::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void StreamStatus::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.StreamStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const StreamStatus* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const StreamStatus*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const StreamStatus>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.StreamStatus)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.StreamStatus)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void StreamStatus::MergeFrom(const StreamStatus& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.StreamStatus)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void StreamStatus::UnsafeMergeFrom(const StreamStatus& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
       mutable_header()->::gnss_driver::pb::Header::MergeFrom(from.header());
@@ -528,19 +581,24 @@ void StreamStatus::MergeFrom(const StreamStatus& from) {
       set_rtk_stream_out_type(from.rtk_stream_out_type());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void StreamStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.StreamStatus)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void StreamStatus::CopyFrom(const StreamStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.StreamStatus)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool StreamStatus::IsInitialized() const {
@@ -549,15 +607,17 @@ bool StreamStatus::IsInitialized() const {
 }
 
 void StreamStatus::Swap(StreamStatus* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(ins_stream_type_, other->ins_stream_type_);
-    std::swap(rtk_stream_in_type_, other->rtk_stream_in_type_);
-    std::swap(rtk_stream_out_type_, other->rtk_stream_out_type_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void StreamStatus::InternalSwap(StreamStatus* other) {
+  std::swap(header_, other->header_);
+  std::swap(ins_stream_type_, other->ins_stream_type_);
+  std::swap(rtk_stream_in_type_, other->rtk_stream_in_type_);
+  std::swap(rtk_stream_out_type_, other->rtk_stream_out_type_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata StreamStatus::GetMetadata() const {
@@ -568,6 +628,133 @@ void StreamStatus::Swap(StreamStatus* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// StreamStatus
+
+// optional .gnss_driver.pb.Header header = 1;
+bool StreamStatus::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void StreamStatus::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void StreamStatus::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void StreamStatus::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& StreamStatus::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.StreamStatus.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* StreamStatus::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.StreamStatus.header)
+  return header_;
+}
+::gnss_driver::pb::Header* StreamStatus::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.StreamStatus.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void StreamStatus::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.StreamStatus.header)
+}
+
+// optional .gnss_driver.pb.StreamStatus.Type ins_stream_type = 2 [default = DISCONNECTED];
+bool StreamStatus::has_ins_stream_type() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void StreamStatus::set_has_ins_stream_type() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void StreamStatus::clear_has_ins_stream_type() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void StreamStatus::clear_ins_stream_type() {
+  ins_stream_type_ = 0;
+  clear_has_ins_stream_type();
+}
+::gnss_driver::pb::StreamStatus_Type StreamStatus::ins_stream_type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.StreamStatus.ins_stream_type)
+  return static_cast< ::gnss_driver::pb::StreamStatus_Type >(ins_stream_type_);
+}
+void StreamStatus::set_ins_stream_type(::gnss_driver::pb::StreamStatus_Type value) {
+  assert(::gnss_driver::pb::StreamStatus_Type_IsValid(value));
+  set_has_ins_stream_type();
+  ins_stream_type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.StreamStatus.ins_stream_type)
+}
+
+// optional .gnss_driver.pb.StreamStatus.Type rtk_stream_in_type = 3 [default = DISCONNECTED];
+bool StreamStatus::has_rtk_stream_in_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void StreamStatus::set_has_rtk_stream_in_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void StreamStatus::clear_has_rtk_stream_in_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void StreamStatus::clear_rtk_stream_in_type() {
+  rtk_stream_in_type_ = 0;
+  clear_has_rtk_stream_in_type();
+}
+::gnss_driver::pb::StreamStatus_Type StreamStatus::rtk_stream_in_type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.StreamStatus.rtk_stream_in_type)
+  return static_cast< ::gnss_driver::pb::StreamStatus_Type >(rtk_stream_in_type_);
+}
+void StreamStatus::set_rtk_stream_in_type(::gnss_driver::pb::StreamStatus_Type value) {
+  assert(::gnss_driver::pb::StreamStatus_Type_IsValid(value));
+  set_has_rtk_stream_in_type();
+  rtk_stream_in_type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.StreamStatus.rtk_stream_in_type)
+}
+
+// optional .gnss_driver.pb.StreamStatus.Type rtk_stream_out_type = 4 [default = DISCONNECTED];
+bool StreamStatus::has_rtk_stream_out_type() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void StreamStatus::set_has_rtk_stream_out_type() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void StreamStatus::clear_has_rtk_stream_out_type() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void StreamStatus::clear_rtk_stream_out_type() {
+  rtk_stream_out_type_ = 0;
+  clear_has_rtk_stream_out_type();
+}
+::gnss_driver::pb::StreamStatus_Type StreamStatus::rtk_stream_out_type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.StreamStatus.rtk_stream_out_type)
+  return static_cast< ::gnss_driver::pb::StreamStatus_Type >(rtk_stream_out_type_);
+}
+void StreamStatus::set_rtk_stream_out_type(::gnss_driver::pb::StreamStatus_Type value) {
+  assert(::gnss_driver::pb::StreamStatus_Type_IsValid(value));
+  set_has_rtk_stream_out_type();
+  rtk_stream_out_type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.StreamStatus.rtk_stream_out_type)
+}
+
+inline const StreamStatus* StreamStatus::internal_default_instance() {
+  return &StreamStatus_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -576,7 +763,7 @@ const ::google::protobuf::EnumDescriptor* InsStatus_Type_descriptor() {
   return InsStatus_Type_descriptor_;
 }
 bool InsStatus_Type_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1:
     case 2:
@@ -586,33 +773,36 @@ bool InsStatus_Type_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const InsStatus_Type InsStatus::INVALID;
 const InsStatus_Type InsStatus::CONVERGING;
 const InsStatus_Type InsStatus::GOOD;
 const InsStatus_Type InsStatus::Type_MIN;
 const InsStatus_Type InsStatus::Type_MAX;
 const int InsStatus::Type_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int InsStatus::kHeaderFieldNumber;
 const int InsStatus::kTypeFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 InsStatus::InsStatus()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gnss_5fstatus_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.InsStatus)
 }
 
 void InsStatus::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
 }
 
 InsStatus::InsStatus(const InsStatus& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.InsStatus)
 }
 
@@ -620,7 +810,6 @@ void InsStatus::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
   type_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 InsStatus::~InsStatus() {
@@ -629,7 +818,7 @@ InsStatus::~InsStatus() {
 }
 
 void InsStatus::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &InsStatus_default_instance_.get()) {
     delete header_;
   }
 }
@@ -645,30 +834,37 @@ const ::google::protobuf::Descriptor* InsStatus::descriptor() {
 }
 
 const InsStatus& InsStatus::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gnss_5fstatus_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gnss_5fstatus_2eproto();
+  return *internal_default_instance();
 }
 
-InsStatus* InsStatus::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<InsStatus> InsStatus_default_instance_;
 
-InsStatus* InsStatus::New() const {
-  return new InsStatus;
+InsStatus* InsStatus::New(::google::protobuf::Arena* arena) const {
+  InsStatus* n = new InsStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void InsStatus::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.InsStatus)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
     type_ = 0;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool InsStatus::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.InsStatus)
   for (;;) {
@@ -736,7 +932,7 @@ void InsStatus::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional .gnss_driver.pb.InsStatus.Type type = 2 [default = INVALID];
@@ -745,21 +941,22 @@ void InsStatus::SerializeWithCachedSizes(
       2, this->type(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.InsStatus)
 }
 
-::google::protobuf::uint8* InsStatus::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* InsStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.InsStatus)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional .gnss_driver.pb.InsStatus.Type type = 2 [default = INVALID];
@@ -768,7 +965,7 @@ void InsStatus::SerializeWithCachedSizes(
       2, this->type(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -776,15 +973,16 @@ void InsStatus::SerializeWithCachedSizes(
   return target;
 }
 
-int InsStatus::ByteSize() const {
-  int total_size = 0;
+size_t InsStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.InsStatus)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional .gnss_driver.pb.InsStatus.Type type = 2 [default = INVALID];
@@ -794,31 +992,44 @@ int InsStatus::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void InsStatus::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.InsStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const InsStatus* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const InsStatus*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const InsStatus>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.InsStatus)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.InsStatus)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void InsStatus::MergeFrom(const InsStatus& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.InsStatus)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void InsStatus::UnsafeMergeFrom(const InsStatus& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
       mutable_header()->::gnss_driver::pb::Header::MergeFrom(from.header());
@@ -827,19 +1038,24 @@ void InsStatus::MergeFrom(const InsStatus& from) {
       set_type(from.type());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void InsStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.InsStatus)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void InsStatus::CopyFrom(const InsStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.InsStatus)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool InsStatus::IsInitialized() const {
@@ -848,13 +1064,15 @@ bool InsStatus::IsInitialized() const {
 }
 
 void InsStatus::Swap(InsStatus* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(type_, other->type_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void InsStatus::InternalSwap(InsStatus* other) {
+  std::swap(header_, other->header_);
+  std::swap(type_, other->type_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata InsStatus::GetMetadata() const {
@@ -865,42 +1083,119 @@ void InsStatus::Swap(InsStatus* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// InsStatus
+
+// optional .gnss_driver.pb.Header header = 1;
+bool InsStatus::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void InsStatus::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void InsStatus::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void InsStatus::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& InsStatus::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.InsStatus.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* InsStatus::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.InsStatus.header)
+  return header_;
+}
+::gnss_driver::pb::Header* InsStatus::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.InsStatus.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void InsStatus::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.InsStatus.header)
+}
+
+// optional .gnss_driver.pb.InsStatus.Type type = 2 [default = INVALID];
+bool InsStatus::has_type() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void InsStatus::set_has_type() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void InsStatus::clear_has_type() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void InsStatus::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+::gnss_driver::pb::InsStatus_Type InsStatus::type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.InsStatus.type)
+  return static_cast< ::gnss_driver::pb::InsStatus_Type >(type_);
+}
+void InsStatus::set_type(::gnss_driver::pb::InsStatus_Type value) {
+  assert(::gnss_driver::pb::InsStatus_Type_IsValid(value));
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.InsStatus.type)
+}
+
+inline const InsStatus* InsStatus::internal_default_instance() {
+  return &InsStatus_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int GnssStatus::kHeaderFieldNumber;
 const int GnssStatus::kSolutionCompletedFieldNumber;
 const int GnssStatus::kSolutionStatusFieldNumber;
 const int GnssStatus::kPositionTypeFieldNumber;
 const int GnssStatus::kNumSatsFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 GnssStatus::GnssStatus()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gnss_5fstatus_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.GnssStatus)
 }
 
 void GnssStatus::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
 }
 
 GnssStatus::GnssStatus(const GnssStatus& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.GnssStatus)
 }
 
 void GnssStatus::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
-  solution_completed_ = false;
-  solution_status_ = 0u;
-  position_type_ = 0u;
-  num_sats_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&solution_completed_, 0, reinterpret_cast<char*>(&num_sats_) -
+    reinterpret_cast<char*>(&solution_completed_) + sizeof(num_sats_));
 }
 
 GnssStatus::~GnssStatus() {
@@ -909,7 +1204,7 @@ GnssStatus::~GnssStatus() {
 }
 
 void GnssStatus::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &GnssStatus_default_instance_.get()) {
     delete header_;
   }
 }
@@ -925,44 +1220,57 @@ const ::google::protobuf::Descriptor* GnssStatus::descriptor() {
 }
 
 const GnssStatus& GnssStatus::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gnss_5fstatus_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gnss_5fstatus_2eproto();
+  return *internal_default_instance();
 }
 
-GnssStatus* GnssStatus::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<GnssStatus> GnssStatus_default_instance_;
 
-GnssStatus* GnssStatus::New() const {
-  return new GnssStatus;
+GnssStatus* GnssStatus::New(::google::protobuf::Arena* arena) const {
+  GnssStatus* n = new GnssStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void GnssStatus::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<GnssStatus*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.GnssStatus)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(GnssStatus, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<GnssStatus*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
-  if (_has_bits_[0 / 32] & 31) {
+  if (_has_bits_[0 / 32] & 31u) {
     ZR_(solution_completed_, num_sats_);
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
   }
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool GnssStatus::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.GnssStatus)
   for (;;) {
@@ -986,10 +1294,10 @@ bool GnssStatus::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_solution_completed:
+          set_has_solution_completed();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
                  input, &solution_completed_)));
-          set_has_solution_completed();
         } else {
           goto handle_unusual;
         }
@@ -1001,10 +1309,10 @@ bool GnssStatus::MergePartialFromCodedStream(
       case 3: {
         if (tag == 24) {
          parse_solution_status:
+          set_has_solution_status();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &solution_status_)));
-          set_has_solution_status();
         } else {
           goto handle_unusual;
         }
@@ -1016,10 +1324,10 @@ bool GnssStatus::MergePartialFromCodedStream(
       case 4: {
         if (tag == 32) {
          parse_position_type:
+          set_has_position_type();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &position_type_)));
-          set_has_position_type();
         } else {
           goto handle_unusual;
         }
@@ -1031,10 +1339,10 @@ bool GnssStatus::MergePartialFromCodedStream(
       case 5: {
         if (tag == 40) {
          parse_num_sats:
+          set_has_num_sats();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &num_sats_)));
-          set_has_num_sats();
         } else {
           goto handle_unusual;
         }
@@ -1070,7 +1378,7 @@ void GnssStatus::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional bool solution_completed = 2 [default = false];
@@ -1093,21 +1401,22 @@ void GnssStatus::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->num_sats(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.GnssStatus)
 }
 
-::google::protobuf::uint8* GnssStatus::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* GnssStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.GnssStatus)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional bool solution_completed = 2 [default = false];
@@ -1130,7 +1439,7 @@ void GnssStatus::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->num_sats(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1138,15 +1447,16 @@ void GnssStatus::SerializeWithCachedSizes(
   return target;
 }
 
-int GnssStatus::ByteSize() const {
-  int total_size = 0;
+size_t GnssStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.GnssStatus)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 31u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional bool solution_completed = 2 [default = false];
@@ -1176,31 +1486,44 @@ int GnssStatus::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void GnssStatus::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.GnssStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const GnssStatus* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const GnssStatus*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const GnssStatus>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.GnssStatus)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.GnssStatus)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void GnssStatus::MergeFrom(const GnssStatus& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.GnssStatus)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void GnssStatus::UnsafeMergeFrom(const GnssStatus& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
       mutable_header()->::gnss_driver::pb::Header::MergeFrom(from.header());
@@ -1218,19 +1541,24 @@ void GnssStatus::MergeFrom(const GnssStatus& from) {
       set_num_sats(from.num_sats());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void GnssStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.GnssStatus)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GnssStatus::CopyFrom(const GnssStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.GnssStatus)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool GnssStatus::IsInitialized() const {
@@ -1239,16 +1567,18 @@ bool GnssStatus::IsInitialized() const {
 }
 
 void GnssStatus::Swap(GnssStatus* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(solution_completed_, other->solution_completed_);
-    std::swap(solution_status_, other->solution_status_);
-    std::swap(position_type_, other->position_type_);
-    std::swap(num_sats_, other->num_sats_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GnssStatus::InternalSwap(GnssStatus* other) {
+  std::swap(header_, other->header_);
+  std::swap(solution_completed_, other->solution_completed_);
+  std::swap(solution_status_, other->solution_status_);
+  std::swap(position_type_, other->position_type_);
+  std::swap(num_sats_, other->num_sats_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata GnssStatus::GetMetadata() const {
@@ -1259,6 +1589,154 @@ void GnssStatus::Swap(GnssStatus* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// GnssStatus
+
+// optional .gnss_driver.pb.Header header = 1;
+bool GnssStatus::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void GnssStatus::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void GnssStatus::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void GnssStatus::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& GnssStatus::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssStatus.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* GnssStatus::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.GnssStatus.header)
+  return header_;
+}
+::gnss_driver::pb::Header* GnssStatus::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.GnssStatus.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void GnssStatus::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.GnssStatus.header)
+}
+
+// optional bool solution_completed = 2 [default = false];
+bool GnssStatus::has_solution_completed() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void GnssStatus::set_has_solution_completed() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void GnssStatus::clear_has_solution_completed() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void GnssStatus::clear_solution_completed() {
+  solution_completed_ = false;
+  clear_has_solution_completed();
+}
+bool GnssStatus::solution_completed() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssStatus.solution_completed)
+  return solution_completed_;
+}
+void GnssStatus::set_solution_completed(bool value) {
+  set_has_solution_completed();
+  solution_completed_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.GnssStatus.solution_completed)
+}
+
+// optional uint32 solution_status = 3 [default = 0];
+bool GnssStatus::has_solution_status() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void GnssStatus::set_has_solution_status() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void GnssStatus::clear_has_solution_status() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void GnssStatus::clear_solution_status() {
+  solution_status_ = 0u;
+  clear_has_solution_status();
+}
+::google::protobuf::uint32 GnssStatus::solution_status() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssStatus.solution_status)
+  return solution_status_;
+}
+void GnssStatus::set_solution_status(::google::protobuf::uint32 value) {
+  set_has_solution_status();
+  solution_status_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.GnssStatus.solution_status)
+}
+
+// optional uint32 position_type = 4 [default = 0];
+bool GnssStatus::has_position_type() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void GnssStatus::set_has_position_type() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void GnssStatus::clear_has_position_type() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void GnssStatus::clear_position_type() {
+  position_type_ = 0u;
+  clear_has_position_type();
+}
+::google::protobuf::uint32 GnssStatus::position_type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssStatus.position_type)
+  return position_type_;
+}
+void GnssStatus::set_position_type(::google::protobuf::uint32 value) {
+  set_has_position_type();
+  position_type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.GnssStatus.position_type)
+}
+
+// optional int32 num_sats = 5 [default = 0];
+bool GnssStatus::has_num_sats() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void GnssStatus::set_has_num_sats() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void GnssStatus::clear_has_num_sats() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void GnssStatus::clear_num_sats() {
+  num_sats_ = 0;
+  clear_has_num_sats();
+}
+::google::protobuf::int32 GnssStatus::num_sats() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssStatus.num_sats)
+  return num_sats_;
+}
+void GnssStatus::set_num_sats(::google::protobuf::int32 value) {
+  set_has_num_sats();
+  num_sats_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.GnssStatus.num_sats)
+}
+
+inline const GnssStatus* GnssStatus::internal_default_instance() {
+  return &GnssStatus_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

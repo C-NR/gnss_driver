@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -29,6 +30,7 @@ const ::google::protobuf::EnumDescriptor* Ins_Type_descriptor_ = NULL;
 }  // namespace
 
 
+void protobuf_AssignDesc_ins_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_ins_2eproto() {
   protobuf_AddDesc_ins_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -52,48 +54,58 @@ void protobuf_AssignDesc_ins_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ins, linear_acceleration_covariance_),
   };
   Ins_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Ins_descriptor_,
-      Ins::default_instance_,
+      Ins::internal_default_instance(),
       Ins_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ins, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ins, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ins, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Ins));
+      -1,
+      sizeof(Ins),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ins, _internal_metadata_));
   Ins_Type_descriptor_ = Ins_descriptor_->enum_type(0);
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_ins_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Ins_descriptor_, &Ins::default_instance());
+      Ins_descriptor_, Ins::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_ins_2eproto() {
-  delete Ins::default_instance_;
+  Ins_default_instance_.Shutdown();
   delete Ins_reflection_;
 }
 
-void protobuf_AddDesc_ins_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_ins_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
-  ::gnss_driver::pb::protobuf_AddDesc_geometry_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_header_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_geometry_2eproto();
+  Ins_default_instance_.DefaultConstruct();
+  Ins_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_ins_2eproto_once_);
+void protobuf_InitDefaults_ins_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_ins_2eproto_once_,
+                 &protobuf_InitDefaults_ins_2eproto_impl);
+}
+void protobuf_AddDesc_ins_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_ins_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\tins.proto\022\016gnss_driver.pb\032\014header.prot"
     "o\032\016geometry.proto\"\327\004\n\003Ins\022&\n\006header\030\001 \001("
@@ -114,17 +126,32 @@ void protobuf_AddDesc_ins_2eproto() {
     "VERGING\020\001\022\010\n\004GOOD\020\002", 659);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ins.proto", &protobuf_RegisterTypes);
-  Ins::default_instance_ = new Ins();
-  Ins::default_instance_->InitAsDefaultInstance();
+  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
+  ::gnss_driver::pb::protobuf_AddDesc_geometry_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_ins_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_ins_2eproto_once_);
+void protobuf_AddDesc_ins_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_ins_2eproto_once_,
+                 &protobuf_AddDesc_ins_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_ins_2eproto {
   StaticDescriptorInitializer_ins_2eproto() {
     protobuf_AddDesc_ins_2eproto();
   }
 } static_descriptor_initializer_ins_2eproto_;
+
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
 
 // ===================================================================
 
@@ -133,7 +160,7 @@ const ::google::protobuf::EnumDescriptor* Ins_Type_descriptor() {
   return Ins_Type_descriptor_;
 }
 bool Ins_Type_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1:
     case 2:
@@ -143,15 +170,15 @@ bool Ins_Type_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const Ins_Type Ins::INVALID;
 const Ins_Type Ins::CONVERGING;
 const Ins_Type Ins::GOOD;
 const Ins_Type Ins::Type_MIN;
 const Ins_Type Ins::Type_MAX;
 const int Ins::Type_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Ins::kHeaderFieldNumber;
 const int Ins::kMeasurementTimeFieldNumber;
 const int Ins::kTypeFieldNumber;
@@ -165,41 +192,48 @@ const int Ins::kEulerAnglesCovarianceFieldNumber;
 const int Ins::kLinearVelocityCovarianceFieldNumber;
 const int Ins::kAngularVelocityCovarianceFieldNumber;
 const int Ins::kLinearAccelerationCovarianceFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Ins::Ins()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_ins_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Ins)
 }
 
 void Ins::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
-  position_ = const_cast< ::gnss_driver::pb::PointLLH*>(&::gnss_driver::pb::PointLLH::default_instance());
-  euler_angles_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  linear_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  angular_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  linear_acceleration_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
+  position_ = const_cast< ::gnss_driver::pb::PointLLH*>(
+      ::gnss_driver::pb::PointLLH::internal_default_instance());
+  euler_angles_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  linear_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  angular_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  linear_acceleration_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
 }
 
 Ins::Ins(const Ins& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Ins)
 }
 
 void Ins::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
-  measurement_time_ = 0;
-  type_ = 0;
   position_ = NULL;
   euler_angles_ = NULL;
   linear_velocity_ = NULL;
   angular_velocity_ = NULL;
   linear_acceleration_ = NULL;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&measurement_time_, 0, reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&measurement_time_) + sizeof(type_));
 }
 
 Ins::~Ins() {
@@ -208,7 +242,7 @@ Ins::~Ins() {
 }
 
 void Ins::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &Ins_default_instance_.get()) {
     delete header_;
     delete position_;
     delete euler_angles_;
@@ -229,23 +263,43 @@ const ::google::protobuf::Descriptor* Ins::descriptor() {
 }
 
 const Ins& Ins::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_ins_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_ins_2eproto();
+  return *internal_default_instance();
 }
 
-Ins* Ins::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Ins> Ins_default_instance_;
 
-Ins* Ins::New() const {
-  return new Ins;
+Ins* Ins::New(::google::protobuf::Arena* arena) const {
+  Ins* n = new Ins;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Ins::Clear() {
-  if (_has_bits_[0 / 32] & 255) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Ins)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Ins, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Ins*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  if (_has_bits_[0 / 32] & 255u) {
+    ZR_(measurement_time_, type_);
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
-    measurement_time_ = 0;
-    type_ = 0;
     if (has_position()) {
       if (position_ != NULL) position_->::gnss_driver::pb::PointLLH::Clear();
     }
@@ -262,18 +316,24 @@ void Ins::Clear() {
       if (linear_acceleration_ != NULL) linear_acceleration_->::gnss_driver::pb::Point3D::Clear();
     }
   }
+
+#undef ZR_HELPER_
+#undef ZR_
+
   position_covariance_.Clear();
   euler_angles_covariance_.Clear();
   linear_velocity_covariance_.Clear();
   angular_velocity_covariance_.Clear();
   linear_acceleration_covariance_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Ins::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Ins)
   for (;;) {
@@ -297,10 +357,10 @@ bool Ins::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_measurement_time:
+          set_has_measurement_time();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &measurement_time_)));
-          set_has_measurement_time();
         } else {
           goto handle_unusual;
         }
@@ -511,7 +571,7 @@ void Ins::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional double measurement_time = 2;
@@ -528,31 +588,31 @@ void Ins::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.PointLLH position = 4;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->position(), output);
+      4, *this->position_, output);
   }
 
   // optional .gnss_driver.pb.Point3D euler_angles = 5;
   if (has_euler_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->euler_angles(), output);
+      5, *this->euler_angles_, output);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity = 6;
   if (has_linear_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->linear_velocity(), output);
+      6, *this->linear_velocity_, output);
   }
 
   // optional .gnss_driver.pb.Point3D angular_velocity = 7;
   if (has_angular_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->angular_velocity(), output);
+      7, *this->angular_velocity_, output);
   }
 
   // optional .gnss_driver.pb.Point3D linear_acceleration = 8;
   if (has_linear_acceleration()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->linear_acceleration(), output);
+      8, *this->linear_acceleration_, output);
   }
 
   // repeated float position_covariance = 9 [packed = true];
@@ -605,21 +665,22 @@ void Ins::SerializeWithCachedSizes(
       this->linear_acceleration_covariance(i), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Ins)
 }
 
-::google::protobuf::uint8* Ins::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Ins::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Ins)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional double measurement_time = 2;
@@ -636,36 +697,36 @@ void Ins::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.PointLLH position = 4;
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->position(), target);
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->position_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D euler_angles = 5;
   if (has_euler_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->euler_angles(), target);
+      InternalWriteMessageNoVirtualToArray(
+        5, *this->euler_angles_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity = 6;
   if (has_linear_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        6, this->linear_velocity(), target);
+      InternalWriteMessageNoVirtualToArray(
+        6, *this->linear_velocity_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D angular_velocity = 7;
   if (has_angular_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        7, this->angular_velocity(), target);
+      InternalWriteMessageNoVirtualToArray(
+        7, *this->angular_velocity_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D linear_acceleration = 8;
   if (has_linear_acceleration()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        8, this->linear_acceleration(), target);
+      InternalWriteMessageNoVirtualToArray(
+        8, *this->linear_acceleration_, false, target);
   }
 
   // repeated float position_covariance = 9 [packed = true];
@@ -738,7 +799,7 @@ void Ins::SerializeWithCachedSizes(
       WriteFloatNoTagToArray(this->linear_acceleration_covariance(i), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -746,15 +807,16 @@ void Ins::SerializeWithCachedSizes(
   return target;
 }
 
-int Ins::ByteSize() const {
-  int total_size = 0;
+size_t Ins::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Ins)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional double measurement_time = 2;
@@ -772,138 +834,161 @@ int Ins::ByteSize() const {
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->position());
+          *this->position_);
     }
 
     // optional .gnss_driver.pb.Point3D euler_angles = 5;
     if (has_euler_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->euler_angles());
+          *this->euler_angles_);
     }
 
     // optional .gnss_driver.pb.Point3D linear_velocity = 6;
     if (has_linear_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_velocity());
+          *this->linear_velocity_);
     }
 
     // optional .gnss_driver.pb.Point3D angular_velocity = 7;
     if (has_angular_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->angular_velocity());
+          *this->angular_velocity_);
     }
 
     // optional .gnss_driver.pb.Point3D linear_acceleration = 8;
     if (has_linear_acceleration()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_acceleration());
+          *this->linear_acceleration_);
     }
 
   }
   // repeated float position_covariance = 9 [packed = true];
   {
-    int data_size = 0;
-    data_size = 4 * this->position_covariance_size();
+    size_t data_size = 0;
+    unsigned int count = this->position_covariance_size();
+    data_size = 4UL * count;
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
+    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _position_covariance_cached_byte_size_ = data_size;
+    _position_covariance_cached_byte_size_ = cached_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
   // repeated float euler_angles_covariance = 10 [packed = true];
   {
-    int data_size = 0;
-    data_size = 4 * this->euler_angles_covariance_size();
+    size_t data_size = 0;
+    unsigned int count = this->euler_angles_covariance_size();
+    data_size = 4UL * count;
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
+    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _euler_angles_covariance_cached_byte_size_ = data_size;
+    _euler_angles_covariance_cached_byte_size_ = cached_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
   // repeated float linear_velocity_covariance = 11 [packed = true];
   {
-    int data_size = 0;
-    data_size = 4 * this->linear_velocity_covariance_size();
+    size_t data_size = 0;
+    unsigned int count = this->linear_velocity_covariance_size();
+    data_size = 4UL * count;
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
+    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _linear_velocity_covariance_cached_byte_size_ = data_size;
+    _linear_velocity_covariance_cached_byte_size_ = cached_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
   // repeated float angular_velocity_covariance = 12 [packed = true];
   {
-    int data_size = 0;
-    data_size = 4 * this->angular_velocity_covariance_size();
+    size_t data_size = 0;
+    unsigned int count = this->angular_velocity_covariance_size();
+    data_size = 4UL * count;
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
+    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _angular_velocity_covariance_cached_byte_size_ = data_size;
+    _angular_velocity_covariance_cached_byte_size_ = cached_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
   // repeated float linear_acceleration_covariance = 13 [packed = true];
   {
-    int data_size = 0;
-    data_size = 4 * this->linear_acceleration_covariance_size();
+    size_t data_size = 0;
+    unsigned int count = this->linear_acceleration_covariance_size();
+    data_size = 4UL * count;
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
     }
+    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
     GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _linear_acceleration_covariance_cached_byte_size_ = data_size;
+    _linear_acceleration_covariance_cached_byte_size_ = cached_size;
     GOOGLE_SAFE_CONCURRENT_WRITES_END();
     total_size += data_size;
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Ins::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Ins)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Ins* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Ins*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Ins>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Ins)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Ins)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Ins::MergeFrom(const Ins& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  position_covariance_.MergeFrom(from.position_covariance_);
-  euler_angles_covariance_.MergeFrom(from.euler_angles_covariance_);
-  linear_velocity_covariance_.MergeFrom(from.linear_velocity_covariance_);
-  angular_velocity_covariance_.MergeFrom(from.angular_velocity_covariance_);
-  linear_acceleration_covariance_.MergeFrom(from.linear_acceleration_covariance_);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Ins)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Ins::UnsafeMergeFrom(const Ins& from) {
+  GOOGLE_DCHECK(&from != this);
+  position_covariance_.UnsafeMergeFrom(from.position_covariance_);
+  euler_angles_covariance_.UnsafeMergeFrom(from.euler_angles_covariance_);
+  linear_velocity_covariance_.UnsafeMergeFrom(from.linear_velocity_covariance_);
+  angular_velocity_covariance_.UnsafeMergeFrom(from.angular_velocity_covariance_);
+  linear_acceleration_covariance_.UnsafeMergeFrom(from.linear_acceleration_covariance_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
       mutable_header()->::gnss_driver::pb::Header::MergeFrom(from.header());
@@ -930,19 +1015,24 @@ void Ins::MergeFrom(const Ins& from) {
       mutable_linear_acceleration()->::gnss_driver::pb::Point3D::MergeFrom(from.linear_acceleration());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Ins::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Ins)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Ins::CopyFrom(const Ins& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Ins)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Ins::IsInitialized() const {
@@ -951,24 +1041,26 @@ bool Ins::IsInitialized() const {
 }
 
 void Ins::Swap(Ins* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(measurement_time_, other->measurement_time_);
-    std::swap(type_, other->type_);
-    std::swap(position_, other->position_);
-    std::swap(euler_angles_, other->euler_angles_);
-    std::swap(linear_velocity_, other->linear_velocity_);
-    std::swap(angular_velocity_, other->angular_velocity_);
-    std::swap(linear_acceleration_, other->linear_acceleration_);
-    position_covariance_.Swap(&other->position_covariance_);
-    euler_angles_covariance_.Swap(&other->euler_angles_covariance_);
-    linear_velocity_covariance_.Swap(&other->linear_velocity_covariance_);
-    angular_velocity_covariance_.Swap(&other->angular_velocity_covariance_);
-    linear_acceleration_covariance_.Swap(&other->linear_acceleration_covariance_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Ins::InternalSwap(Ins* other) {
+  std::swap(header_, other->header_);
+  std::swap(measurement_time_, other->measurement_time_);
+  std::swap(type_, other->type_);
+  std::swap(position_, other->position_);
+  std::swap(euler_angles_, other->euler_angles_);
+  std::swap(linear_velocity_, other->linear_velocity_);
+  std::swap(angular_velocity_, other->angular_velocity_);
+  std::swap(linear_acceleration_, other->linear_acceleration_);
+  position_covariance_.UnsafeArenaSwap(&other->position_covariance_);
+  euler_angles_covariance_.UnsafeArenaSwap(&other->euler_angles_covariance_);
+  linear_velocity_covariance_.UnsafeArenaSwap(&other->linear_velocity_covariance_);
+  angular_velocity_covariance_.UnsafeArenaSwap(&other->angular_velocity_covariance_);
+  linear_acceleration_covariance_.UnsafeArenaSwap(&other->linear_acceleration_covariance_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Ins::GetMetadata() const {
@@ -979,6 +1071,482 @@ void Ins::Swap(Ins* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Ins
+
+// optional .gnss_driver.pb.Header header = 1;
+bool Ins::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Ins::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Ins::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Ins::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& Ins::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* Ins::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Ins.header)
+  return header_;
+}
+::gnss_driver::pb::Header* Ins::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Ins.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void Ins::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Ins.header)
+}
+
+// optional double measurement_time = 2;
+bool Ins::has_measurement_time() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Ins::set_has_measurement_time() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Ins::clear_has_measurement_time() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Ins::clear_measurement_time() {
+  measurement_time_ = 0;
+  clear_has_measurement_time();
+}
+double Ins::measurement_time() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.measurement_time)
+  return measurement_time_;
+}
+void Ins::set_measurement_time(double value) {
+  set_has_measurement_time();
+  measurement_time_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.measurement_time)
+}
+
+// optional .gnss_driver.pb.Ins.Type type = 3;
+bool Ins::has_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Ins::set_has_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Ins::clear_has_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Ins::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+::gnss_driver::pb::Ins_Type Ins::type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.type)
+  return static_cast< ::gnss_driver::pb::Ins_Type >(type_);
+}
+void Ins::set_type(::gnss_driver::pb::Ins_Type value) {
+  assert(::gnss_driver::pb::Ins_Type_IsValid(value));
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.type)
+}
+
+// optional .gnss_driver.pb.PointLLH position = 4;
+bool Ins::has_position() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Ins::set_has_position() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Ins::clear_has_position() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Ins::clear_position() {
+  if (position_ != NULL) position_->::gnss_driver::pb::PointLLH::Clear();
+  clear_has_position();
+}
+const ::gnss_driver::pb::PointLLH& Ins::position() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.position)
+  return position_ != NULL ? *position_
+                         : *::gnss_driver::pb::PointLLH::internal_default_instance();
+}
+::gnss_driver::pb::PointLLH* Ins::mutable_position() {
+  set_has_position();
+  if (position_ == NULL) {
+    position_ = new ::gnss_driver::pb::PointLLH;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Ins.position)
+  return position_;
+}
+::gnss_driver::pb::PointLLH* Ins::release_position() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Ins.position)
+  clear_has_position();
+  ::gnss_driver::pb::PointLLH* temp = position_;
+  position_ = NULL;
+  return temp;
+}
+void Ins::set_allocated_position(::gnss_driver::pb::PointLLH* position) {
+  delete position_;
+  position_ = position;
+  if (position) {
+    set_has_position();
+  } else {
+    clear_has_position();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Ins.position)
+}
+
+// optional .gnss_driver.pb.Point3D euler_angles = 5;
+bool Ins::has_euler_angles() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Ins::set_has_euler_angles() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Ins::clear_has_euler_angles() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Ins::clear_euler_angles() {
+  if (euler_angles_ != NULL) euler_angles_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_euler_angles();
+}
+const ::gnss_driver::pb::Point3D& Ins::euler_angles() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.euler_angles)
+  return euler_angles_ != NULL ? *euler_angles_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Ins::mutable_euler_angles() {
+  set_has_euler_angles();
+  if (euler_angles_ == NULL) {
+    euler_angles_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Ins.euler_angles)
+  return euler_angles_;
+}
+::gnss_driver::pb::Point3D* Ins::release_euler_angles() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Ins.euler_angles)
+  clear_has_euler_angles();
+  ::gnss_driver::pb::Point3D* temp = euler_angles_;
+  euler_angles_ = NULL;
+  return temp;
+}
+void Ins::set_allocated_euler_angles(::gnss_driver::pb::Point3D* euler_angles) {
+  delete euler_angles_;
+  euler_angles_ = euler_angles;
+  if (euler_angles) {
+    set_has_euler_angles();
+  } else {
+    clear_has_euler_angles();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Ins.euler_angles)
+}
+
+// optional .gnss_driver.pb.Point3D linear_velocity = 6;
+bool Ins::has_linear_velocity() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Ins::set_has_linear_velocity() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Ins::clear_has_linear_velocity() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Ins::clear_linear_velocity() {
+  if (linear_velocity_ != NULL) linear_velocity_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_velocity();
+}
+const ::gnss_driver::pb::Point3D& Ins::linear_velocity() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.linear_velocity)
+  return linear_velocity_ != NULL ? *linear_velocity_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Ins::mutable_linear_velocity() {
+  set_has_linear_velocity();
+  if (linear_velocity_ == NULL) {
+    linear_velocity_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Ins.linear_velocity)
+  return linear_velocity_;
+}
+::gnss_driver::pb::Point3D* Ins::release_linear_velocity() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Ins.linear_velocity)
+  clear_has_linear_velocity();
+  ::gnss_driver::pb::Point3D* temp = linear_velocity_;
+  linear_velocity_ = NULL;
+  return temp;
+}
+void Ins::set_allocated_linear_velocity(::gnss_driver::pb::Point3D* linear_velocity) {
+  delete linear_velocity_;
+  linear_velocity_ = linear_velocity;
+  if (linear_velocity) {
+    set_has_linear_velocity();
+  } else {
+    clear_has_linear_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Ins.linear_velocity)
+}
+
+// optional .gnss_driver.pb.Point3D angular_velocity = 7;
+bool Ins::has_angular_velocity() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void Ins::set_has_angular_velocity() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void Ins::clear_has_angular_velocity() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void Ins::clear_angular_velocity() {
+  if (angular_velocity_ != NULL) angular_velocity_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_angular_velocity();
+}
+const ::gnss_driver::pb::Point3D& Ins::angular_velocity() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.angular_velocity)
+  return angular_velocity_ != NULL ? *angular_velocity_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Ins::mutable_angular_velocity() {
+  set_has_angular_velocity();
+  if (angular_velocity_ == NULL) {
+    angular_velocity_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Ins.angular_velocity)
+  return angular_velocity_;
+}
+::gnss_driver::pb::Point3D* Ins::release_angular_velocity() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Ins.angular_velocity)
+  clear_has_angular_velocity();
+  ::gnss_driver::pb::Point3D* temp = angular_velocity_;
+  angular_velocity_ = NULL;
+  return temp;
+}
+void Ins::set_allocated_angular_velocity(::gnss_driver::pb::Point3D* angular_velocity) {
+  delete angular_velocity_;
+  angular_velocity_ = angular_velocity;
+  if (angular_velocity) {
+    set_has_angular_velocity();
+  } else {
+    clear_has_angular_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Ins.angular_velocity)
+}
+
+// optional .gnss_driver.pb.Point3D linear_acceleration = 8;
+bool Ins::has_linear_acceleration() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void Ins::set_has_linear_acceleration() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void Ins::clear_has_linear_acceleration() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void Ins::clear_linear_acceleration() {
+  if (linear_acceleration_ != NULL) linear_acceleration_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_acceleration();
+}
+const ::gnss_driver::pb::Point3D& Ins::linear_acceleration() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.linear_acceleration)
+  return linear_acceleration_ != NULL ? *linear_acceleration_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Ins::mutable_linear_acceleration() {
+  set_has_linear_acceleration();
+  if (linear_acceleration_ == NULL) {
+    linear_acceleration_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Ins.linear_acceleration)
+  return linear_acceleration_;
+}
+::gnss_driver::pb::Point3D* Ins::release_linear_acceleration() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Ins.linear_acceleration)
+  clear_has_linear_acceleration();
+  ::gnss_driver::pb::Point3D* temp = linear_acceleration_;
+  linear_acceleration_ = NULL;
+  return temp;
+}
+void Ins::set_allocated_linear_acceleration(::gnss_driver::pb::Point3D* linear_acceleration) {
+  delete linear_acceleration_;
+  linear_acceleration_ = linear_acceleration;
+  if (linear_acceleration) {
+    set_has_linear_acceleration();
+  } else {
+    clear_has_linear_acceleration();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Ins.linear_acceleration)
+}
+
+// repeated float position_covariance = 9 [packed = true];
+int Ins::position_covariance_size() const {
+  return position_covariance_.size();
+}
+void Ins::clear_position_covariance() {
+  position_covariance_.Clear();
+}
+float Ins::position_covariance(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.position_covariance)
+  return position_covariance_.Get(index);
+}
+void Ins::set_position_covariance(int index, float value) {
+  position_covariance_.Set(index, value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.position_covariance)
+}
+void Ins::add_position_covariance(float value) {
+  position_covariance_.Add(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Ins.position_covariance)
+}
+const ::google::protobuf::RepeatedField< float >&
+Ins::position_covariance() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Ins.position_covariance)
+  return position_covariance_;
+}
+::google::protobuf::RepeatedField< float >*
+Ins::mutable_position_covariance() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Ins.position_covariance)
+  return &position_covariance_;
+}
+
+// repeated float euler_angles_covariance = 10 [packed = true];
+int Ins::euler_angles_covariance_size() const {
+  return euler_angles_covariance_.size();
+}
+void Ins::clear_euler_angles_covariance() {
+  euler_angles_covariance_.Clear();
+}
+float Ins::euler_angles_covariance(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.euler_angles_covariance)
+  return euler_angles_covariance_.Get(index);
+}
+void Ins::set_euler_angles_covariance(int index, float value) {
+  euler_angles_covariance_.Set(index, value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.euler_angles_covariance)
+}
+void Ins::add_euler_angles_covariance(float value) {
+  euler_angles_covariance_.Add(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Ins.euler_angles_covariance)
+}
+const ::google::protobuf::RepeatedField< float >&
+Ins::euler_angles_covariance() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Ins.euler_angles_covariance)
+  return euler_angles_covariance_;
+}
+::google::protobuf::RepeatedField< float >*
+Ins::mutable_euler_angles_covariance() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Ins.euler_angles_covariance)
+  return &euler_angles_covariance_;
+}
+
+// repeated float linear_velocity_covariance = 11 [packed = true];
+int Ins::linear_velocity_covariance_size() const {
+  return linear_velocity_covariance_.size();
+}
+void Ins::clear_linear_velocity_covariance() {
+  linear_velocity_covariance_.Clear();
+}
+float Ins::linear_velocity_covariance(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.linear_velocity_covariance)
+  return linear_velocity_covariance_.Get(index);
+}
+void Ins::set_linear_velocity_covariance(int index, float value) {
+  linear_velocity_covariance_.Set(index, value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.linear_velocity_covariance)
+}
+void Ins::add_linear_velocity_covariance(float value) {
+  linear_velocity_covariance_.Add(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Ins.linear_velocity_covariance)
+}
+const ::google::protobuf::RepeatedField< float >&
+Ins::linear_velocity_covariance() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Ins.linear_velocity_covariance)
+  return linear_velocity_covariance_;
+}
+::google::protobuf::RepeatedField< float >*
+Ins::mutable_linear_velocity_covariance() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Ins.linear_velocity_covariance)
+  return &linear_velocity_covariance_;
+}
+
+// repeated float angular_velocity_covariance = 12 [packed = true];
+int Ins::angular_velocity_covariance_size() const {
+  return angular_velocity_covariance_.size();
+}
+void Ins::clear_angular_velocity_covariance() {
+  angular_velocity_covariance_.Clear();
+}
+float Ins::angular_velocity_covariance(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.angular_velocity_covariance)
+  return angular_velocity_covariance_.Get(index);
+}
+void Ins::set_angular_velocity_covariance(int index, float value) {
+  angular_velocity_covariance_.Set(index, value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.angular_velocity_covariance)
+}
+void Ins::add_angular_velocity_covariance(float value) {
+  angular_velocity_covariance_.Add(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Ins.angular_velocity_covariance)
+}
+const ::google::protobuf::RepeatedField< float >&
+Ins::angular_velocity_covariance() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Ins.angular_velocity_covariance)
+  return angular_velocity_covariance_;
+}
+::google::protobuf::RepeatedField< float >*
+Ins::mutable_angular_velocity_covariance() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Ins.angular_velocity_covariance)
+  return &angular_velocity_covariance_;
+}
+
+// repeated float linear_acceleration_covariance = 13 [packed = true];
+int Ins::linear_acceleration_covariance_size() const {
+  return linear_acceleration_covariance_.size();
+}
+void Ins::clear_linear_acceleration_covariance() {
+  linear_acceleration_covariance_.Clear();
+}
+float Ins::linear_acceleration_covariance(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Ins.linear_acceleration_covariance)
+  return linear_acceleration_covariance_.Get(index);
+}
+void Ins::set_linear_acceleration_covariance(int index, float value) {
+  linear_acceleration_covariance_.Set(index, value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Ins.linear_acceleration_covariance)
+}
+void Ins::add_linear_acceleration_covariance(float value) {
+  linear_acceleration_covariance_.Add(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Ins.linear_acceleration_covariance)
+}
+const ::google::protobuf::RepeatedField< float >&
+Ins::linear_acceleration_covariance() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Ins.linear_acceleration_covariance)
+  return linear_acceleration_covariance_;
+}
+::google::protobuf::RepeatedField< float >*
+Ins::mutable_linear_acceleration_covariance() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Ins.linear_acceleration_covariance)
+  return &linear_acceleration_covariance_;
+}
+
+inline const Ins* Ins::internal_default_instance() {
+  return &Ins_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

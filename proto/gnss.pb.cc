@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -36,6 +37,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_gnss_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_gnss_2eproto() {
   protobuf_AddDesc_gnss_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -57,16 +59,15 @@ void protobuf_AssignDesc_gnss_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gnss, position_type_),
   };
   Gnss_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Gnss_descriptor_,
-      Gnss::default_instance_,
+      Gnss::internal_default_instance(),
       Gnss_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gnss, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gnss, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gnss, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Gnss));
+      -1,
+      sizeof(Gnss),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gnss, _internal_metadata_));
   Gnss_Type_descriptor_ = Gnss_descriptor_->enum_type(0);
   RangeInfo_descriptor_ = file->message_type(1);
   static const int RangeInfo_offsets_[11] = {
@@ -83,16 +84,15 @@ void protobuf_AssignDesc_gnss_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeInfo, lock_time_),
   };
   RangeInfo_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       RangeInfo_descriptor_,
-      RangeInfo::default_instance_,
+      RangeInfo::internal_default_instance(),
       RangeInfo_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeInfo, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeInfo, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeInfo, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(RangeInfo));
+      -1,
+      sizeof(RangeInfo),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeInfo, _internal_metadata_));
   RangeInfo_Constellation_descriptor_ = RangeInfo_descriptor_->enum_type(0);
   GnssRange_descriptor_ = file->message_type(2);
   static const int GnssRange_offsets_[3] = {
@@ -101,55 +101,69 @@ void protobuf_AssignDesc_gnss_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssRange, ranges_),
   };
   GnssRange_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       GnssRange_descriptor_,
-      GnssRange::default_instance_,
+      GnssRange::internal_default_instance(),
       GnssRange_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssRange, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssRange, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssRange, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(GnssRange));
+      -1,
+      sizeof(GnssRange),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GnssRange, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_gnss_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Gnss_descriptor_, &Gnss::default_instance());
+      Gnss_descriptor_, Gnss::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    RangeInfo_descriptor_, &RangeInfo::default_instance());
+      RangeInfo_descriptor_, RangeInfo::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    GnssRange_descriptor_, &GnssRange::default_instance());
+      GnssRange_descriptor_, GnssRange::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_gnss_2eproto() {
-  delete Gnss::default_instance_;
+  Gnss_default_instance_.Shutdown();
   delete Gnss_reflection_;
-  delete RangeInfo::default_instance_;
+  RangeInfo_default_instance_.Shutdown();
   delete RangeInfo_reflection_;
-  delete GnssRange::default_instance_;
+  GnssRange_default_instance_.Shutdown();
   delete GnssRange_reflection_;
 }
 
-void protobuf_AddDesc_gnss_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_gnss_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
-  ::gnss_driver::pb::protobuf_AddDesc_geometry_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_header_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_geometry_2eproto();
+  Gnss_default_instance_.DefaultConstruct();
+  RangeInfo_default_instance_.DefaultConstruct();
+  GnssRange_default_instance_.DefaultConstruct();
+  Gnss_default_instance_.get_mutable()->InitAsDefaultInstance();
+  RangeInfo_default_instance_.get_mutable()->InitAsDefaultInstance();
+  GnssRange_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_gnss_2eproto_once_);
+void protobuf_InitDefaults_gnss_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_gnss_2eproto_once_,
+                 &protobuf_InitDefaults_gnss_2eproto_impl);
+}
+void protobuf_AddDesc_gnss_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_gnss_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\ngnss.proto\022\016gnss_driver.pb\032\014header.pro"
     "to\032\016geometry.proto\"\202\004\n\004Gnss\022&\n\006header\030\001 "
@@ -181,21 +195,32 @@ void protobuf_AddDesc_gnss_2eproto() {
     "\006ranges\030\003 \003(\0132\031.gnss_driver.pb.RangeInfo", 1120);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "gnss.proto", &protobuf_RegisterTypes);
-  Gnss::default_instance_ = new Gnss();
-  RangeInfo::default_instance_ = new RangeInfo();
-  GnssRange::default_instance_ = new GnssRange();
-  Gnss::default_instance_->InitAsDefaultInstance();
-  RangeInfo::default_instance_->InitAsDefaultInstance();
-  GnssRange::default_instance_->InitAsDefaultInstance();
+  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
+  ::gnss_driver::pb::protobuf_AddDesc_geometry_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_gnss_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_gnss_2eproto_once_);
+void protobuf_AddDesc_gnss_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_gnss_2eproto_once_,
+                 &protobuf_AddDesc_gnss_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_gnss_2eproto {
   StaticDescriptorInitializer_gnss_2eproto() {
     protobuf_AddDesc_gnss_2eproto();
   }
 } static_descriptor_initializer_gnss_2eproto_;
+
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
 
 // ===================================================================
 
@@ -204,7 +229,7 @@ const ::google::protobuf::EnumDescriptor* Gnss_Type_descriptor() {
   return Gnss_Type_descriptor_;
 }
 bool Gnss_Type_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1:
     case 2:
@@ -218,7 +243,7 @@ bool Gnss_Type_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const Gnss_Type Gnss::INVALID;
 const Gnss_Type Gnss::PROPAGATED;
 const Gnss_Type Gnss::SINGLE;
@@ -229,8 +254,8 @@ const Gnss_Type Gnss::RTK_INTEGER;
 const Gnss_Type Gnss::Type_MIN;
 const Gnss_Type Gnss::Type_MAX;
 const int Gnss::Type_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Gnss::kHeaderFieldNumber;
 const int Gnss::kMeasurementTimeFieldNumber;
 const int Gnss::kVelocityLatencyFieldNumber;
@@ -242,43 +267,45 @@ const int Gnss::kNumSatsFieldNumber;
 const int Gnss::kTypeFieldNumber;
 const int Gnss::kSolutionStatusFieldNumber;
 const int Gnss::kPositionTypeFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Gnss::Gnss()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gnss_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Gnss)
 }
 
 void Gnss::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
-  position_ = const_cast< ::gnss_driver::pb::PointLLH*>(&::gnss_driver::pb::PointLLH::default_instance());
-  position_std_dev_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  linear_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  linear_velocity_std_dev_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
+  position_ = const_cast< ::gnss_driver::pb::PointLLH*>(
+      ::gnss_driver::pb::PointLLH::internal_default_instance());
+  position_std_dev_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  linear_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  linear_velocity_std_dev_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
 }
 
 Gnss::Gnss(const Gnss& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Gnss)
 }
 
 void Gnss::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
-  measurement_time_ = 0;
-  velocity_latency_ = 0;
   position_ = NULL;
   position_std_dev_ = NULL;
   linear_velocity_ = NULL;
   linear_velocity_std_dev_ = NULL;
-  num_sats_ = 0;
-  type_ = 0;
-  solution_status_ = 0u;
-  position_type_ = 0u;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&measurement_time_, 0, reinterpret_cast<char*>(&position_type_) -
+    reinterpret_cast<char*>(&measurement_time_) + sizeof(position_type_));
 }
 
 Gnss::~Gnss() {
@@ -287,7 +314,7 @@ Gnss::~Gnss() {
 }
 
 void Gnss::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &Gnss_default_instance_.get()) {
     delete header_;
     delete position_;
     delete position_std_dev_;
@@ -307,33 +334,43 @@ const ::google::protobuf::Descriptor* Gnss::descriptor() {
 }
 
 const Gnss& Gnss::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gnss_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gnss_2eproto();
+  return *internal_default_instance();
 }
 
-Gnss* Gnss::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Gnss> Gnss_default_instance_;
 
-Gnss* Gnss::New() const {
-  return new Gnss;
+Gnss* Gnss::New(::google::protobuf::Arena* arena) const {
+  Gnss* n = new Gnss;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Gnss::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<Gnss*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Gnss)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Gnss, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Gnss*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
-  if (_has_bits_[0 / 32] & 255) {
-    ZR_(velocity_latency_, num_sats_);
+  if (_has_bits_[0 / 32] & 255u) {
+    ZR_(measurement_time_, num_sats_);
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
-    measurement_time_ = 0;
     if (has_position()) {
       if (position_ != NULL) position_->::gnss_driver::pb::PointLLH::Clear();
     }
@@ -349,16 +386,18 @@ void Gnss::Clear() {
   }
   ZR_(type_, position_type_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Gnss::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Gnss)
   for (;;) {
@@ -382,10 +421,10 @@ bool Gnss::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_measurement_time:
+          set_has_measurement_time();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &measurement_time_)));
-          set_has_measurement_time();
         } else {
           goto handle_unusual;
         }
@@ -397,10 +436,10 @@ bool Gnss::MergePartialFromCodedStream(
       case 3: {
         if (tag == 29) {
          parse_velocity_latency:
+          set_has_velocity_latency();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &velocity_latency_)));
-          set_has_velocity_latency();
         } else {
           goto handle_unusual;
         }
@@ -464,10 +503,10 @@ bool Gnss::MergePartialFromCodedStream(
       case 8: {
         if (tag == 64) {
          parse_num_sats:
+          set_has_num_sats();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &num_sats_)));
-          set_has_num_sats();
         } else {
           goto handle_unusual;
         }
@@ -499,10 +538,10 @@ bool Gnss::MergePartialFromCodedStream(
       case 10: {
         if (tag == 80) {
          parse_solution_status:
+          set_has_solution_status();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &solution_status_)));
-          set_has_solution_status();
         } else {
           goto handle_unusual;
         }
@@ -514,10 +553,10 @@ bool Gnss::MergePartialFromCodedStream(
       case 11: {
         if (tag == 88) {
          parse_position_type:
+          set_has_position_type();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &position_type_)));
-          set_has_position_type();
         } else {
           goto handle_unusual;
         }
@@ -553,7 +592,7 @@ void Gnss::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional double measurement_time = 2;
@@ -569,25 +608,25 @@ void Gnss::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.PointLLH position = 4;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->position(), output);
+      4, *this->position_, output);
   }
 
   // optional .gnss_driver.pb.Point3D position_std_dev = 5;
   if (has_position_std_dev()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->position_std_dev(), output);
+      5, *this->position_std_dev_, output);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity = 6;
   if (has_linear_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->linear_velocity(), output);
+      6, *this->linear_velocity_, output);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity_std_dev = 7;
   if (has_linear_velocity_std_dev()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->linear_velocity_std_dev(), output);
+      7, *this->linear_velocity_std_dev_, output);
   }
 
   // optional int32 num_sats = 8;
@@ -611,21 +650,22 @@ void Gnss::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(11, this->position_type(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Gnss)
 }
 
-::google::protobuf::uint8* Gnss::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Gnss::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Gnss)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional double measurement_time = 2;
@@ -641,29 +681,29 @@ void Gnss::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.PointLLH position = 4;
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->position(), target);
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->position_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D position_std_dev = 5;
   if (has_position_std_dev()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->position_std_dev(), target);
+      InternalWriteMessageNoVirtualToArray(
+        5, *this->position_std_dev_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity = 6;
   if (has_linear_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        6, this->linear_velocity(), target);
+      InternalWriteMessageNoVirtualToArray(
+        6, *this->linear_velocity_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity_std_dev = 7;
   if (has_linear_velocity_std_dev()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        7, this->linear_velocity_std_dev(), target);
+      InternalWriteMessageNoVirtualToArray(
+        7, *this->linear_velocity_std_dev_, false, target);
   }
 
   // optional int32 num_sats = 8;
@@ -687,7 +727,7 @@ void Gnss::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(11, this->position_type(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -695,15 +735,16 @@ void Gnss::SerializeWithCachedSizes(
   return target;
 }
 
-int Gnss::ByteSize() const {
-  int total_size = 0;
+size_t Gnss::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Gnss)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional double measurement_time = 2;
@@ -720,28 +761,28 @@ int Gnss::ByteSize() const {
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->position());
+          *this->position_);
     }
 
     // optional .gnss_driver.pb.Point3D position_std_dev = 5;
     if (has_position_std_dev()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->position_std_dev());
+          *this->position_std_dev_);
     }
 
     // optional .gnss_driver.pb.Point3D linear_velocity = 6;
     if (has_linear_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_velocity());
+          *this->linear_velocity_);
     }
 
     // optional .gnss_driver.pb.Point3D linear_velocity_std_dev = 7;
     if (has_linear_velocity_std_dev()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_velocity_std_dev());
+          *this->linear_velocity_std_dev_);
     }
 
     // optional int32 num_sats = 8;
@@ -752,7 +793,7 @@ int Gnss::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+  if (_has_bits_[8 / 32] & 1792u) {
     // optional .gnss_driver.pb.Gnss.Type type = 9;
     if (has_type()) {
       total_size += 1 +
@@ -774,31 +815,44 @@ int Gnss::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Gnss::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Gnss)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Gnss* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Gnss*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Gnss>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Gnss)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Gnss)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Gnss::MergeFrom(const Gnss& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Gnss)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Gnss::UnsafeMergeFrom(const Gnss& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
       mutable_header()->::gnss_driver::pb::Header::MergeFrom(from.header());
@@ -836,19 +890,24 @@ void Gnss::MergeFrom(const Gnss& from) {
       set_position_type(from.position_type());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Gnss::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Gnss)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Gnss::CopyFrom(const Gnss& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Gnss)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Gnss::IsInitialized() const {
@@ -857,22 +916,24 @@ bool Gnss::IsInitialized() const {
 }
 
 void Gnss::Swap(Gnss* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(measurement_time_, other->measurement_time_);
-    std::swap(velocity_latency_, other->velocity_latency_);
-    std::swap(position_, other->position_);
-    std::swap(position_std_dev_, other->position_std_dev_);
-    std::swap(linear_velocity_, other->linear_velocity_);
-    std::swap(linear_velocity_std_dev_, other->linear_velocity_std_dev_);
-    std::swap(num_sats_, other->num_sats_);
-    std::swap(type_, other->type_);
-    std::swap(solution_status_, other->solution_status_);
-    std::swap(position_type_, other->position_type_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Gnss::InternalSwap(Gnss* other) {
+  std::swap(header_, other->header_);
+  std::swap(measurement_time_, other->measurement_time_);
+  std::swap(velocity_latency_, other->velocity_latency_);
+  std::swap(position_, other->position_);
+  std::swap(position_std_dev_, other->position_std_dev_);
+  std::swap(linear_velocity_, other->linear_velocity_);
+  std::swap(linear_velocity_std_dev_, other->linear_velocity_std_dev_);
+  std::swap(num_sats_, other->num_sats_);
+  std::swap(type_, other->type_);
+  std::swap(solution_status_, other->solution_status_);
+  std::swap(position_type_, other->position_type_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Gnss::GetMetadata() const {
@@ -883,6 +944,383 @@ void Gnss::Swap(Gnss* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Gnss
+
+// optional .gnss_driver.pb.Header header = 1;
+bool Gnss::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Gnss::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Gnss::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Gnss::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& Gnss::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* Gnss::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gnss.header)
+  return header_;
+}
+::gnss_driver::pb::Header* Gnss::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gnss.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void Gnss::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gnss.header)
+}
+
+// optional double measurement_time = 2;
+bool Gnss::has_measurement_time() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Gnss::set_has_measurement_time() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Gnss::clear_has_measurement_time() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Gnss::clear_measurement_time() {
+  measurement_time_ = 0;
+  clear_has_measurement_time();
+}
+double Gnss::measurement_time() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.measurement_time)
+  return measurement_time_;
+}
+void Gnss::set_measurement_time(double value) {
+  set_has_measurement_time();
+  measurement_time_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Gnss.measurement_time)
+}
+
+// optional float velocity_latency = 3 [default = 0];
+bool Gnss::has_velocity_latency() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Gnss::set_has_velocity_latency() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Gnss::clear_has_velocity_latency() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Gnss::clear_velocity_latency() {
+  velocity_latency_ = 0;
+  clear_has_velocity_latency();
+}
+float Gnss::velocity_latency() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.velocity_latency)
+  return velocity_latency_;
+}
+void Gnss::set_velocity_latency(float value) {
+  set_has_velocity_latency();
+  velocity_latency_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Gnss.velocity_latency)
+}
+
+// optional .gnss_driver.pb.PointLLH position = 4;
+bool Gnss::has_position() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Gnss::set_has_position() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Gnss::clear_has_position() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Gnss::clear_position() {
+  if (position_ != NULL) position_->::gnss_driver::pb::PointLLH::Clear();
+  clear_has_position();
+}
+const ::gnss_driver::pb::PointLLH& Gnss::position() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.position)
+  return position_ != NULL ? *position_
+                         : *::gnss_driver::pb::PointLLH::internal_default_instance();
+}
+::gnss_driver::pb::PointLLH* Gnss::mutable_position() {
+  set_has_position();
+  if (position_ == NULL) {
+    position_ = new ::gnss_driver::pb::PointLLH;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gnss.position)
+  return position_;
+}
+::gnss_driver::pb::PointLLH* Gnss::release_position() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gnss.position)
+  clear_has_position();
+  ::gnss_driver::pb::PointLLH* temp = position_;
+  position_ = NULL;
+  return temp;
+}
+void Gnss::set_allocated_position(::gnss_driver::pb::PointLLH* position) {
+  delete position_;
+  position_ = position;
+  if (position) {
+    set_has_position();
+  } else {
+    clear_has_position();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gnss.position)
+}
+
+// optional .gnss_driver.pb.Point3D position_std_dev = 5;
+bool Gnss::has_position_std_dev() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Gnss::set_has_position_std_dev() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Gnss::clear_has_position_std_dev() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Gnss::clear_position_std_dev() {
+  if (position_std_dev_ != NULL) position_std_dev_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_position_std_dev();
+}
+const ::gnss_driver::pb::Point3D& Gnss::position_std_dev() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.position_std_dev)
+  return position_std_dev_ != NULL ? *position_std_dev_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Gnss::mutable_position_std_dev() {
+  set_has_position_std_dev();
+  if (position_std_dev_ == NULL) {
+    position_std_dev_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gnss.position_std_dev)
+  return position_std_dev_;
+}
+::gnss_driver::pb::Point3D* Gnss::release_position_std_dev() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gnss.position_std_dev)
+  clear_has_position_std_dev();
+  ::gnss_driver::pb::Point3D* temp = position_std_dev_;
+  position_std_dev_ = NULL;
+  return temp;
+}
+void Gnss::set_allocated_position_std_dev(::gnss_driver::pb::Point3D* position_std_dev) {
+  delete position_std_dev_;
+  position_std_dev_ = position_std_dev;
+  if (position_std_dev) {
+    set_has_position_std_dev();
+  } else {
+    clear_has_position_std_dev();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gnss.position_std_dev)
+}
+
+// optional .gnss_driver.pb.Point3D linear_velocity = 6;
+bool Gnss::has_linear_velocity() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Gnss::set_has_linear_velocity() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Gnss::clear_has_linear_velocity() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Gnss::clear_linear_velocity() {
+  if (linear_velocity_ != NULL) linear_velocity_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_velocity();
+}
+const ::gnss_driver::pb::Point3D& Gnss::linear_velocity() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.linear_velocity)
+  return linear_velocity_ != NULL ? *linear_velocity_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Gnss::mutable_linear_velocity() {
+  set_has_linear_velocity();
+  if (linear_velocity_ == NULL) {
+    linear_velocity_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gnss.linear_velocity)
+  return linear_velocity_;
+}
+::gnss_driver::pb::Point3D* Gnss::release_linear_velocity() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gnss.linear_velocity)
+  clear_has_linear_velocity();
+  ::gnss_driver::pb::Point3D* temp = linear_velocity_;
+  linear_velocity_ = NULL;
+  return temp;
+}
+void Gnss::set_allocated_linear_velocity(::gnss_driver::pb::Point3D* linear_velocity) {
+  delete linear_velocity_;
+  linear_velocity_ = linear_velocity;
+  if (linear_velocity) {
+    set_has_linear_velocity();
+  } else {
+    clear_has_linear_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gnss.linear_velocity)
+}
+
+// optional .gnss_driver.pb.Point3D linear_velocity_std_dev = 7;
+bool Gnss::has_linear_velocity_std_dev() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void Gnss::set_has_linear_velocity_std_dev() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void Gnss::clear_has_linear_velocity_std_dev() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void Gnss::clear_linear_velocity_std_dev() {
+  if (linear_velocity_std_dev_ != NULL) linear_velocity_std_dev_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_velocity_std_dev();
+}
+const ::gnss_driver::pb::Point3D& Gnss::linear_velocity_std_dev() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.linear_velocity_std_dev)
+  return linear_velocity_std_dev_ != NULL ? *linear_velocity_std_dev_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Gnss::mutable_linear_velocity_std_dev() {
+  set_has_linear_velocity_std_dev();
+  if (linear_velocity_std_dev_ == NULL) {
+    linear_velocity_std_dev_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gnss.linear_velocity_std_dev)
+  return linear_velocity_std_dev_;
+}
+::gnss_driver::pb::Point3D* Gnss::release_linear_velocity_std_dev() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gnss.linear_velocity_std_dev)
+  clear_has_linear_velocity_std_dev();
+  ::gnss_driver::pb::Point3D* temp = linear_velocity_std_dev_;
+  linear_velocity_std_dev_ = NULL;
+  return temp;
+}
+void Gnss::set_allocated_linear_velocity_std_dev(::gnss_driver::pb::Point3D* linear_velocity_std_dev) {
+  delete linear_velocity_std_dev_;
+  linear_velocity_std_dev_ = linear_velocity_std_dev;
+  if (linear_velocity_std_dev) {
+    set_has_linear_velocity_std_dev();
+  } else {
+    clear_has_linear_velocity_std_dev();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gnss.linear_velocity_std_dev)
+}
+
+// optional int32 num_sats = 8;
+bool Gnss::has_num_sats() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void Gnss::set_has_num_sats() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void Gnss::clear_has_num_sats() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void Gnss::clear_num_sats() {
+  num_sats_ = 0;
+  clear_has_num_sats();
+}
+::google::protobuf::int32 Gnss::num_sats() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.num_sats)
+  return num_sats_;
+}
+void Gnss::set_num_sats(::google::protobuf::int32 value) {
+  set_has_num_sats();
+  num_sats_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Gnss.num_sats)
+}
+
+// optional .gnss_driver.pb.Gnss.Type type = 9;
+bool Gnss::has_type() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void Gnss::set_has_type() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void Gnss::clear_has_type() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void Gnss::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+::gnss_driver::pb::Gnss_Type Gnss::type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.type)
+  return static_cast< ::gnss_driver::pb::Gnss_Type >(type_);
+}
+void Gnss::set_type(::gnss_driver::pb::Gnss_Type value) {
+  assert(::gnss_driver::pb::Gnss_Type_IsValid(value));
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Gnss.type)
+}
+
+// optional uint32 solution_status = 10;
+bool Gnss::has_solution_status() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void Gnss::set_has_solution_status() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void Gnss::clear_has_solution_status() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void Gnss::clear_solution_status() {
+  solution_status_ = 0u;
+  clear_has_solution_status();
+}
+::google::protobuf::uint32 Gnss::solution_status() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.solution_status)
+  return solution_status_;
+}
+void Gnss::set_solution_status(::google::protobuf::uint32 value) {
+  set_has_solution_status();
+  solution_status_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Gnss.solution_status)
+}
+
+// optional uint32 position_type = 11;
+bool Gnss::has_position_type() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void Gnss::set_has_position_type() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void Gnss::clear_has_position_type() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void Gnss::clear_position_type() {
+  position_type_ = 0u;
+  clear_has_position_type();
+}
+::google::protobuf::uint32 Gnss::position_type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gnss.position_type)
+  return position_type_;
+}
+void Gnss::set_position_type(::google::protobuf::uint32 value) {
+  set_has_position_type();
+  position_type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Gnss.position_type)
+}
+
+inline const Gnss* Gnss::internal_default_instance() {
+  return &Gnss_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -891,7 +1329,7 @@ const ::google::protobuf::EnumDescriptor* RangeInfo_Constellation_descriptor() {
   return RangeInfo_Constellation_descriptor_;
 }
 bool RangeInfo_Constellation_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1:
     case 2:
@@ -904,7 +1342,7 @@ bool RangeInfo_Constellation_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const RangeInfo_Constellation RangeInfo::GPS;
 const RangeInfo_Constellation RangeInfo::GLONASS;
 const RangeInfo_Constellation RangeInfo::SBAS;
@@ -914,8 +1352,8 @@ const RangeInfo_Constellation RangeInfo::QZSS;
 const RangeInfo_Constellation RangeInfo::Constellation_MIN;
 const RangeInfo_Constellation RangeInfo::Constellation_MAX;
 const int RangeInfo::Constellation_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RangeInfo::kConstellationFieldNumber;
 const int RangeInfo::kPrnFieldNumber;
 const int RangeInfo::kCarrierFrequencyFieldNumber;
@@ -927,10 +1365,11 @@ const int RangeInfo::kDopplerFieldNumber;
 const int RangeInfo::kDopplerStdDevFieldNumber;
 const int RangeInfo::kCnoFieldNumber;
 const int RangeInfo::kLockTimeFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RangeInfo::RangeInfo()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gnss_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.RangeInfo)
 }
@@ -939,26 +1378,25 @@ void RangeInfo::InitAsDefaultInstance() {
 }
 
 RangeInfo::RangeInfo(const RangeInfo& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.RangeInfo)
 }
 
 void RangeInfo::SharedCtor() {
   _cached_size_ = 0;
-  constellation_ = 0;
-  prn_ = 0;
-  carrier_frequency_ = 0u;
+  ::memset(&constellation_, 0, reinterpret_cast<char*>(&carrier_frequency_) -
+    reinterpret_cast<char*>(&constellation_) + sizeof(carrier_frequency_));
   pseudorange_ = ::google::protobuf::internal::NaN();
-  pseudorange_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
   carrier_phase_ = ::google::protobuf::internal::NaN();
+  pseudorange_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
   carrier_phase_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
   doppler_ = static_cast<float>(::google::protobuf::internal::NaN());
   doppler_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
   cno_ = -1;
   lock_time_ = -1;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 RangeInfo::~RangeInfo() {
@@ -967,8 +1405,6 @@ RangeInfo::~RangeInfo() {
 }
 
 void RangeInfo::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void RangeInfo::SetCachedSize(int size) const {
@@ -982,52 +1418,64 @@ const ::google::protobuf::Descriptor* RangeInfo::descriptor() {
 }
 
 const RangeInfo& RangeInfo::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gnss_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gnss_2eproto();
+  return *internal_default_instance();
 }
 
-RangeInfo* RangeInfo::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<RangeInfo> RangeInfo_default_instance_;
 
-RangeInfo* RangeInfo::New() const {
-  return new RangeInfo;
+RangeInfo* RangeInfo::New(::google::protobuf::Arena* arena) const {
+  RangeInfo* n = new RangeInfo;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void RangeInfo::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<RangeInfo*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.RangeInfo)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(RangeInfo, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<RangeInfo*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
-  if (_has_bits_[0 / 32] & 255) {
-    ZR_(constellation_, prn_);
-    carrier_frequency_ = 0u;
+  if (_has_bits_[0 / 32] & 255u) {
+    ZR_(constellation_, carrier_frequency_);
     pseudorange_ = ::google::protobuf::internal::NaN();
     pseudorange_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
     carrier_phase_ = ::google::protobuf::internal::NaN();
     carrier_phase_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
     doppler_ = static_cast<float>(::google::protobuf::internal::NaN());
   }
-  if (_has_bits_[8 / 32] & 1792) {
+  if (_has_bits_[8 / 32] & 1792u) {
     doppler_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
     cno_ = -1;
     lock_time_ = -1;
   }
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool RangeInfo::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.RangeInfo)
   for (;;) {
@@ -1058,10 +1506,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_prn:
+          set_has_prn();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &prn_)));
-          set_has_prn();
         } else {
           goto handle_unusual;
         }
@@ -1073,10 +1521,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 3: {
         if (tag == 29) {
          parse_carrier_frequency:
+          set_has_carrier_frequency();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
                  input, &carrier_frequency_)));
-          set_has_carrier_frequency();
         } else {
           goto handle_unusual;
         }
@@ -1088,10 +1536,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 4: {
         if (tag == 33) {
          parse_pseudorange:
+          set_has_pseudorange();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &pseudorange_)));
-          set_has_pseudorange();
         } else {
           goto handle_unusual;
         }
@@ -1103,10 +1551,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 5: {
         if (tag == 45) {
          parse_pseudorange_std_dev:
+          set_has_pseudorange_std_dev();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &pseudorange_std_dev_)));
-          set_has_pseudorange_std_dev();
         } else {
           goto handle_unusual;
         }
@@ -1118,10 +1566,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 6: {
         if (tag == 49) {
          parse_carrier_phase:
+          set_has_carrier_phase();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &carrier_phase_)));
-          set_has_carrier_phase();
         } else {
           goto handle_unusual;
         }
@@ -1133,10 +1581,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 7: {
         if (tag == 61) {
          parse_carrier_phase_std_dev:
+          set_has_carrier_phase_std_dev();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &carrier_phase_std_dev_)));
-          set_has_carrier_phase_std_dev();
         } else {
           goto handle_unusual;
         }
@@ -1148,10 +1596,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 8: {
         if (tag == 69) {
          parse_doppler:
+          set_has_doppler();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &doppler_)));
-          set_has_doppler();
         } else {
           goto handle_unusual;
         }
@@ -1163,10 +1611,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 9: {
         if (tag == 77) {
          parse_doppler_std_dev:
+          set_has_doppler_std_dev();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &doppler_std_dev_)));
-          set_has_doppler_std_dev();
         } else {
           goto handle_unusual;
         }
@@ -1178,10 +1626,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 10: {
         if (tag == 80) {
          parse_cno:
+          set_has_cno();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &cno_)));
-          set_has_cno();
         } else {
           goto handle_unusual;
         }
@@ -1193,10 +1641,10 @@ bool RangeInfo::MergePartialFromCodedStream(
       case 11: {
         if (tag == 88) {
          parse_lock_time:
+          set_has_lock_time();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &lock_time_)));
-          set_has_lock_time();
         } else {
           goto handle_unusual;
         }
@@ -1285,15 +1733,16 @@ void RangeInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(11, this->lock_time(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.RangeInfo)
 }
 
-::google::protobuf::uint8* RangeInfo::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* RangeInfo::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.RangeInfo)
   // optional .gnss_driver.pb.RangeInfo.Constellation constellation = 1 [default = GPS];
   if (has_constellation()) {
@@ -1351,7 +1800,7 @@ void RangeInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(11, this->lock_time(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1359,10 +1808,11 @@ void RangeInfo::SerializeWithCachedSizes(
   return target;
 }
 
-int RangeInfo::ByteSize() const {
-  int total_size = 0;
+size_t RangeInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.RangeInfo)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional .gnss_driver.pb.RangeInfo.Constellation constellation = 1 [default = GPS];
     if (has_constellation()) {
       total_size += 1 +
@@ -1407,7 +1857,7 @@ int RangeInfo::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+  if (_has_bits_[8 / 32] & 1792u) {
     // optional float doppler_std_dev = 9 [default = nan];
     if (has_doppler_std_dev()) {
       total_size += 1 + 4;
@@ -1428,31 +1878,44 @@ int RangeInfo::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void RangeInfo::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.RangeInfo)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const RangeInfo* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const RangeInfo*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const RangeInfo>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.RangeInfo)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.RangeInfo)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void RangeInfo::MergeFrom(const RangeInfo& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.RangeInfo)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void RangeInfo::UnsafeMergeFrom(const RangeInfo& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_constellation()) {
       set_constellation(from.constellation());
@@ -1490,19 +1953,24 @@ void RangeInfo::MergeFrom(const RangeInfo& from) {
       set_lock_time(from.lock_time());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void RangeInfo::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.RangeInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void RangeInfo::CopyFrom(const RangeInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.RangeInfo)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool RangeInfo::IsInitialized() const {
@@ -1511,22 +1979,24 @@ bool RangeInfo::IsInitialized() const {
 }
 
 void RangeInfo::Swap(RangeInfo* other) {
-  if (other != this) {
-    std::swap(constellation_, other->constellation_);
-    std::swap(prn_, other->prn_);
-    std::swap(carrier_frequency_, other->carrier_frequency_);
-    std::swap(pseudorange_, other->pseudorange_);
-    std::swap(pseudorange_std_dev_, other->pseudorange_std_dev_);
-    std::swap(carrier_phase_, other->carrier_phase_);
-    std::swap(carrier_phase_std_dev_, other->carrier_phase_std_dev_);
-    std::swap(doppler_, other->doppler_);
-    std::swap(doppler_std_dev_, other->doppler_std_dev_);
-    std::swap(cno_, other->cno_);
-    std::swap(lock_time_, other->lock_time_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void RangeInfo::InternalSwap(RangeInfo* other) {
+  std::swap(constellation_, other->constellation_);
+  std::swap(prn_, other->prn_);
+  std::swap(carrier_frequency_, other->carrier_frequency_);
+  std::swap(pseudorange_, other->pseudorange_);
+  std::swap(pseudorange_std_dev_, other->pseudorange_std_dev_);
+  std::swap(carrier_phase_, other->carrier_phase_);
+  std::swap(carrier_phase_std_dev_, other->carrier_phase_std_dev_);
+  std::swap(doppler_, other->doppler_);
+  std::swap(doppler_std_dev_, other->doppler_std_dev_);
+  std::swap(cno_, other->cno_);
+  std::swap(lock_time_, other->lock_time_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata RangeInfo::GetMetadata() const {
@@ -1537,29 +2007,304 @@ void RangeInfo::Swap(RangeInfo* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// RangeInfo
+
+// optional .gnss_driver.pb.RangeInfo.Constellation constellation = 1 [default = GPS];
+bool RangeInfo::has_constellation() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void RangeInfo::set_has_constellation() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void RangeInfo::clear_has_constellation() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void RangeInfo::clear_constellation() {
+  constellation_ = 0;
+  clear_has_constellation();
+}
+::gnss_driver::pb::RangeInfo_Constellation RangeInfo::constellation() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.constellation)
+  return static_cast< ::gnss_driver::pb::RangeInfo_Constellation >(constellation_);
+}
+void RangeInfo::set_constellation(::gnss_driver::pb::RangeInfo_Constellation value) {
+  assert(::gnss_driver::pb::RangeInfo_Constellation_IsValid(value));
+  set_has_constellation();
+  constellation_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.constellation)
+}
+
+// optional int32 prn = 2;
+bool RangeInfo::has_prn() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void RangeInfo::set_has_prn() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void RangeInfo::clear_has_prn() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void RangeInfo::clear_prn() {
+  prn_ = 0;
+  clear_has_prn();
+}
+::google::protobuf::int32 RangeInfo::prn() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.prn)
+  return prn_;
+}
+void RangeInfo::set_prn(::google::protobuf::int32 value) {
+  set_has_prn();
+  prn_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.prn)
+}
+
+// optional fixed32 carrier_frequency = 3;
+bool RangeInfo::has_carrier_frequency() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void RangeInfo::set_has_carrier_frequency() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void RangeInfo::clear_has_carrier_frequency() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void RangeInfo::clear_carrier_frequency() {
+  carrier_frequency_ = 0u;
+  clear_has_carrier_frequency();
+}
+::google::protobuf::uint32 RangeInfo::carrier_frequency() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.carrier_frequency)
+  return carrier_frequency_;
+}
+void RangeInfo::set_carrier_frequency(::google::protobuf::uint32 value) {
+  set_has_carrier_frequency();
+  carrier_frequency_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.carrier_frequency)
+}
+
+// optional double pseudorange = 4 [default = nan];
+bool RangeInfo::has_pseudorange() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void RangeInfo::set_has_pseudorange() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void RangeInfo::clear_has_pseudorange() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void RangeInfo::clear_pseudorange() {
+  pseudorange_ = ::google::protobuf::internal::NaN();
+  clear_has_pseudorange();
+}
+double RangeInfo::pseudorange() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.pseudorange)
+  return pseudorange_;
+}
+void RangeInfo::set_pseudorange(double value) {
+  set_has_pseudorange();
+  pseudorange_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.pseudorange)
+}
+
+// optional float pseudorange_std_dev = 5 [default = nan];
+bool RangeInfo::has_pseudorange_std_dev() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void RangeInfo::set_has_pseudorange_std_dev() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void RangeInfo::clear_has_pseudorange_std_dev() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void RangeInfo::clear_pseudorange_std_dev() {
+  pseudorange_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
+  clear_has_pseudorange_std_dev();
+}
+float RangeInfo::pseudorange_std_dev() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.pseudorange_std_dev)
+  return pseudorange_std_dev_;
+}
+void RangeInfo::set_pseudorange_std_dev(float value) {
+  set_has_pseudorange_std_dev();
+  pseudorange_std_dev_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.pseudorange_std_dev)
+}
+
+// optional double carrier_phase = 6 [default = nan];
+bool RangeInfo::has_carrier_phase() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void RangeInfo::set_has_carrier_phase() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void RangeInfo::clear_has_carrier_phase() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void RangeInfo::clear_carrier_phase() {
+  carrier_phase_ = ::google::protobuf::internal::NaN();
+  clear_has_carrier_phase();
+}
+double RangeInfo::carrier_phase() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.carrier_phase)
+  return carrier_phase_;
+}
+void RangeInfo::set_carrier_phase(double value) {
+  set_has_carrier_phase();
+  carrier_phase_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.carrier_phase)
+}
+
+// optional float carrier_phase_std_dev = 7 [default = nan];
+bool RangeInfo::has_carrier_phase_std_dev() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void RangeInfo::set_has_carrier_phase_std_dev() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void RangeInfo::clear_has_carrier_phase_std_dev() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void RangeInfo::clear_carrier_phase_std_dev() {
+  carrier_phase_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
+  clear_has_carrier_phase_std_dev();
+}
+float RangeInfo::carrier_phase_std_dev() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.carrier_phase_std_dev)
+  return carrier_phase_std_dev_;
+}
+void RangeInfo::set_carrier_phase_std_dev(float value) {
+  set_has_carrier_phase_std_dev();
+  carrier_phase_std_dev_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.carrier_phase_std_dev)
+}
+
+// optional float doppler = 8 [default = nan];
+bool RangeInfo::has_doppler() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void RangeInfo::set_has_doppler() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void RangeInfo::clear_has_doppler() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void RangeInfo::clear_doppler() {
+  doppler_ = static_cast<float>(::google::protobuf::internal::NaN());
+  clear_has_doppler();
+}
+float RangeInfo::doppler() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.doppler)
+  return doppler_;
+}
+void RangeInfo::set_doppler(float value) {
+  set_has_doppler();
+  doppler_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.doppler)
+}
+
+// optional float doppler_std_dev = 9 [default = nan];
+bool RangeInfo::has_doppler_std_dev() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void RangeInfo::set_has_doppler_std_dev() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void RangeInfo::clear_has_doppler_std_dev() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void RangeInfo::clear_doppler_std_dev() {
+  doppler_std_dev_ = static_cast<float>(::google::protobuf::internal::NaN());
+  clear_has_doppler_std_dev();
+}
+float RangeInfo::doppler_std_dev() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.doppler_std_dev)
+  return doppler_std_dev_;
+}
+void RangeInfo::set_doppler_std_dev(float value) {
+  set_has_doppler_std_dev();
+  doppler_std_dev_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.doppler_std_dev)
+}
+
+// optional int32 cno = 10 [default = -1];
+bool RangeInfo::has_cno() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void RangeInfo::set_has_cno() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void RangeInfo::clear_has_cno() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void RangeInfo::clear_cno() {
+  cno_ = -1;
+  clear_has_cno();
+}
+::google::protobuf::int32 RangeInfo::cno() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.cno)
+  return cno_;
+}
+void RangeInfo::set_cno(::google::protobuf::int32 value) {
+  set_has_cno();
+  cno_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.cno)
+}
+
+// optional int32 lock_time = 11 [default = -1];
+bool RangeInfo::has_lock_time() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void RangeInfo::set_has_lock_time() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void RangeInfo::clear_has_lock_time() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void RangeInfo::clear_lock_time() {
+  lock_time_ = -1;
+  clear_has_lock_time();
+}
+::google::protobuf::int32 RangeInfo::lock_time() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.RangeInfo.lock_time)
+  return lock_time_;
+}
+void RangeInfo::set_lock_time(::google::protobuf::int32 value) {
+  set_has_lock_time();
+  lock_time_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.RangeInfo.lock_time)
+}
+
+inline const RangeInfo* RangeInfo::internal_default_instance() {
+  return &RangeInfo_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int GnssRange::kHeaderFieldNumber;
 const int GnssRange::kMeasurementTimeFieldNumber;
 const int GnssRange::kRangesFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 GnssRange::GnssRange()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gnss_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.GnssRange)
 }
 
 void GnssRange::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
 }
 
 GnssRange::GnssRange(const GnssRange& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.GnssRange)
 }
 
@@ -1567,7 +2312,6 @@ void GnssRange::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
   measurement_time_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 GnssRange::~GnssRange() {
@@ -1576,7 +2320,7 @@ GnssRange::~GnssRange() {
 }
 
 void GnssRange::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &GnssRange_default_instance_.get()) {
     delete header_;
   }
 }
@@ -1592,31 +2336,38 @@ const ::google::protobuf::Descriptor* GnssRange::descriptor() {
 }
 
 const GnssRange& GnssRange::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gnss_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gnss_2eproto();
+  return *internal_default_instance();
 }
 
-GnssRange* GnssRange::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<GnssRange> GnssRange_default_instance_;
 
-GnssRange* GnssRange::New() const {
-  return new GnssRange;
+GnssRange* GnssRange::New(::google::protobuf::Arena* arena) const {
+  GnssRange* n = new GnssRange;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void GnssRange::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.GnssRange)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
     measurement_time_ = 0;
   }
   ranges_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool GnssRange::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.GnssRange)
   for (;;) {
@@ -1640,10 +2391,10 @@ bool GnssRange::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_measurement_time:
+          set_has_measurement_time();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &measurement_time_)));
-          set_has_measurement_time();
         } else {
           goto handle_unusual;
         }
@@ -1655,12 +2406,15 @@ bool GnssRange::MergePartialFromCodedStream(
       case 3: {
         if (tag == 26) {
          parse_ranges:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_ranges:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_ranges()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_ranges;
+        if (input->ExpectTag(26)) goto parse_loop_ranges;
+        input->UnsafeDecrementRecursionDepth();
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1693,7 +2447,7 @@ void GnssRange::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional double measurement_time = 2;
@@ -1702,26 +2456,27 @@ void GnssRange::SerializeWithCachedSizes(
   }
 
   // repeated .gnss_driver.pb.RangeInfo ranges = 3;
-  for (int i = 0; i < this->ranges_size(); i++) {
+  for (unsigned int i = 0, n = this->ranges_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->ranges(i), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.GnssRange)
 }
 
-::google::protobuf::uint8* GnssRange::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* GnssRange::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.GnssRange)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional double measurement_time = 2;
@@ -1730,13 +2485,13 @@ void GnssRange::SerializeWithCachedSizes(
   }
 
   // repeated .gnss_driver.pb.RangeInfo ranges = 3;
-  for (int i = 0; i < this->ranges_size(); i++) {
+  for (unsigned int i = 0, n = this->ranges_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->ranges(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->ranges(i), false, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1744,15 +2499,16 @@ void GnssRange::SerializeWithCachedSizes(
   return target;
 }
 
-int GnssRange::ByteSize() const {
-  int total_size = 0;
+size_t GnssRange::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.GnssRange)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional double measurement_time = 2;
@@ -1762,38 +2518,54 @@ int GnssRange::ByteSize() const {
 
   }
   // repeated .gnss_driver.pb.RangeInfo ranges = 3;
-  total_size += 1 * this->ranges_size();
-  for (int i = 0; i < this->ranges_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->ranges(i));
+  {
+    unsigned int count = this->ranges_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->ranges(i));
+    }
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void GnssRange::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.GnssRange)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const GnssRange* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const GnssRange*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const GnssRange>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.GnssRange)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.GnssRange)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void GnssRange::MergeFrom(const GnssRange& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.GnssRange)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void GnssRange::UnsafeMergeFrom(const GnssRange& from) {
+  GOOGLE_DCHECK(&from != this);
   ranges_.MergeFrom(from.ranges_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
@@ -1803,19 +2575,24 @@ void GnssRange::MergeFrom(const GnssRange& from) {
       set_measurement_time(from.measurement_time());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void GnssRange::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.GnssRange)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GnssRange::CopyFrom(const GnssRange& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.GnssRange)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool GnssRange::IsInitialized() const {
@@ -1824,14 +2601,16 @@ bool GnssRange::IsInitialized() const {
 }
 
 void GnssRange::Swap(GnssRange* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(measurement_time_, other->measurement_time_);
-    ranges_.Swap(&other->ranges_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GnssRange::InternalSwap(GnssRange* other) {
+  std::swap(header_, other->header_);
+  std::swap(measurement_time_, other->measurement_time_);
+  ranges_.UnsafeArenaSwap(&other->ranges_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata GnssRange::GetMetadata() const {
@@ -1842,6 +2621,112 @@ void GnssRange::Swap(GnssRange* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// GnssRange
+
+// optional .gnss_driver.pb.Header header = 1;
+bool GnssRange::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void GnssRange::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void GnssRange::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void GnssRange::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& GnssRange::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssRange.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* GnssRange::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.GnssRange.header)
+  return header_;
+}
+::gnss_driver::pb::Header* GnssRange::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.GnssRange.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void GnssRange::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.GnssRange.header)
+}
+
+// optional double measurement_time = 2;
+bool GnssRange::has_measurement_time() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void GnssRange::set_has_measurement_time() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void GnssRange::clear_has_measurement_time() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void GnssRange::clear_measurement_time() {
+  measurement_time_ = 0;
+  clear_has_measurement_time();
+}
+double GnssRange::measurement_time() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssRange.measurement_time)
+  return measurement_time_;
+}
+void GnssRange::set_measurement_time(double value) {
+  set_has_measurement_time();
+  measurement_time_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.GnssRange.measurement_time)
+}
+
+// repeated .gnss_driver.pb.RangeInfo ranges = 3;
+int GnssRange::ranges_size() const {
+  return ranges_.size();
+}
+void GnssRange::clear_ranges() {
+  ranges_.Clear();
+}
+const ::gnss_driver::pb::RangeInfo& GnssRange::ranges(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GnssRange.ranges)
+  return ranges_.Get(index);
+}
+::gnss_driver::pb::RangeInfo* GnssRange::mutable_ranges(int index) {
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.GnssRange.ranges)
+  return ranges_.Mutable(index);
+}
+::gnss_driver::pb::RangeInfo* GnssRange::add_ranges() {
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.GnssRange.ranges)
+  return ranges_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::gnss_driver::pb::RangeInfo >*
+GnssRange::mutable_ranges() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.GnssRange.ranges)
+  return &ranges_;
+}
+const ::google::protobuf::RepeatedPtrField< ::gnss_driver::pb::RangeInfo >&
+GnssRange::ranges() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.GnssRange.ranges)
+  return ranges_;
+}
+
+inline const GnssRange* GnssRange::internal_default_instance() {
+  return &GnssRange_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
