@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -29,6 +30,7 @@ const ::google::protobuf::EnumDescriptor* ErrorCode_descriptor_ = NULL;
 }  // namespace
 
 
+void protobuf_AssignDesc_error_5fcode_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_error_5fcode_2eproto() {
   protobuf_AddDesc_error_5fcode_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -41,46 +43,57 @@ void protobuf_AssignDesc_error_5fcode_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusPb, msg_),
   };
   StatusPb_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       StatusPb_descriptor_,
-      StatusPb::default_instance_,
+      StatusPb::internal_default_instance(),
       StatusPb_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusPb, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusPb, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusPb, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(StatusPb));
+      -1,
+      sizeof(StatusPb),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StatusPb, _internal_metadata_));
   ErrorCode_descriptor_ = file->enum_type(0);
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_error_5fcode_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    StatusPb_descriptor_, &StatusPb::default_instance());
+      StatusPb_descriptor_, StatusPb::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_error_5fcode_2eproto() {
-  delete StatusPb::default_instance_;
+  StatusPb_default_instance_.Shutdown();
   delete StatusPb_reflection_;
 }
 
-void protobuf_AddDesc_error_5fcode_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_error_5fcode_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::google::protobuf::internal::GetEmptyString();
+  StatusPb_default_instance_.DefaultConstruct();
+  StatusPb_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_error_5fcode_2eproto_once_);
+void protobuf_InitDefaults_error_5fcode_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_error_5fcode_2eproto_once_,
+                 &protobuf_InitDefaults_error_5fcode_2eproto_impl);
+}
+void protobuf_AddDesc_error_5fcode_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_error_5fcode_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\020error_code.proto\022\016gnss_driver.pb\"J\n\010St"
     "atusPb\0221\n\nerror_code\030\001 \001(\0162\031.gnss_driver"
@@ -98,11 +111,14 @@ void protobuf_AddDesc_error_5fcode_2eproto() {
     "OR\020\210\'", 525);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "error_code.proto", &protobuf_RegisterTypes);
-  StatusPb::default_instance_ = new StatusPb();
-  StatusPb::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_error_5fcode_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_error_5fcode_2eproto_once_);
+void protobuf_AddDesc_error_5fcode_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_error_5fcode_2eproto_once_,
+                 &protobuf_AddDesc_error_5fcode_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_error_5fcode_2eproto {
   StaticDescriptorInitializer_error_5fcode_2eproto() {
@@ -114,7 +130,7 @@ const ::google::protobuf::EnumDescriptor* ErrorCode_descriptor() {
   return ErrorCode_descriptor_;
 }
 bool ErrorCode_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1000:
     case 1001:
@@ -137,15 +153,26 @@ bool ErrorCode_IsValid(int value) {
 }
 
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int StatusPb::kErrorCodeFieldNumber;
 const int StatusPb::kMsgFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 StatusPb::StatusPb()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_error_5fcode_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.StatusPb)
 }
@@ -154,18 +181,17 @@ void StatusPb::InitAsDefaultInstance() {
 }
 
 StatusPb::StatusPb(const StatusPb& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.StatusPb)
 }
 
 void StatusPb::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
+  msg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   error_code_ = 0;
-  msg_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 StatusPb::~StatusPb() {
@@ -174,11 +200,7 @@ StatusPb::~StatusPb() {
 }
 
 void StatusPb::SharedDtor() {
-  if (msg_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete msg_;
-  }
-  if (this != default_instance_) {
-  }
+  msg_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void StatusPb::SetCachedSize(int size) const {
@@ -192,32 +214,37 @@ const ::google::protobuf::Descriptor* StatusPb::descriptor() {
 }
 
 const StatusPb& StatusPb::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_error_5fcode_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_error_5fcode_2eproto();
+  return *internal_default_instance();
 }
 
-StatusPb* StatusPb::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<StatusPb> StatusPb_default_instance_;
 
-StatusPb* StatusPb::New() const {
-  return new StatusPb;
+StatusPb* StatusPb::New(::google::protobuf::Arena* arena) const {
+  StatusPb* n = new StatusPb;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void StatusPb::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.StatusPb)
+  if (_has_bits_[0 / 32] & 3u) {
     error_code_ = 0;
     if (has_msg()) {
-      if (msg_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        msg_->clear();
-      }
+      msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool StatusPb::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.StatusPb)
   for (;;) {
@@ -253,7 +280,7 @@ bool StatusPb::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->msg().data(), this->msg().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "msg");
+            "gnss_driver.pb.StatusPb.msg");
         } else {
           goto handle_unusual;
         }
@@ -297,20 +324,21 @@ void StatusPb::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->msg().data(), this->msg().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "msg");
+      "gnss_driver.pb.StatusPb.msg");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->msg(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.StatusPb)
 }
 
-::google::protobuf::uint8* StatusPb::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* StatusPb::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.StatusPb)
   // optional .gnss_driver.pb.ErrorCode error_code = 1 [default = OK];
   if (has_error_code()) {
@@ -323,13 +351,13 @@ void StatusPb::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->msg().data(), this->msg().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "msg");
+      "gnss_driver.pb.StatusPb.msg");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->msg(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -337,10 +365,11 @@ void StatusPb::SerializeWithCachedSizes(
   return target;
 }
 
-int StatusPb::ByteSize() const {
-  int total_size = 0;
+size_t StatusPb::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.StatusPb)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional .gnss_driver.pb.ErrorCode error_code = 1 [default = OK];
     if (has_error_code()) {
       total_size += 1 +
@@ -355,52 +384,71 @@ int StatusPb::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void StatusPb::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.StatusPb)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const StatusPb* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const StatusPb*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const StatusPb>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.StatusPb)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.StatusPb)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void StatusPb::MergeFrom(const StatusPb& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.StatusPb)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void StatusPb::UnsafeMergeFrom(const StatusPb& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_error_code()) {
       set_error_code(from.error_code());
     }
     if (from.has_msg()) {
-      set_msg(from.msg());
+      set_has_msg();
+      msg_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.msg_);
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void StatusPb::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.StatusPb)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void StatusPb::CopyFrom(const StatusPb& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.StatusPb)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool StatusPb::IsInitialized() const {
@@ -409,13 +457,15 @@ bool StatusPb::IsInitialized() const {
 }
 
 void StatusPb::Swap(StatusPb* other) {
-  if (other != this) {
-    std::swap(error_code_, other->error_code_);
-    std::swap(msg_, other->msg_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void StatusPb::InternalSwap(StatusPb* other) {
+  std::swap(error_code_, other->error_code_);
+  msg_.Swap(&other->msg_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata StatusPb::GetMetadata() const {
@@ -426,6 +476,92 @@ void StatusPb::Swap(StatusPb* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// StatusPb
+
+// optional .gnss_driver.pb.ErrorCode error_code = 1 [default = OK];
+bool StatusPb::has_error_code() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void StatusPb::set_has_error_code() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void StatusPb::clear_has_error_code() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void StatusPb::clear_error_code() {
+  error_code_ = 0;
+  clear_has_error_code();
+}
+::gnss_driver::pb::ErrorCode StatusPb::error_code() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.StatusPb.error_code)
+  return static_cast< ::gnss_driver::pb::ErrorCode >(error_code_);
+}
+void StatusPb::set_error_code(::gnss_driver::pb::ErrorCode value) {
+  assert(::gnss_driver::pb::ErrorCode_IsValid(value));
+  set_has_error_code();
+  error_code_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.StatusPb.error_code)
+}
+
+// optional string msg = 2;
+bool StatusPb::has_msg() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void StatusPb::set_has_msg() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void StatusPb::clear_has_msg() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void StatusPb::clear_msg() {
+  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_msg();
+}
+const ::std::string& StatusPb::msg() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.StatusPb.msg)
+  return msg_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void StatusPb::set_msg(const ::std::string& value) {
+  set_has_msg();
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.StatusPb.msg)
+}
+void StatusPb::set_msg(const char* value) {
+  set_has_msg();
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.StatusPb.msg)
+}
+void StatusPb::set_msg(const char* value, size_t size) {
+  set_has_msg();
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.StatusPb.msg)
+}
+::std::string* StatusPb::mutable_msg() {
+  set_has_msg();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.StatusPb.msg)
+  return msg_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* StatusPb::release_msg() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.StatusPb.msg)
+  clear_has_msg();
+  return msg_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void StatusPb::set_allocated_msg(::std::string* msg) {
+  if (msg != NULL) {
+    set_has_msg();
+  } else {
+    clear_has_msg();
+  }
+  msg_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), msg);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.StatusPb.msg)
+}
+
+inline const StatusPb* StatusPb::internal_default_instance() {
+  return &StatusPb_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

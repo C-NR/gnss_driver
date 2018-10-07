@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -28,6 +29,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_gpgga_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_gpgga_2eproto() {
   protobuf_AddDesc_gpgga_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -39,55 +41,69 @@ void protobuf_AssignDesc_gpgga_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GPGGA, gpgga_),
   };
   GPGGA_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       GPGGA_descriptor_,
-      GPGGA::default_instance_,
+      GPGGA::internal_default_instance(),
       GPGGA_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GPGGA, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GPGGA, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GPGGA, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(GPGGA));
+      -1,
+      sizeof(GPGGA),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GPGGA, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_gpgga_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    GPGGA_descriptor_, &GPGGA::default_instance());
+      GPGGA_descriptor_, GPGGA::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_gpgga_2eproto() {
-  delete GPGGA::default_instance_;
+  GPGGA_default_instance_.Shutdown();
   delete GPGGA_reflection_;
 }
 
-void protobuf_AddDesc_gpgga_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_gpgga_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::google::protobuf::internal::GetEmptyString();
+  GPGGA_default_instance_.DefaultConstruct();
+  GPGGA_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_gpgga_2eproto_once_);
+void protobuf_InitDefaults_gpgga_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_gpgga_2eproto_once_,
+                 &protobuf_InitDefaults_gpgga_2eproto_impl);
+}
+void protobuf_AddDesc_gpgga_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_gpgga_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013gpgga.proto\022\016gnss_driver.pb\"\026\n\005GPGGA\022\r"
     "\n\005gpgga\030\001 \002(\t", 53);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "gpgga.proto", &protobuf_RegisterTypes);
-  GPGGA::default_instance_ = new GPGGA();
-  GPGGA::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_gpgga_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_gpgga_2eproto_once_);
+void protobuf_AddDesc_gpgga_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_gpgga_2eproto_once_,
+                 &protobuf_AddDesc_gpgga_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_gpgga_2eproto {
   StaticDescriptorInitializer_gpgga_2eproto() {
@@ -95,14 +111,25 @@ struct StaticDescriptorInitializer_gpgga_2eproto {
   }
 } static_descriptor_initializer_gpgga_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int GPGGA::kGpggaFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 GPGGA::GPGGA()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gpgga_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.GPGGA)
 }
@@ -111,17 +138,16 @@ void GPGGA::InitAsDefaultInstance() {
 }
 
 GPGGA::GPGGA(const GPGGA& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.GPGGA)
 }
 
 void GPGGA::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  gpgga_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  gpgga_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 GPGGA::~GPGGA() {
@@ -130,11 +156,7 @@ GPGGA::~GPGGA() {
 }
 
 void GPGGA::SharedDtor() {
-  if (gpgga_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete gpgga_;
-  }
-  if (this != default_instance_) {
-  }
+  gpgga_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void GPGGA::SetCachedSize(int size) const {
@@ -148,29 +170,34 @@ const ::google::protobuf::Descriptor* GPGGA::descriptor() {
 }
 
 const GPGGA& GPGGA::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gpgga_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gpgga_2eproto();
+  return *internal_default_instance();
 }
 
-GPGGA* GPGGA::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<GPGGA> GPGGA_default_instance_;
 
-GPGGA* GPGGA::New() const {
-  return new GPGGA;
+GPGGA* GPGGA::New(::google::protobuf::Arena* arena) const {
+  GPGGA* n = new GPGGA;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void GPGGA::Clear() {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.GPGGA)
   if (has_gpgga()) {
-    if (gpgga_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      gpgga_->clear();
-    }
+    gpgga_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool GPGGA::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.GPGGA)
   for (;;) {
@@ -186,7 +213,7 @@ bool GPGGA::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->gpgga().data(), this->gpgga().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "gpgga");
+            "gnss_driver.pb.GPGGA.gpgga");
         } else {
           goto handle_unusual;
         }
@@ -224,33 +251,34 @@ void GPGGA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->gpgga().data(), this->gpgga().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "gpgga");
+      "gnss_driver.pb.GPGGA.gpgga");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->gpgga(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.GPGGA)
 }
 
-::google::protobuf::uint8* GPGGA::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* GPGGA::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.GPGGA)
   // required string gpgga = 1;
   if (has_gpgga()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->gpgga().data(), this->gpgga().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "gpgga");
+      "gnss_driver.pb.GPGGA.gpgga");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->gpgga(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -258,61 +286,78 @@ void GPGGA::SerializeWithCachedSizes(
   return target;
 }
 
-int GPGGA::ByteSize() const {
-  int total_size = 0;
+size_t GPGGA::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.GPGGA)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string gpgga = 1;
-    if (has_gpgga()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->gpgga());
-    }
-
+  // required string gpgga = 1;
+  if (has_gpgga()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->gpgga());
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void GPGGA::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.GPGGA)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const GPGGA* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const GPGGA*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const GPGGA>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.GPGGA)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.GPGGA)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void GPGGA::MergeFrom(const GPGGA& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.GPGGA)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void GPGGA::UnsafeMergeFrom(const GPGGA& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_gpgga()) {
-      set_gpgga(from.gpgga());
+      set_has_gpgga();
+      gpgga_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.gpgga_);
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void GPGGA::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.GPGGA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GPGGA::CopyFrom(const GPGGA& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.GPGGA)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool GPGGA::IsInitialized() const {
@@ -322,12 +367,14 @@ bool GPGGA::IsInitialized() const {
 }
 
 void GPGGA::Swap(GPGGA* other) {
-  if (other != this) {
-    std::swap(gpgga_, other->gpgga_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GPGGA::InternalSwap(GPGGA* other) {
+  gpgga_.Swap(&other->gpgga_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata GPGGA::GetMetadata() const {
@@ -338,6 +385,67 @@ void GPGGA::Swap(GPGGA* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// GPGGA
+
+// required string gpgga = 1;
+bool GPGGA::has_gpgga() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void GPGGA::set_has_gpgga() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void GPGGA::clear_has_gpgga() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void GPGGA::clear_gpgga() {
+  gpgga_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_gpgga();
+}
+const ::std::string& GPGGA::gpgga() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.GPGGA.gpgga)
+  return gpgga_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void GPGGA::set_gpgga(const ::std::string& value) {
+  set_has_gpgga();
+  gpgga_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.GPGGA.gpgga)
+}
+void GPGGA::set_gpgga(const char* value) {
+  set_has_gpgga();
+  gpgga_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.GPGGA.gpgga)
+}
+void GPGGA::set_gpgga(const char* value, size_t size) {
+  set_has_gpgga();
+  gpgga_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.GPGGA.gpgga)
+}
+::std::string* GPGGA::mutable_gpgga() {
+  set_has_gpgga();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.GPGGA.gpgga)
+  return gpgga_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* GPGGA::release_gpgga() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.GPGGA.gpgga)
+  clear_has_gpgga();
+  return gpgga_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void GPGGA::set_allocated_gpgga(::std::string* gpgga) {
+  if (gpgga != NULL) {
+    set_has_gpgga();
+  } else {
+    clear_has_gpgga();
+  }
+  gpgga_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), gpgga);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.GPGGA.gpgga)
+}
+
+inline const GPGGA* GPGGA::internal_default_instance() {
+  return &GPGGA_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

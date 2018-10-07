@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -28,6 +29,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_pose_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_pose_2eproto() {
   protobuf_AddDesc_pose_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -46,46 +48,56 @@ void protobuf_AssignDesc_pose_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose, angular_velocity_vrf_),
   };
   Pose_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Pose_descriptor_,
-      Pose::default_instance_,
+      Pose::internal_default_instance(),
       Pose_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Pose));
+      -1,
+      sizeof(Pose),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_pose_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Pose_descriptor_, &Pose::default_instance());
+      Pose_descriptor_, Pose::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_pose_2eproto() {
-  delete Pose::default_instance_;
+  Pose_default_instance_.Shutdown();
   delete Pose_reflection_;
 }
 
-void protobuf_AddDesc_pose_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_pose_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::gnss_driver::pb::protobuf_AddDesc_geometry_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_geometry_2eproto();
+  Pose_default_instance_.DefaultConstruct();
+  Pose_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_pose_2eproto_once_);
+void protobuf_InitDefaults_pose_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_pose_2eproto_once_,
+                 &protobuf_InitDefaults_pose_2eproto_impl);
+}
+void protobuf_AddDesc_pose_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_pose_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\npose.proto\022\016gnss_driver.pb\032\016geometry.p"
     "roto\"\200\003\n\004Pose\022*\n\010position\030\001 \001(\0132\030.gnss_d"
@@ -100,11 +112,15 @@ void protobuf_AddDesc_pose_2eproto() {
     "\030\010 \001(\0132\027.gnss_driver.pb.Point3D", 431);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "pose.proto", &protobuf_RegisterTypes);
-  Pose::default_instance_ = new Pose();
-  Pose::default_instance_->InitAsDefaultInstance();
+  ::gnss_driver::pb::protobuf_AddDesc_geometry_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_pose_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_pose_2eproto_once_);
+void protobuf_AddDesc_pose_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_pose_2eproto_once_,
+                 &protobuf_AddDesc_pose_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_pose_2eproto {
   StaticDescriptorInitializer_pose_2eproto() {
@@ -112,9 +128,19 @@ struct StaticDescriptorInitializer_pose_2eproto {
   }
 } static_descriptor_initializer_pose_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Pose::kPositionFieldNumber;
 const int Pose::kOrientationFieldNumber;
 const int Pose::kLinearVelocityFieldNumber;
@@ -123,28 +149,37 @@ const int Pose::kAngularVelocityFieldNumber;
 const int Pose::kHeadingFieldNumber;
 const int Pose::kLinearAccelerationVrfFieldNumber;
 const int Pose::kAngularVelocityVrfFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Pose::Pose()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_pose_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Pose)
 }
 
 void Pose::InitAsDefaultInstance() {
-  position_ = const_cast< ::gnss_driver::pb::PointENU*>(&::gnss_driver::pb::PointENU::default_instance());
-  orientation_ = const_cast< ::gnss_driver::pb::Quaternion*>(&::gnss_driver::pb::Quaternion::default_instance());
-  linear_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  linear_acceleration_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  angular_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  linear_acceleration_vrf_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
-  angular_velocity_vrf_ = const_cast< ::gnss_driver::pb::Point3D*>(&::gnss_driver::pb::Point3D::default_instance());
+  position_ = const_cast< ::gnss_driver::pb::PointENU*>(
+      ::gnss_driver::pb::PointENU::internal_default_instance());
+  orientation_ = const_cast< ::gnss_driver::pb::Quaternion*>(
+      ::gnss_driver::pb::Quaternion::internal_default_instance());
+  linear_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  linear_acceleration_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  angular_velocity_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  linear_acceleration_vrf_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
+  angular_velocity_vrf_ = const_cast< ::gnss_driver::pb::Point3D*>(
+      ::gnss_driver::pb::Point3D::internal_default_instance());
 }
 
 Pose::Pose(const Pose& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Pose)
 }
 
@@ -155,10 +190,9 @@ void Pose::SharedCtor() {
   linear_velocity_ = NULL;
   linear_acceleration_ = NULL;
   angular_velocity_ = NULL;
-  heading_ = 0;
   linear_acceleration_vrf_ = NULL;
   angular_velocity_vrf_ = NULL;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  heading_ = 0;
 }
 
 Pose::~Pose() {
@@ -167,7 +201,7 @@ Pose::~Pose() {
 }
 
 void Pose::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &Pose_default_instance_.get()) {
     delete position_;
     delete orientation_;
     delete linear_velocity_;
@@ -189,18 +223,23 @@ const ::google::protobuf::Descriptor* Pose::descriptor() {
 }
 
 const Pose& Pose::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_pose_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_pose_2eproto();
+  return *internal_default_instance();
 }
 
-Pose* Pose::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Pose> Pose_default_instance_;
 
-Pose* Pose::New() const {
-  return new Pose;
+Pose* Pose::New(::google::protobuf::Arena* arena) const {
+  Pose* n = new Pose;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Pose::Clear() {
-  if (_has_bits_[0 / 32] & 255) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Pose)
+  if (_has_bits_[0 / 32] & 255u) {
     if (has_position()) {
       if (position_ != NULL) position_->::gnss_driver::pb::PointENU::Clear();
     }
@@ -224,13 +263,15 @@ void Pose::Clear() {
       if (angular_velocity_vrf_ != NULL) angular_velocity_vrf_->::gnss_driver::pb::Point3D::Clear();
     }
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Pose::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Pose)
   for (;;) {
@@ -306,10 +347,10 @@ bool Pose::MergePartialFromCodedStream(
       case 6: {
         if (tag == 49) {
          parse_heading:
+          set_has_heading();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &heading_)));
-          set_has_heading();
         } else {
           goto handle_unusual;
         }
@@ -371,31 +412,31 @@ void Pose::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.PointENU position = 1;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->position(), output);
+      1, *this->position_, output);
   }
 
   // optional .gnss_driver.pb.Quaternion orientation = 2;
   if (has_orientation()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->orientation(), output);
+      2, *this->orientation_, output);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity = 3;
   if (has_linear_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->linear_velocity(), output);
+      3, *this->linear_velocity_, output);
   }
 
   // optional .gnss_driver.pb.Point3D linear_acceleration = 4;
   if (has_linear_acceleration()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->linear_acceleration(), output);
+      4, *this->linear_acceleration_, output);
   }
 
   // optional .gnss_driver.pb.Point3D angular_velocity = 5;
   if (has_angular_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->angular_velocity(), output);
+      5, *this->angular_velocity_, output);
   }
 
   // optional double heading = 6;
@@ -406,58 +447,59 @@ void Pose::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Point3D linear_acceleration_vrf = 7;
   if (has_linear_acceleration_vrf()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->linear_acceleration_vrf(), output);
+      7, *this->linear_acceleration_vrf_, output);
   }
 
   // optional .gnss_driver.pb.Point3D angular_velocity_vrf = 8;
   if (has_angular_velocity_vrf()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->angular_velocity_vrf(), output);
+      8, *this->angular_velocity_vrf_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Pose)
 }
 
-::google::protobuf::uint8* Pose::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Pose::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Pose)
   // optional .gnss_driver.pb.PointENU position = 1;
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->position(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->position_, false, target);
   }
 
   // optional .gnss_driver.pb.Quaternion orientation = 2;
   if (has_orientation()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->orientation(), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->orientation_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D linear_velocity = 3;
   if (has_linear_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->linear_velocity(), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->linear_velocity_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D linear_acceleration = 4;
   if (has_linear_acceleration()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->linear_acceleration(), target);
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->linear_acceleration_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D angular_velocity = 5;
   if (has_angular_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->angular_velocity(), target);
+      InternalWriteMessageNoVirtualToArray(
+        5, *this->angular_velocity_, false, target);
   }
 
   // optional double heading = 6;
@@ -468,18 +510,18 @@ void Pose::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Point3D linear_acceleration_vrf = 7;
   if (has_linear_acceleration_vrf()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        7, this->linear_acceleration_vrf(), target);
+      InternalWriteMessageNoVirtualToArray(
+        7, *this->linear_acceleration_vrf_, false, target);
   }
 
   // optional .gnss_driver.pb.Point3D angular_velocity_vrf = 8;
   if (has_angular_velocity_vrf()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        8, this->angular_velocity_vrf(), target);
+      InternalWriteMessageNoVirtualToArray(
+        8, *this->angular_velocity_vrf_, false, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -487,43 +529,44 @@ void Pose::SerializeWithCachedSizes(
   return target;
 }
 
-int Pose::ByteSize() const {
-  int total_size = 0;
+size_t Pose::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Pose)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional .gnss_driver.pb.PointENU position = 1;
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->position());
+          *this->position_);
     }
 
     // optional .gnss_driver.pb.Quaternion orientation = 2;
     if (has_orientation()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->orientation());
+          *this->orientation_);
     }
 
     // optional .gnss_driver.pb.Point3D linear_velocity = 3;
     if (has_linear_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_velocity());
+          *this->linear_velocity_);
     }
 
     // optional .gnss_driver.pb.Point3D linear_acceleration = 4;
     if (has_linear_acceleration()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_acceleration());
+          *this->linear_acceleration_);
     }
 
     // optional .gnss_driver.pb.Point3D angular_velocity = 5;
     if (has_angular_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->angular_velocity());
+          *this->angular_velocity_);
     }
 
     // optional double heading = 6;
@@ -535,42 +578,55 @@ int Pose::ByteSize() const {
     if (has_linear_acceleration_vrf()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear_acceleration_vrf());
+          *this->linear_acceleration_vrf_);
     }
 
     // optional .gnss_driver.pb.Point3D angular_velocity_vrf = 8;
     if (has_angular_velocity_vrf()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->angular_velocity_vrf());
+          *this->angular_velocity_vrf_);
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Pose::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Pose)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Pose* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Pose*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Pose>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Pose)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Pose)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Pose::MergeFrom(const Pose& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Pose)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Pose::UnsafeMergeFrom(const Pose& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_position()) {
       mutable_position()->::gnss_driver::pb::PointENU::MergeFrom(from.position());
@@ -597,19 +653,24 @@ void Pose::MergeFrom(const Pose& from) {
       mutable_angular_velocity_vrf()->::gnss_driver::pb::Point3D::MergeFrom(from.angular_velocity_vrf());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Pose::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Pose)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Pose::CopyFrom(const Pose& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Pose)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Pose::IsInitialized() const {
@@ -618,19 +679,21 @@ bool Pose::IsInitialized() const {
 }
 
 void Pose::Swap(Pose* other) {
-  if (other != this) {
-    std::swap(position_, other->position_);
-    std::swap(orientation_, other->orientation_);
-    std::swap(linear_velocity_, other->linear_velocity_);
-    std::swap(linear_acceleration_, other->linear_acceleration_);
-    std::swap(angular_velocity_, other->angular_velocity_);
-    std::swap(heading_, other->heading_);
-    std::swap(linear_acceleration_vrf_, other->linear_acceleration_vrf_);
-    std::swap(angular_velocity_vrf_, other->angular_velocity_vrf_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Pose::InternalSwap(Pose* other) {
+  std::swap(position_, other->position_);
+  std::swap(orientation_, other->orientation_);
+  std::swap(linear_velocity_, other->linear_velocity_);
+  std::swap(linear_acceleration_, other->linear_acceleration_);
+  std::swap(angular_velocity_, other->angular_velocity_);
+  std::swap(heading_, other->heading_);
+  std::swap(linear_acceleration_vrf_, other->linear_acceleration_vrf_);
+  std::swap(angular_velocity_vrf_, other->angular_velocity_vrf_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Pose::GetMetadata() const {
@@ -641,6 +704,352 @@ void Pose::Swap(Pose* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Pose
+
+// optional .gnss_driver.pb.PointENU position = 1;
+bool Pose::has_position() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Pose::set_has_position() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Pose::clear_has_position() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Pose::clear_position() {
+  if (position_ != NULL) position_->::gnss_driver::pb::PointENU::Clear();
+  clear_has_position();
+}
+const ::gnss_driver::pb::PointENU& Pose::position() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.position)
+  return position_ != NULL ? *position_
+                         : *::gnss_driver::pb::PointENU::internal_default_instance();
+}
+::gnss_driver::pb::PointENU* Pose::mutable_position() {
+  set_has_position();
+  if (position_ == NULL) {
+    position_ = new ::gnss_driver::pb::PointENU;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.position)
+  return position_;
+}
+::gnss_driver::pb::PointENU* Pose::release_position() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.position)
+  clear_has_position();
+  ::gnss_driver::pb::PointENU* temp = position_;
+  position_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_position(::gnss_driver::pb::PointENU* position) {
+  delete position_;
+  position_ = position;
+  if (position) {
+    set_has_position();
+  } else {
+    clear_has_position();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.position)
+}
+
+// optional .gnss_driver.pb.Quaternion orientation = 2;
+bool Pose::has_orientation() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Pose::set_has_orientation() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Pose::clear_has_orientation() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Pose::clear_orientation() {
+  if (orientation_ != NULL) orientation_->::gnss_driver::pb::Quaternion::Clear();
+  clear_has_orientation();
+}
+const ::gnss_driver::pb::Quaternion& Pose::orientation() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.orientation)
+  return orientation_ != NULL ? *orientation_
+                         : *::gnss_driver::pb::Quaternion::internal_default_instance();
+}
+::gnss_driver::pb::Quaternion* Pose::mutable_orientation() {
+  set_has_orientation();
+  if (orientation_ == NULL) {
+    orientation_ = new ::gnss_driver::pb::Quaternion;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.orientation)
+  return orientation_;
+}
+::gnss_driver::pb::Quaternion* Pose::release_orientation() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.orientation)
+  clear_has_orientation();
+  ::gnss_driver::pb::Quaternion* temp = orientation_;
+  orientation_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_orientation(::gnss_driver::pb::Quaternion* orientation) {
+  delete orientation_;
+  orientation_ = orientation;
+  if (orientation) {
+    set_has_orientation();
+  } else {
+    clear_has_orientation();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.orientation)
+}
+
+// optional .gnss_driver.pb.Point3D linear_velocity = 3;
+bool Pose::has_linear_velocity() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Pose::set_has_linear_velocity() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Pose::clear_has_linear_velocity() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Pose::clear_linear_velocity() {
+  if (linear_velocity_ != NULL) linear_velocity_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_velocity();
+}
+const ::gnss_driver::pb::Point3D& Pose::linear_velocity() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.linear_velocity)
+  return linear_velocity_ != NULL ? *linear_velocity_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Pose::mutable_linear_velocity() {
+  set_has_linear_velocity();
+  if (linear_velocity_ == NULL) {
+    linear_velocity_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.linear_velocity)
+  return linear_velocity_;
+}
+::gnss_driver::pb::Point3D* Pose::release_linear_velocity() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.linear_velocity)
+  clear_has_linear_velocity();
+  ::gnss_driver::pb::Point3D* temp = linear_velocity_;
+  linear_velocity_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_linear_velocity(::gnss_driver::pb::Point3D* linear_velocity) {
+  delete linear_velocity_;
+  linear_velocity_ = linear_velocity;
+  if (linear_velocity) {
+    set_has_linear_velocity();
+  } else {
+    clear_has_linear_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.linear_velocity)
+}
+
+// optional .gnss_driver.pb.Point3D linear_acceleration = 4;
+bool Pose::has_linear_acceleration() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Pose::set_has_linear_acceleration() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Pose::clear_has_linear_acceleration() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Pose::clear_linear_acceleration() {
+  if (linear_acceleration_ != NULL) linear_acceleration_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_acceleration();
+}
+const ::gnss_driver::pb::Point3D& Pose::linear_acceleration() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.linear_acceleration)
+  return linear_acceleration_ != NULL ? *linear_acceleration_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Pose::mutable_linear_acceleration() {
+  set_has_linear_acceleration();
+  if (linear_acceleration_ == NULL) {
+    linear_acceleration_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.linear_acceleration)
+  return linear_acceleration_;
+}
+::gnss_driver::pb::Point3D* Pose::release_linear_acceleration() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.linear_acceleration)
+  clear_has_linear_acceleration();
+  ::gnss_driver::pb::Point3D* temp = linear_acceleration_;
+  linear_acceleration_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_linear_acceleration(::gnss_driver::pb::Point3D* linear_acceleration) {
+  delete linear_acceleration_;
+  linear_acceleration_ = linear_acceleration;
+  if (linear_acceleration) {
+    set_has_linear_acceleration();
+  } else {
+    clear_has_linear_acceleration();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.linear_acceleration)
+}
+
+// optional .gnss_driver.pb.Point3D angular_velocity = 5;
+bool Pose::has_angular_velocity() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Pose::set_has_angular_velocity() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Pose::clear_has_angular_velocity() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Pose::clear_angular_velocity() {
+  if (angular_velocity_ != NULL) angular_velocity_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_angular_velocity();
+}
+const ::gnss_driver::pb::Point3D& Pose::angular_velocity() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.angular_velocity)
+  return angular_velocity_ != NULL ? *angular_velocity_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Pose::mutable_angular_velocity() {
+  set_has_angular_velocity();
+  if (angular_velocity_ == NULL) {
+    angular_velocity_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.angular_velocity)
+  return angular_velocity_;
+}
+::gnss_driver::pb::Point3D* Pose::release_angular_velocity() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.angular_velocity)
+  clear_has_angular_velocity();
+  ::gnss_driver::pb::Point3D* temp = angular_velocity_;
+  angular_velocity_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_angular_velocity(::gnss_driver::pb::Point3D* angular_velocity) {
+  delete angular_velocity_;
+  angular_velocity_ = angular_velocity;
+  if (angular_velocity) {
+    set_has_angular_velocity();
+  } else {
+    clear_has_angular_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.angular_velocity)
+}
+
+// optional double heading = 6;
+bool Pose::has_heading() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Pose::set_has_heading() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Pose::clear_has_heading() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Pose::clear_heading() {
+  heading_ = 0;
+  clear_has_heading();
+}
+double Pose::heading() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.heading)
+  return heading_;
+}
+void Pose::set_heading(double value) {
+  set_has_heading();
+  heading_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Pose.heading)
+}
+
+// optional .gnss_driver.pb.Point3D linear_acceleration_vrf = 7;
+bool Pose::has_linear_acceleration_vrf() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void Pose::set_has_linear_acceleration_vrf() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void Pose::clear_has_linear_acceleration_vrf() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void Pose::clear_linear_acceleration_vrf() {
+  if (linear_acceleration_vrf_ != NULL) linear_acceleration_vrf_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_linear_acceleration_vrf();
+}
+const ::gnss_driver::pb::Point3D& Pose::linear_acceleration_vrf() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.linear_acceleration_vrf)
+  return linear_acceleration_vrf_ != NULL ? *linear_acceleration_vrf_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Pose::mutable_linear_acceleration_vrf() {
+  set_has_linear_acceleration_vrf();
+  if (linear_acceleration_vrf_ == NULL) {
+    linear_acceleration_vrf_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.linear_acceleration_vrf)
+  return linear_acceleration_vrf_;
+}
+::gnss_driver::pb::Point3D* Pose::release_linear_acceleration_vrf() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.linear_acceleration_vrf)
+  clear_has_linear_acceleration_vrf();
+  ::gnss_driver::pb::Point3D* temp = linear_acceleration_vrf_;
+  linear_acceleration_vrf_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_linear_acceleration_vrf(::gnss_driver::pb::Point3D* linear_acceleration_vrf) {
+  delete linear_acceleration_vrf_;
+  linear_acceleration_vrf_ = linear_acceleration_vrf;
+  if (linear_acceleration_vrf) {
+    set_has_linear_acceleration_vrf();
+  } else {
+    clear_has_linear_acceleration_vrf();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.linear_acceleration_vrf)
+}
+
+// optional .gnss_driver.pb.Point3D angular_velocity_vrf = 8;
+bool Pose::has_angular_velocity_vrf() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void Pose::set_has_angular_velocity_vrf() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void Pose::clear_has_angular_velocity_vrf() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void Pose::clear_angular_velocity_vrf() {
+  if (angular_velocity_vrf_ != NULL) angular_velocity_vrf_->::gnss_driver::pb::Point3D::Clear();
+  clear_has_angular_velocity_vrf();
+}
+const ::gnss_driver::pb::Point3D& Pose::angular_velocity_vrf() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Pose.angular_velocity_vrf)
+  return angular_velocity_vrf_ != NULL ? *angular_velocity_vrf_
+                         : *::gnss_driver::pb::Point3D::internal_default_instance();
+}
+::gnss_driver::pb::Point3D* Pose::mutable_angular_velocity_vrf() {
+  set_has_angular_velocity_vrf();
+  if (angular_velocity_vrf_ == NULL) {
+    angular_velocity_vrf_ = new ::gnss_driver::pb::Point3D;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Pose.angular_velocity_vrf)
+  return angular_velocity_vrf_;
+}
+::gnss_driver::pb::Point3D* Pose::release_angular_velocity_vrf() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Pose.angular_velocity_vrf)
+  clear_has_angular_velocity_vrf();
+  ::gnss_driver::pb::Point3D* temp = angular_velocity_vrf_;
+  angular_velocity_vrf_ = NULL;
+  return temp;
+}
+void Pose::set_allocated_angular_velocity_vrf(::gnss_driver::pb::Point3D* angular_velocity_vrf) {
+  delete angular_velocity_vrf_;
+  angular_velocity_vrf_ = angular_velocity_vrf;
+  if (angular_velocity_vrf) {
+    set_has_angular_velocity_vrf();
+  } else {
+    clear_has_angular_velocity_vrf();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Pose.angular_velocity_vrf)
+}
+
+inline const Pose* Pose::internal_default_instance() {
+  return &Pose_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

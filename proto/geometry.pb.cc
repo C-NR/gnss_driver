@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -40,6 +41,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_geometry_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_geometry_2eproto() {
   protobuf_AddDesc_geometry_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -53,16 +55,15 @@ void protobuf_AssignDesc_geometry_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointENU, z_),
   };
   PointENU_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PointENU_descriptor_,
-      PointENU::default_instance_,
+      PointENU::internal_default_instance(),
       PointENU_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointENU, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointENU, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointENU, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PointENU));
+      -1,
+      sizeof(PointENU),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointENU, _internal_metadata_));
   PointLLH_descriptor_ = file->message_type(1);
   static const int PointLLH_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointLLH, lon_),
@@ -70,32 +71,30 @@ void protobuf_AssignDesc_geometry_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointLLH, height_),
   };
   PointLLH_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PointLLH_descriptor_,
-      PointLLH::default_instance_,
+      PointLLH::internal_default_instance(),
       PointLLH_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointLLH, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointLLH, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointLLH, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PointLLH));
+      -1,
+      sizeof(PointLLH),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PointLLH, _internal_metadata_));
   Point2D_descriptor_ = file->message_type(2);
   static const int Point2D_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point2D, x_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point2D, y_),
   };
   Point2D_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Point2D_descriptor_,
-      Point2D::default_instance_,
+      Point2D::internal_default_instance(),
       Point2D_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point2D, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point2D, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point2D, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Point2D));
+      -1,
+      sizeof(Point2D),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point2D, _internal_metadata_));
   Point3D_descriptor_ = file->message_type(3);
   static const int Point3D_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point3D, x_),
@@ -103,16 +102,15 @@ void protobuf_AssignDesc_geometry_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point3D, z_),
   };
   Point3D_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Point3D_descriptor_,
-      Point3D::default_instance_,
+      Point3D::internal_default_instance(),
       Point3D_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point3D, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point3D, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point3D, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Point3D));
+      -1,
+      sizeof(Point3D),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point3D, _internal_metadata_));
   Quaternion_descriptor_ = file->message_type(4);
   static const int Quaternion_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, qx_),
@@ -121,61 +119,79 @@ void protobuf_AssignDesc_geometry_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, qw_),
   };
   Quaternion_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Quaternion_descriptor_,
-      Quaternion::default_instance_,
+      Quaternion::internal_default_instance(),
       Quaternion_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Quaternion));
+      -1,
+      sizeof(Quaternion),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_geometry_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PointENU_descriptor_, &PointENU::default_instance());
+      PointENU_descriptor_, PointENU::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PointLLH_descriptor_, &PointLLH::default_instance());
+      PointLLH_descriptor_, PointLLH::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Point2D_descriptor_, &Point2D::default_instance());
+      Point2D_descriptor_, Point2D::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Point3D_descriptor_, &Point3D::default_instance());
+      Point3D_descriptor_, Point3D::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Quaternion_descriptor_, &Quaternion::default_instance());
+      Quaternion_descriptor_, Quaternion::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_geometry_2eproto() {
-  delete PointENU::default_instance_;
+  PointENU_default_instance_.Shutdown();
   delete PointENU_reflection_;
-  delete PointLLH::default_instance_;
+  PointLLH_default_instance_.Shutdown();
   delete PointLLH_reflection_;
-  delete Point2D::default_instance_;
+  Point2D_default_instance_.Shutdown();
   delete Point2D_reflection_;
-  delete Point3D::default_instance_;
+  Point3D_default_instance_.Shutdown();
   delete Point3D_reflection_;
-  delete Quaternion::default_instance_;
+  Quaternion_default_instance_.Shutdown();
   delete Quaternion_reflection_;
 }
 
-void protobuf_AddDesc_geometry_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_geometry_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  PointENU_default_instance_.DefaultConstruct();
+  PointLLH_default_instance_.DefaultConstruct();
+  Point2D_default_instance_.DefaultConstruct();
+  Point3D_default_instance_.DefaultConstruct();
+  Quaternion_default_instance_.DefaultConstruct();
+  PointENU_default_instance_.get_mutable()->InitAsDefaultInstance();
+  PointLLH_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Point2D_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Point3D_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Quaternion_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_geometry_2eproto_once_);
+void protobuf_InitDefaults_geometry_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_geometry_2eproto_once_,
+                 &protobuf_InitDefaults_geometry_2eproto_impl);
+}
+void protobuf_AddDesc_geometry_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_geometry_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\016geometry.proto\022\016gnss_driver.pb\"8\n\010Poin"
     "tENU\022\016\n\001x\030\001 \001(\001:\003nan\022\016\n\001y\030\002 \001(\001:\003nan\022\014\n\001"
@@ -188,19 +204,14 @@ void protobuf_AddDesc_geometry_2eproto() {
     "\003nan\022\017\n\002qw\030\004 \001(\001:\003nan", 341);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "geometry.proto", &protobuf_RegisterTypes);
-  PointENU::default_instance_ = new PointENU();
-  PointLLH::default_instance_ = new PointLLH();
-  Point2D::default_instance_ = new Point2D();
-  Point3D::default_instance_ = new Point3D();
-  Quaternion::default_instance_ = new Quaternion();
-  PointENU::default_instance_->InitAsDefaultInstance();
-  PointLLH::default_instance_->InitAsDefaultInstance();
-  Point2D::default_instance_->InitAsDefaultInstance();
-  Point3D::default_instance_->InitAsDefaultInstance();
-  Quaternion::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_geometry_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_geometry_2eproto_once_);
+void protobuf_AddDesc_geometry_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_geometry_2eproto_once_,
+                 &protobuf_AddDesc_geometry_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_geometry_2eproto {
   StaticDescriptorInitializer_geometry_2eproto() {
@@ -208,16 +219,27 @@ struct StaticDescriptorInitializer_geometry_2eproto {
   }
 } static_descriptor_initializer_geometry_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PointENU::kXFieldNumber;
 const int PointENU::kYFieldNumber;
 const int PointENU::kZFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PointENU::PointENU()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_geometry_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.PointENU)
 }
@@ -226,18 +248,18 @@ void PointENU::InitAsDefaultInstance() {
 }
 
 PointENU::PointENU(const PointENU& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.PointENU)
 }
 
 void PointENU::SharedCtor() {
   _cached_size_ = 0;
+  z_ = 0;
   x_ = ::google::protobuf::internal::NaN();
   y_ = ::google::protobuf::internal::NaN();
-  z_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 PointENU::~PointENU() {
@@ -246,8 +268,6 @@ PointENU::~PointENU() {
 }
 
 void PointENU::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void PointENU::SetCachedSize(int size) const {
@@ -261,29 +281,36 @@ const ::google::protobuf::Descriptor* PointENU::descriptor() {
 }
 
 const PointENU& PointENU::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_geometry_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_geometry_2eproto();
+  return *internal_default_instance();
 }
 
-PointENU* PointENU::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<PointENU> PointENU_default_instance_;
 
-PointENU* PointENU::New() const {
-  return new PointENU;
+PointENU* PointENU::New(::google::protobuf::Arena* arena) const {
+  PointENU* n = new PointENU;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PointENU::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.PointENU)
+  if (_has_bits_[0 / 32] & 7u) {
     x_ = ::google::protobuf::internal::NaN();
     y_ = ::google::protobuf::internal::NaN();
     z_ = 0;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PointENU::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.PointENU)
   for (;;) {
@@ -294,10 +321,10 @@ bool PointENU::MergePartialFromCodedStream(
       // optional double x = 1 [default = nan];
       case 1: {
         if (tag == 9) {
+          set_has_x();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &x_)));
-          set_has_x();
         } else {
           goto handle_unusual;
         }
@@ -309,10 +336,10 @@ bool PointENU::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_y:
+          set_has_y();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &y_)));
-          set_has_y();
         } else {
           goto handle_unusual;
         }
@@ -324,10 +351,10 @@ bool PointENU::MergePartialFromCodedStream(
       case 3: {
         if (tag == 25) {
          parse_z:
+          set_has_z();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &z_)));
-          set_has_z();
         } else {
           goto handle_unusual;
         }
@@ -375,15 +402,16 @@ void PointENU::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->z(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.PointENU)
 }
 
-::google::protobuf::uint8* PointENU::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PointENU::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.PointENU)
   // optional double x = 1 [default = nan];
   if (has_x()) {
@@ -400,7 +428,7 @@ void PointENU::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->z(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -408,10 +436,11 @@ void PointENU::SerializeWithCachedSizes(
   return target;
 }
 
-int PointENU::ByteSize() const {
-  int total_size = 0;
+size_t PointENU::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.PointENU)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 7u) {
     // optional double x = 1 [default = nan];
     if (has_x()) {
       total_size += 1 + 8;
@@ -428,31 +457,44 @@ int PointENU::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void PointENU::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.PointENU)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const PointENU* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PointENU*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const PointENU>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.PointENU)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.PointENU)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void PointENU::MergeFrom(const PointENU& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.PointENU)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void PointENU::UnsafeMergeFrom(const PointENU& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -464,19 +506,24 @@ void PointENU::MergeFrom(const PointENU& from) {
       set_z(from.z());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void PointENU::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.PointENU)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PointENU::CopyFrom(const PointENU& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.PointENU)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool PointENU::IsInitialized() const {
@@ -485,14 +532,16 @@ bool PointENU::IsInitialized() const {
 }
 
 void PointENU::Swap(PointENU* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(z_, other->z_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PointENU::InternalSwap(PointENU* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PointENU::GetMetadata() const {
@@ -503,17 +552,97 @@ void PointENU::Swap(PointENU* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PointENU
+
+// optional double x = 1 [default = nan];
+bool PointENU::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PointENU::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PointENU::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PointENU::clear_x() {
+  x_ = ::google::protobuf::internal::NaN();
+  clear_has_x();
+}
+double PointENU::x() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.PointENU.x)
+  return x_;
+}
+void PointENU::set_x(double value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.PointENU.x)
+}
+
+// optional double y = 2 [default = nan];
+bool PointENU::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PointENU::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PointENU::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PointENU::clear_y() {
+  y_ = ::google::protobuf::internal::NaN();
+  clear_has_y();
+}
+double PointENU::y() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.PointENU.y)
+  return y_;
+}
+void PointENU::set_y(double value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.PointENU.y)
+}
+
+// optional double z = 3 [default = 0];
+bool PointENU::has_z() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PointENU::set_has_z() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PointENU::clear_has_z() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PointENU::clear_z() {
+  z_ = 0;
+  clear_has_z();
+}
+double PointENU::z() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.PointENU.z)
+  return z_;
+}
+void PointENU::set_z(double value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.PointENU.z)
+}
+
+inline const PointENU* PointENU::internal_default_instance() {
+  return &PointENU_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PointLLH::kLonFieldNumber;
 const int PointLLH::kLatFieldNumber;
 const int PointLLH::kHeightFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PointLLH::PointLLH()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_geometry_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.PointLLH)
 }
@@ -522,18 +651,18 @@ void PointLLH::InitAsDefaultInstance() {
 }
 
 PointLLH::PointLLH(const PointLLH& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.PointLLH)
 }
 
 void PointLLH::SharedCtor() {
   _cached_size_ = 0;
+  height_ = 0;
   lon_ = ::google::protobuf::internal::NaN();
   lat_ = ::google::protobuf::internal::NaN();
-  height_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 PointLLH::~PointLLH() {
@@ -542,8 +671,6 @@ PointLLH::~PointLLH() {
 }
 
 void PointLLH::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void PointLLH::SetCachedSize(int size) const {
@@ -557,29 +684,36 @@ const ::google::protobuf::Descriptor* PointLLH::descriptor() {
 }
 
 const PointLLH& PointLLH::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_geometry_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_geometry_2eproto();
+  return *internal_default_instance();
 }
 
-PointLLH* PointLLH::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<PointLLH> PointLLH_default_instance_;
 
-PointLLH* PointLLH::New() const {
-  return new PointLLH;
+PointLLH* PointLLH::New(::google::protobuf::Arena* arena) const {
+  PointLLH* n = new PointLLH;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PointLLH::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.PointLLH)
+  if (_has_bits_[0 / 32] & 7u) {
     lon_ = ::google::protobuf::internal::NaN();
     lat_ = ::google::protobuf::internal::NaN();
     height_ = 0;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PointLLH::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.PointLLH)
   for (;;) {
@@ -590,10 +724,10 @@ bool PointLLH::MergePartialFromCodedStream(
       // optional double lon = 1 [default = nan];
       case 1: {
         if (tag == 9) {
+          set_has_lon();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &lon_)));
-          set_has_lon();
         } else {
           goto handle_unusual;
         }
@@ -605,10 +739,10 @@ bool PointLLH::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_lat:
+          set_has_lat();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &lat_)));
-          set_has_lat();
         } else {
           goto handle_unusual;
         }
@@ -620,10 +754,10 @@ bool PointLLH::MergePartialFromCodedStream(
       case 3: {
         if (tag == 25) {
          parse_height:
+          set_has_height();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &height_)));
-          set_has_height();
         } else {
           goto handle_unusual;
         }
@@ -671,15 +805,16 @@ void PointLLH::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->height(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.PointLLH)
 }
 
-::google::protobuf::uint8* PointLLH::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PointLLH::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.PointLLH)
   // optional double lon = 1 [default = nan];
   if (has_lon()) {
@@ -696,7 +831,7 @@ void PointLLH::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->height(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -704,10 +839,11 @@ void PointLLH::SerializeWithCachedSizes(
   return target;
 }
 
-int PointLLH::ByteSize() const {
-  int total_size = 0;
+size_t PointLLH::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.PointLLH)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 7u) {
     // optional double lon = 1 [default = nan];
     if (has_lon()) {
       total_size += 1 + 8;
@@ -724,31 +860,44 @@ int PointLLH::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void PointLLH::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.PointLLH)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const PointLLH* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PointLLH*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const PointLLH>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.PointLLH)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.PointLLH)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void PointLLH::MergeFrom(const PointLLH& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.PointLLH)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void PointLLH::UnsafeMergeFrom(const PointLLH& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_lon()) {
       set_lon(from.lon());
@@ -760,19 +909,24 @@ void PointLLH::MergeFrom(const PointLLH& from) {
       set_height(from.height());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void PointLLH::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.PointLLH)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PointLLH::CopyFrom(const PointLLH& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.PointLLH)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool PointLLH::IsInitialized() const {
@@ -781,14 +935,16 @@ bool PointLLH::IsInitialized() const {
 }
 
 void PointLLH::Swap(PointLLH* other) {
-  if (other != this) {
-    std::swap(lon_, other->lon_);
-    std::swap(lat_, other->lat_);
-    std::swap(height_, other->height_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PointLLH::InternalSwap(PointLLH* other) {
+  std::swap(lon_, other->lon_);
+  std::swap(lat_, other->lat_);
+  std::swap(height_, other->height_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PointLLH::GetMetadata() const {
@@ -799,16 +955,96 @@ void PointLLH::Swap(PointLLH* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PointLLH
+
+// optional double lon = 1 [default = nan];
+bool PointLLH::has_lon() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PointLLH::set_has_lon() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PointLLH::clear_has_lon() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PointLLH::clear_lon() {
+  lon_ = ::google::protobuf::internal::NaN();
+  clear_has_lon();
+}
+double PointLLH::lon() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.PointLLH.lon)
+  return lon_;
+}
+void PointLLH::set_lon(double value) {
+  set_has_lon();
+  lon_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.PointLLH.lon)
+}
+
+// optional double lat = 2 [default = nan];
+bool PointLLH::has_lat() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PointLLH::set_has_lat() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PointLLH::clear_has_lat() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PointLLH::clear_lat() {
+  lat_ = ::google::protobuf::internal::NaN();
+  clear_has_lat();
+}
+double PointLLH::lat() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.PointLLH.lat)
+  return lat_;
+}
+void PointLLH::set_lat(double value) {
+  set_has_lat();
+  lat_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.PointLLH.lat)
+}
+
+// optional double height = 3 [default = 0];
+bool PointLLH::has_height() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PointLLH::set_has_height() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PointLLH::clear_has_height() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PointLLH::clear_height() {
+  height_ = 0;
+  clear_has_height();
+}
+double PointLLH::height() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.PointLLH.height)
+  return height_;
+}
+void PointLLH::set_height(double value) {
+  set_has_height();
+  height_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.PointLLH.height)
+}
+
+inline const PointLLH* PointLLH::internal_default_instance() {
+  return &PointLLH_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Point2D::kXFieldNumber;
 const int Point2D::kYFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Point2D::Point2D()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_geometry_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Point2D)
 }
@@ -817,9 +1053,10 @@ void Point2D::InitAsDefaultInstance() {
 }
 
 Point2D::Point2D(const Point2D& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Point2D)
 }
 
@@ -827,7 +1064,6 @@ void Point2D::SharedCtor() {
   _cached_size_ = 0;
   x_ = ::google::protobuf::internal::NaN();
   y_ = ::google::protobuf::internal::NaN();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Point2D::~Point2D() {
@@ -836,8 +1072,6 @@ Point2D::~Point2D() {
 }
 
 void Point2D::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void Point2D::SetCachedSize(int size) const {
@@ -851,28 +1085,35 @@ const ::google::protobuf::Descriptor* Point2D::descriptor() {
 }
 
 const Point2D& Point2D::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_geometry_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_geometry_2eproto();
+  return *internal_default_instance();
 }
 
-Point2D* Point2D::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Point2D> Point2D_default_instance_;
 
-Point2D* Point2D::New() const {
-  return new Point2D;
+Point2D* Point2D::New(::google::protobuf::Arena* arena) const {
+  Point2D* n = new Point2D;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Point2D::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Point2D)
+  if (_has_bits_[0 / 32] & 3u) {
     x_ = ::google::protobuf::internal::NaN();
     y_ = ::google::protobuf::internal::NaN();
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Point2D::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Point2D)
   for (;;) {
@@ -883,10 +1124,10 @@ bool Point2D::MergePartialFromCodedStream(
       // optional double x = 1 [default = nan];
       case 1: {
         if (tag == 9) {
+          set_has_x();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &x_)));
-          set_has_x();
         } else {
           goto handle_unusual;
         }
@@ -898,10 +1139,10 @@ bool Point2D::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_y:
+          set_has_y();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &y_)));
-          set_has_y();
         } else {
           goto handle_unusual;
         }
@@ -944,15 +1185,16 @@ void Point2D::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->y(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Point2D)
 }
 
-::google::protobuf::uint8* Point2D::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Point2D::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Point2D)
   // optional double x = 1 [default = nan];
   if (has_x()) {
@@ -964,7 +1206,7 @@ void Point2D::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->y(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -972,10 +1214,11 @@ void Point2D::SerializeWithCachedSizes(
   return target;
 }
 
-int Point2D::ByteSize() const {
-  int total_size = 0;
+size_t Point2D::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Point2D)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional double x = 1 [default = nan];
     if (has_x()) {
       total_size += 1 + 8;
@@ -987,31 +1230,44 @@ int Point2D::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Point2D::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Point2D)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Point2D* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Point2D*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Point2D>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Point2D)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Point2D)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Point2D::MergeFrom(const Point2D& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Point2D)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Point2D::UnsafeMergeFrom(const Point2D& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -1020,19 +1276,24 @@ void Point2D::MergeFrom(const Point2D& from) {
       set_y(from.y());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Point2D::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Point2D)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Point2D::CopyFrom(const Point2D& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Point2D)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Point2D::IsInitialized() const {
@@ -1041,13 +1302,15 @@ bool Point2D::IsInitialized() const {
 }
 
 void Point2D::Swap(Point2D* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Point2D::InternalSwap(Point2D* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Point2D::GetMetadata() const {
@@ -1058,17 +1321,73 @@ void Point2D::Swap(Point2D* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Point2D
+
+// optional double x = 1 [default = nan];
+bool Point2D::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Point2D::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Point2D::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Point2D::clear_x() {
+  x_ = ::google::protobuf::internal::NaN();
+  clear_has_x();
+}
+double Point2D::x() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Point2D.x)
+  return x_;
+}
+void Point2D::set_x(double value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Point2D.x)
+}
+
+// optional double y = 2 [default = nan];
+bool Point2D::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Point2D::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Point2D::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Point2D::clear_y() {
+  y_ = ::google::protobuf::internal::NaN();
+  clear_has_y();
+}
+double Point2D::y() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Point2D.y)
+  return y_;
+}
+void Point2D::set_y(double value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Point2D.y)
+}
+
+inline const Point2D* Point2D::internal_default_instance() {
+  return &Point2D_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Point3D::kXFieldNumber;
 const int Point3D::kYFieldNumber;
 const int Point3D::kZFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Point3D::Point3D()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_geometry_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Point3D)
 }
@@ -1077,9 +1396,10 @@ void Point3D::InitAsDefaultInstance() {
 }
 
 Point3D::Point3D(const Point3D& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Point3D)
 }
 
@@ -1088,7 +1408,6 @@ void Point3D::SharedCtor() {
   x_ = ::google::protobuf::internal::NaN();
   y_ = ::google::protobuf::internal::NaN();
   z_ = ::google::protobuf::internal::NaN();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Point3D::~Point3D() {
@@ -1097,8 +1416,6 @@ Point3D::~Point3D() {
 }
 
 void Point3D::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void Point3D::SetCachedSize(int size) const {
@@ -1112,29 +1429,36 @@ const ::google::protobuf::Descriptor* Point3D::descriptor() {
 }
 
 const Point3D& Point3D::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_geometry_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_geometry_2eproto();
+  return *internal_default_instance();
 }
 
-Point3D* Point3D::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Point3D> Point3D_default_instance_;
 
-Point3D* Point3D::New() const {
-  return new Point3D;
+Point3D* Point3D::New(::google::protobuf::Arena* arena) const {
+  Point3D* n = new Point3D;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Point3D::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Point3D)
+  if (_has_bits_[0 / 32] & 7u) {
     x_ = ::google::protobuf::internal::NaN();
     y_ = ::google::protobuf::internal::NaN();
     z_ = ::google::protobuf::internal::NaN();
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Point3D::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Point3D)
   for (;;) {
@@ -1145,10 +1469,10 @@ bool Point3D::MergePartialFromCodedStream(
       // optional double x = 1 [default = nan];
       case 1: {
         if (tag == 9) {
+          set_has_x();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &x_)));
-          set_has_x();
         } else {
           goto handle_unusual;
         }
@@ -1160,10 +1484,10 @@ bool Point3D::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_y:
+          set_has_y();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &y_)));
-          set_has_y();
         } else {
           goto handle_unusual;
         }
@@ -1175,10 +1499,10 @@ bool Point3D::MergePartialFromCodedStream(
       case 3: {
         if (tag == 25) {
          parse_z:
+          set_has_z();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &z_)));
-          set_has_z();
         } else {
           goto handle_unusual;
         }
@@ -1226,15 +1550,16 @@ void Point3D::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->z(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Point3D)
 }
 
-::google::protobuf::uint8* Point3D::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Point3D::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Point3D)
   // optional double x = 1 [default = nan];
   if (has_x()) {
@@ -1251,7 +1576,7 @@ void Point3D::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->z(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1259,10 +1584,11 @@ void Point3D::SerializeWithCachedSizes(
   return target;
 }
 
-int Point3D::ByteSize() const {
-  int total_size = 0;
+size_t Point3D::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Point3D)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 7u) {
     // optional double x = 1 [default = nan];
     if (has_x()) {
       total_size += 1 + 8;
@@ -1279,31 +1605,44 @@ int Point3D::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Point3D::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Point3D)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Point3D* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Point3D*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Point3D>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Point3D)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Point3D)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Point3D::MergeFrom(const Point3D& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Point3D)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Point3D::UnsafeMergeFrom(const Point3D& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -1315,19 +1654,24 @@ void Point3D::MergeFrom(const Point3D& from) {
       set_z(from.z());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Point3D::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Point3D)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Point3D::CopyFrom(const Point3D& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Point3D)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Point3D::IsInitialized() const {
@@ -1336,14 +1680,16 @@ bool Point3D::IsInitialized() const {
 }
 
 void Point3D::Swap(Point3D* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(z_, other->z_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Point3D::InternalSwap(Point3D* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Point3D::GetMetadata() const {
@@ -1354,18 +1700,98 @@ void Point3D::Swap(Point3D* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Point3D
+
+// optional double x = 1 [default = nan];
+bool Point3D::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Point3D::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Point3D::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Point3D::clear_x() {
+  x_ = ::google::protobuf::internal::NaN();
+  clear_has_x();
+}
+double Point3D::x() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Point3D.x)
+  return x_;
+}
+void Point3D::set_x(double value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Point3D.x)
+}
+
+// optional double y = 2 [default = nan];
+bool Point3D::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Point3D::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Point3D::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Point3D::clear_y() {
+  y_ = ::google::protobuf::internal::NaN();
+  clear_has_y();
+}
+double Point3D::y() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Point3D.y)
+  return y_;
+}
+void Point3D::set_y(double value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Point3D.y)
+}
+
+// optional double z = 3 [default = nan];
+bool Point3D::has_z() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Point3D::set_has_z() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Point3D::clear_has_z() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Point3D::clear_z() {
+  z_ = ::google::protobuf::internal::NaN();
+  clear_has_z();
+}
+double Point3D::z() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Point3D.z)
+  return z_;
+}
+void Point3D::set_z(double value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Point3D.z)
+}
+
+inline const Point3D* Point3D::internal_default_instance() {
+  return &Point3D_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Quaternion::kQxFieldNumber;
 const int Quaternion::kQyFieldNumber;
 const int Quaternion::kQzFieldNumber;
 const int Quaternion::kQwFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Quaternion::Quaternion()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_geometry_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Quaternion)
 }
@@ -1374,9 +1800,10 @@ void Quaternion::InitAsDefaultInstance() {
 }
 
 Quaternion::Quaternion(const Quaternion& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Quaternion)
 }
 
@@ -1386,7 +1813,6 @@ void Quaternion::SharedCtor() {
   qy_ = ::google::protobuf::internal::NaN();
   qz_ = ::google::protobuf::internal::NaN();
   qw_ = ::google::protobuf::internal::NaN();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Quaternion::~Quaternion() {
@@ -1395,8 +1821,6 @@ Quaternion::~Quaternion() {
 }
 
 void Quaternion::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void Quaternion::SetCachedSize(int size) const {
@@ -1410,30 +1834,37 @@ const ::google::protobuf::Descriptor* Quaternion::descriptor() {
 }
 
 const Quaternion& Quaternion::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_geometry_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_geometry_2eproto();
+  return *internal_default_instance();
 }
 
-Quaternion* Quaternion::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Quaternion> Quaternion_default_instance_;
 
-Quaternion* Quaternion::New() const {
-  return new Quaternion;
+Quaternion* Quaternion::New(::google::protobuf::Arena* arena) const {
+  Quaternion* n = new Quaternion;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Quaternion::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Quaternion)
+  if (_has_bits_[0 / 32] & 15u) {
     qx_ = ::google::protobuf::internal::NaN();
     qy_ = ::google::protobuf::internal::NaN();
     qz_ = ::google::protobuf::internal::NaN();
     qw_ = ::google::protobuf::internal::NaN();
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Quaternion::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Quaternion)
   for (;;) {
@@ -1444,10 +1875,10 @@ bool Quaternion::MergePartialFromCodedStream(
       // optional double qx = 1 [default = nan];
       case 1: {
         if (tag == 9) {
+          set_has_qx();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &qx_)));
-          set_has_qx();
         } else {
           goto handle_unusual;
         }
@@ -1459,10 +1890,10 @@ bool Quaternion::MergePartialFromCodedStream(
       case 2: {
         if (tag == 17) {
          parse_qy:
+          set_has_qy();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &qy_)));
-          set_has_qy();
         } else {
           goto handle_unusual;
         }
@@ -1474,10 +1905,10 @@ bool Quaternion::MergePartialFromCodedStream(
       case 3: {
         if (tag == 25) {
          parse_qz:
+          set_has_qz();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &qz_)));
-          set_has_qz();
         } else {
           goto handle_unusual;
         }
@@ -1489,10 +1920,10 @@ bool Quaternion::MergePartialFromCodedStream(
       case 4: {
         if (tag == 33) {
          parse_qw:
+          set_has_qw();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &qw_)));
-          set_has_qw();
         } else {
           goto handle_unusual;
         }
@@ -1545,15 +1976,16 @@ void Quaternion::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->qw(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Quaternion)
 }
 
-::google::protobuf::uint8* Quaternion::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Quaternion::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Quaternion)
   // optional double qx = 1 [default = nan];
   if (has_qx()) {
@@ -1575,7 +2007,7 @@ void Quaternion::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->qw(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1583,10 +2015,11 @@ void Quaternion::SerializeWithCachedSizes(
   return target;
 }
 
-int Quaternion::ByteSize() const {
-  int total_size = 0;
+size_t Quaternion::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Quaternion)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 15u) {
     // optional double qx = 1 [default = nan];
     if (has_qx()) {
       total_size += 1 + 8;
@@ -1608,31 +2041,44 @@ int Quaternion::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Quaternion::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Quaternion)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Quaternion* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Quaternion*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Quaternion>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Quaternion)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Quaternion)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Quaternion::MergeFrom(const Quaternion& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Quaternion)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Quaternion::UnsafeMergeFrom(const Quaternion& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_qx()) {
       set_qx(from.qx());
@@ -1647,19 +2093,24 @@ void Quaternion::MergeFrom(const Quaternion& from) {
       set_qw(from.qw());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Quaternion::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Quaternion)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Quaternion::CopyFrom(const Quaternion& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Quaternion)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Quaternion::IsInitialized() const {
@@ -1668,15 +2119,17 @@ bool Quaternion::IsInitialized() const {
 }
 
 void Quaternion::Swap(Quaternion* other) {
-  if (other != this) {
-    std::swap(qx_, other->qx_);
-    std::swap(qy_, other->qy_);
-    std::swap(qz_, other->qz_);
-    std::swap(qw_, other->qw_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Quaternion::InternalSwap(Quaternion* other) {
+  std::swap(qx_, other->qx_);
+  std::swap(qy_, other->qy_);
+  std::swap(qz_, other->qz_);
+  std::swap(qw_, other->qw_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Quaternion::GetMetadata() const {
@@ -1687,6 +2140,109 @@ void Quaternion::Swap(Quaternion* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Quaternion
+
+// optional double qx = 1 [default = nan];
+bool Quaternion::has_qx() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Quaternion::set_has_qx() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Quaternion::clear_has_qx() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Quaternion::clear_qx() {
+  qx_ = ::google::protobuf::internal::NaN();
+  clear_has_qx();
+}
+double Quaternion::qx() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Quaternion.qx)
+  return qx_;
+}
+void Quaternion::set_qx(double value) {
+  set_has_qx();
+  qx_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Quaternion.qx)
+}
+
+// optional double qy = 2 [default = nan];
+bool Quaternion::has_qy() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Quaternion::set_has_qy() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Quaternion::clear_has_qy() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Quaternion::clear_qy() {
+  qy_ = ::google::protobuf::internal::NaN();
+  clear_has_qy();
+}
+double Quaternion::qy() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Quaternion.qy)
+  return qy_;
+}
+void Quaternion::set_qy(double value) {
+  set_has_qy();
+  qy_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Quaternion.qy)
+}
+
+// optional double qz = 3 [default = nan];
+bool Quaternion::has_qz() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Quaternion::set_has_qz() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Quaternion::clear_has_qz() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Quaternion::clear_qz() {
+  qz_ = ::google::protobuf::internal::NaN();
+  clear_has_qz();
+}
+double Quaternion::qz() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Quaternion.qz)
+  return qz_;
+}
+void Quaternion::set_qz(double value) {
+  set_has_qz();
+  qz_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Quaternion.qz)
+}
+
+// optional double qw = 4 [default = nan];
+bool Quaternion::has_qw() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Quaternion::set_has_qw() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Quaternion::clear_has_qw() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Quaternion::clear_qw() {
+  qw_ = ::google::protobuf::internal::NaN();
+  clear_has_qw();
+}
+double Quaternion::qw() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Quaternion.qw)
+  return qw_;
+}
+void Quaternion::set_qw(double value) {
+  set_has_qw();
+  qw_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Quaternion.qw)
+}
+
+inline const Quaternion* Quaternion::internal_default_instance() {
+  return &Quaternion_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
