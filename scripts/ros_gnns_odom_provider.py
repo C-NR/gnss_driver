@@ -105,10 +105,21 @@ def callbackGnssOdom(gpsOdom):
     global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom
 
     odom = Odometry()
-    #Position
-    odom.pose.pose.position.x = gpsOdom.localization.position.x
-    odom.pose.pose.position.y = gpsOdom.localization.position.y
-    odom.pose.pose.position.z = gpsOdom.localization.position.z
+
+    if hasFirstOdom:
+        #Position
+        odom.pose.pose.position.x = gpsOdom.localization.position.x - firstPosition.x
+        odom.pose.pose.position.y = gpsOdom.localization.position.y - firstPosition.y
+        odom.pose.pose.position.z = gpsOdom.localization.position.z - firstPosition.z
+    else:
+        firstPosition.x = gpsOdom.localization.position.x
+        firstPosition.y = gpsOdom.localization.position.y
+        firstPosition.z = gpsOdom.localization.position.z
+        odom.pose.pose.position.x = 0
+        odom.pose.pose.position.y = 0
+        odom.pose.pose.position.z = 0
+        hasFirstOdom = True
+
     #Orientation
     quaternion = (
         gpsOdom.localization.orientation.qx,
