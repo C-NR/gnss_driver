@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -28,6 +29,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_gps_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_gps_2eproto() {
   protobuf_AddDesc_gps_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -40,47 +42,57 @@ void protobuf_AssignDesc_gps_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gps, localization_),
   };
   Gps_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Gps_descriptor_,
-      Gps::default_instance_,
+      Gps::internal_default_instance(),
       Gps_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gps, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gps, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gps, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Gps));
+      -1,
+      sizeof(Gps),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Gps, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_gps_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Gps_descriptor_, &Gps::default_instance());
+      Gps_descriptor_, Gps::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_gps_2eproto() {
-  delete Gps::default_instance_;
+  Gps_default_instance_.Shutdown();
   delete Gps_reflection_;
 }
 
-void protobuf_AddDesc_gps_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_gps_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
-  ::gnss_driver::pb::protobuf_AddDesc_pose_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_header_2eproto();
+  ::gnss_driver::pb::protobuf_InitDefaults_pose_2eproto();
+  Gps_default_instance_.DefaultConstruct();
+  Gps_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_gps_2eproto_once_);
+void protobuf_InitDefaults_gps_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_gps_2eproto_once_,
+                 &protobuf_InitDefaults_gps_2eproto_impl);
+}
+void protobuf_AddDesc_gps_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_gps_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\tgps.proto\022\016gnss_driver.pb\032\014header.prot"
     "o\032\npose.proto\"Y\n\003Gps\022&\n\006header\030\001 \001(\0132\026.g"
@@ -88,11 +100,16 @@ void protobuf_AddDesc_gps_2eproto() {
     "(\0132\024.gnss_driver.pb.Pose", 144);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "gps.proto", &protobuf_RegisterTypes);
-  Gps::default_instance_ = new Gps();
-  Gps::default_instance_->InitAsDefaultInstance();
+  ::gnss_driver::pb::protobuf_AddDesc_header_2eproto();
+  ::gnss_driver::pb::protobuf_AddDesc_pose_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_gps_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_gps_2eproto_once_);
+void protobuf_AddDesc_gps_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_gps_2eproto_once_,
+                 &protobuf_AddDesc_gps_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_gps_2eproto {
   StaticDescriptorInitializer_gps_2eproto() {
@@ -100,28 +117,42 @@ struct StaticDescriptorInitializer_gps_2eproto {
   }
 } static_descriptor_initializer_gps_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Gps::kHeaderFieldNumber;
 const int Gps::kLocalizationFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Gps::Gps()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_gps_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Gps)
 }
 
 void Gps::InitAsDefaultInstance() {
-  header_ = const_cast< ::gnss_driver::pb::Header*>(&::gnss_driver::pb::Header::default_instance());
-  localization_ = const_cast< ::gnss_driver::pb::Pose*>(&::gnss_driver::pb::Pose::default_instance());
+  header_ = const_cast< ::gnss_driver::pb::Header*>(
+      ::gnss_driver::pb::Header::internal_default_instance());
+  localization_ = const_cast< ::gnss_driver::pb::Pose*>(
+      ::gnss_driver::pb::Pose::internal_default_instance());
 }
 
 Gps::Gps(const Gps& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Gps)
 }
 
@@ -129,7 +160,6 @@ void Gps::SharedCtor() {
   _cached_size_ = 0;
   header_ = NULL;
   localization_ = NULL;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Gps::~Gps() {
@@ -138,7 +168,7 @@ Gps::~Gps() {
 }
 
 void Gps::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != &Gps_default_instance_.get()) {
     delete header_;
     delete localization_;
   }
@@ -155,18 +185,23 @@ const ::google::protobuf::Descriptor* Gps::descriptor() {
 }
 
 const Gps& Gps::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_gps_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_gps_2eproto();
+  return *internal_default_instance();
 }
 
-Gps* Gps::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Gps> Gps_default_instance_;
 
-Gps* Gps::New() const {
-  return new Gps;
+Gps* Gps::New(::google::protobuf::Arena* arena) const {
+  Gps* n = new Gps;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Gps::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Gps)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_header()) {
       if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
     }
@@ -174,13 +209,15 @@ void Gps::Clear() {
       if (localization_ != NULL) localization_->::gnss_driver::pb::Pose::Clear();
     }
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Gps::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Gps)
   for (;;) {
@@ -241,40 +278,41 @@ void Gps::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->header(), output);
+      1, *this->header_, output);
   }
 
   // optional .gnss_driver.pb.Pose localization = 2;
   if (has_localization()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->localization(), output);
+      2, *this->localization_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Gps)
 }
 
-::google::protobuf::uint8* Gps::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Gps::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Gps)
   // optional .gnss_driver.pb.Header header = 1;
   if (has_header()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->header(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, false, target);
   }
 
   // optional .gnss_driver.pb.Pose localization = 2;
   if (has_localization()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->localization(), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->localization_, false, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -282,50 +320,64 @@ void Gps::SerializeWithCachedSizes(
   return target;
 }
 
-int Gps::ByteSize() const {
-  int total_size = 0;
+size_t Gps::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Gps)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional .gnss_driver.pb.Header header = 1;
     if (has_header()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->header());
+          *this->header_);
     }
 
     // optional .gnss_driver.pb.Pose localization = 2;
     if (has_localization()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->localization());
+          *this->localization_);
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Gps::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Gps)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Gps* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Gps*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Gps>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Gps)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Gps)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Gps::MergeFrom(const Gps& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Gps)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Gps::UnsafeMergeFrom(const Gps& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_header()) {
       mutable_header()->::gnss_driver::pb::Header::MergeFrom(from.header());
@@ -334,19 +386,24 @@ void Gps::MergeFrom(const Gps& from) {
       mutable_localization()->::gnss_driver::pb::Pose::MergeFrom(from.localization());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Gps::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Gps)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Gps::CopyFrom(const Gps& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Gps)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Gps::IsInitialized() const {
@@ -355,13 +412,15 @@ bool Gps::IsInitialized() const {
 }
 
 void Gps::Swap(Gps* other) {
-  if (other != this) {
-    std::swap(header_, other->header_);
-    std::swap(localization_, other->localization_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Gps::InternalSwap(Gps* other) {
+  std::swap(header_, other->header_);
+  std::swap(localization_, other->localization_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Gps::GetMetadata() const {
@@ -372,6 +431,103 @@ void Gps::Swap(Gps* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Gps
+
+// optional .gnss_driver.pb.Header header = 1;
+bool Gps::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Gps::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Gps::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Gps::clear_header() {
+  if (header_ != NULL) header_->::gnss_driver::pb::Header::Clear();
+  clear_has_header();
+}
+const ::gnss_driver::pb::Header& Gps::header() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gps.header)
+  return header_ != NULL ? *header_
+                         : *::gnss_driver::pb::Header::internal_default_instance();
+}
+::gnss_driver::pb::Header* Gps::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) {
+    header_ = new ::gnss_driver::pb::Header;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gps.header)
+  return header_;
+}
+::gnss_driver::pb::Header* Gps::release_header() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gps.header)
+  clear_has_header();
+  ::gnss_driver::pb::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void Gps::set_allocated_header(::gnss_driver::pb::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gps.header)
+}
+
+// optional .gnss_driver.pb.Pose localization = 2;
+bool Gps::has_localization() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Gps::set_has_localization() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Gps::clear_has_localization() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Gps::clear_localization() {
+  if (localization_ != NULL) localization_->::gnss_driver::pb::Pose::Clear();
+  clear_has_localization();
+}
+const ::gnss_driver::pb::Pose& Gps::localization() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Gps.localization)
+  return localization_ != NULL ? *localization_
+                         : *::gnss_driver::pb::Pose::internal_default_instance();
+}
+::gnss_driver::pb::Pose* Gps::mutable_localization() {
+  set_has_localization();
+  if (localization_ == NULL) {
+    localization_ = new ::gnss_driver::pb::Pose;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Gps.localization)
+  return localization_;
+}
+::gnss_driver::pb::Pose* Gps::release_localization() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Gps.localization)
+  clear_has_localization();
+  ::gnss_driver::pb::Pose* temp = localization_;
+  localization_ = NULL;
+  return temp;
+}
+void Gps::set_allocated_localization(::gnss_driver::pb::Pose* localization) {
+  delete localization_;
+  localization_ = localization;
+  if (localization) {
+    set_has_localization();
+  } else {
+    clear_has_localization();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Gps.localization)
+}
+
+inline const Gps* Gps::internal_default_instance() {
+  return &Gps_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -61,6 +62,7 @@ const ::google::protobuf::EnumDescriptor* Config_RtkSolutionType_descriptor_ = N
 }  // namespace
 
 
+void protobuf_AssignDesc_config_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_config_2eproto() {
   protobuf_AddDesc_config_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -77,66 +79,62 @@ void protobuf_AssignDesc_config_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, type_),
   };
   Stream_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Stream_descriptor_,
-      Stream::default_instance_,
+      Stream::internal_default_instance(),
       Stream_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, _has_bits_),
+      -1,
       -1,
       Stream_default_oneof_instance_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, _oneof_case_[0]),
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Stream));
+      sizeof(Stream),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream, _internal_metadata_));
   Stream_Serial_descriptor_ = Stream_descriptor_->nested_type(0);
   static const int Stream_Serial_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Serial, device_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Serial, baud_rate_),
   };
   Stream_Serial_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Stream_Serial_descriptor_,
-      Stream_Serial::default_instance_,
+      Stream_Serial::internal_default_instance(),
       Stream_Serial_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Serial, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Serial, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Serial, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Stream_Serial));
+      -1,
+      sizeof(Stream_Serial),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Serial, _internal_metadata_));
   Stream_Tcp_descriptor_ = Stream_descriptor_->nested_type(1);
   static const int Stream_Tcp_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Tcp, address_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Tcp, port_),
   };
   Stream_Tcp_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Stream_Tcp_descriptor_,
-      Stream_Tcp::default_instance_,
+      Stream_Tcp::internal_default_instance(),
       Stream_Tcp_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Tcp, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Tcp, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Tcp, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Stream_Tcp));
+      -1,
+      sizeof(Stream_Tcp),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Tcp, _internal_metadata_));
   Stream_Udp_descriptor_ = Stream_descriptor_->nested_type(2);
   static const int Stream_Udp_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Udp, address_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Udp, port_),
   };
   Stream_Udp_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Stream_Udp_descriptor_,
-      Stream_Udp::default_instance_,
+      Stream_Udp::internal_default_instance(),
       Stream_Udp_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Udp, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Udp, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Udp, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Stream_Udp));
+      -1,
+      sizeof(Stream_Udp),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Udp, _internal_metadata_));
   Stream_Ntrip_descriptor_ = Stream_descriptor_->nested_type(3);
   static const int Stream_Ntrip_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Ntrip, address_),
@@ -147,46 +145,43 @@ void protobuf_AssignDesc_config_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Ntrip, timeout_s_),
   };
   Stream_Ntrip_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Stream_Ntrip_descriptor_,
-      Stream_Ntrip::default_instance_,
+      Stream_Ntrip::internal_default_instance(),
       Stream_Ntrip_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Ntrip, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Ntrip, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Ntrip, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Stream_Ntrip));
+      -1,
+      sizeof(Stream_Ntrip),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stream_Ntrip, _internal_metadata_));
   Stream_Format_descriptor_ = Stream_descriptor_->enum_type(0);
   NovatelConfig_descriptor_ = file->message_type(1);
   static const int NovatelConfig_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NovatelConfig, imu_orientation_),
   };
   NovatelConfig_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       NovatelConfig_descriptor_,
-      NovatelConfig::default_instance_,
+      NovatelConfig::internal_default_instance(),
       NovatelConfig_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NovatelConfig, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NovatelConfig, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NovatelConfig, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(NovatelConfig));
+      -1,
+      sizeof(NovatelConfig),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NovatelConfig, _internal_metadata_));
   UbloxConfig_descriptor_ = file->message_type(2);
   static const int UbloxConfig_offsets_[1] = {
   };
   UbloxConfig_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       UbloxConfig_descriptor_,
-      UbloxConfig::default_instance_,
+      UbloxConfig::internal_default_instance(),
       UbloxConfig_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UbloxConfig, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UbloxConfig, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UbloxConfig, _has_bits_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(UbloxConfig));
+      -1,
+      sizeof(UbloxConfig),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UbloxConfig, _internal_metadata_));
   Config_descriptor_ = file->message_type(3);
   static const int Config_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, data_),
@@ -201,78 +196,109 @@ void protobuf_AssignDesc_config_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, device_config_),
   };
   Config_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Config_descriptor_,
-      Config::default_instance_,
+      Config::internal_default_instance(),
       Config_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, _has_bits_),
+      -1,
       -1,
       Config_default_oneof_instance_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, _oneof_case_[0]),
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Config));
+      sizeof(Config),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Config, _internal_metadata_));
   Config_RtkSolutionType_descriptor_ = Config_descriptor_->enum_type(0);
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_config_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Stream_descriptor_, &Stream::default_instance());
+      Stream_descriptor_, Stream::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Stream_Serial_descriptor_, &Stream_Serial::default_instance());
+      Stream_Serial_descriptor_, Stream_Serial::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Stream_Tcp_descriptor_, &Stream_Tcp::default_instance());
+      Stream_Tcp_descriptor_, Stream_Tcp::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Stream_Udp_descriptor_, &Stream_Udp::default_instance());
+      Stream_Udp_descriptor_, Stream_Udp::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Stream_Ntrip_descriptor_, &Stream_Ntrip::default_instance());
+      Stream_Ntrip_descriptor_, Stream_Ntrip::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    NovatelConfig_descriptor_, &NovatelConfig::default_instance());
+      NovatelConfig_descriptor_, NovatelConfig::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    UbloxConfig_descriptor_, &UbloxConfig::default_instance());
+      UbloxConfig_descriptor_, UbloxConfig::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Config_descriptor_, &Config::default_instance());
+      Config_descriptor_, Config::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_config_2eproto() {
-  delete Stream::default_instance_;
+  Stream_default_instance_.Shutdown();
   delete Stream_default_oneof_instance_;
   delete Stream_reflection_;
-  delete Stream_Serial::default_instance_;
+  Stream_Serial_default_instance_.Shutdown();
   delete Stream_Serial_reflection_;
-  delete Stream_Tcp::default_instance_;
+  Stream_Tcp_default_instance_.Shutdown();
   delete Stream_Tcp_reflection_;
-  delete Stream_Udp::default_instance_;
+  Stream_Udp_default_instance_.Shutdown();
   delete Stream_Udp_reflection_;
-  delete Stream_Ntrip::default_instance_;
+  Stream_Ntrip_default_instance_.Shutdown();
   delete Stream_Ntrip_reflection_;
-  delete NovatelConfig::default_instance_;
+  NovatelConfig_default_instance_.Shutdown();
   delete NovatelConfig_reflection_;
-  delete UbloxConfig::default_instance_;
+  UbloxConfig_default_instance_.Shutdown();
   delete UbloxConfig_reflection_;
-  delete Config::default_instance_;
+  Config_default_instance_.Shutdown();
   delete Config_default_oneof_instance_;
   delete Config_reflection_;
 }
 
-void protobuf_AddDesc_config_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_config_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  Stream_default_instance_.DefaultConstruct();
+  Stream_default_oneof_instance_ = new StreamOneofInstance();
+  ::google::protobuf::internal::GetEmptyString();
+  Stream_Serial_default_instance_.DefaultConstruct();
+  ::google::protobuf::internal::GetEmptyString();
+  Stream_Tcp_default_instance_.DefaultConstruct();
+  ::google::protobuf::internal::GetEmptyString();
+  Stream_Udp_default_instance_.DefaultConstruct();
+  ::google::protobuf::internal::GetEmptyString();
+  Stream_Ntrip_default_instance_.DefaultConstruct();
+  NovatelConfig_default_instance_.DefaultConstruct();
+  UbloxConfig_default_instance_.DefaultConstruct();
+  ::google::protobuf::internal::GetEmptyString();
+  Config_default_instance_.DefaultConstruct();
+  Config_default_oneof_instance_ = new ConfigOneofInstance();
+  Stream_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Stream_Serial_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Stream_Tcp_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Stream_Udp_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Stream_Ntrip_default_instance_.get_mutable()->InitAsDefaultInstance();
+  NovatelConfig_default_instance_.get_mutable()->InitAsDefaultInstance();
+  UbloxConfig_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Config_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_config_2eproto_once_);
+void protobuf_InitDefaults_config_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_config_2eproto_once_,
+                 &protobuf_InitDefaults_config_2eproto_impl);
+}
+void protobuf_AddDesc_config_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_config_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\014config.proto\022\016gnss_driver.pb\"\376\004\n\006Strea"
     "m\022-\n\006format\030\001 \001(\0162\035.gnss_driver.pb.Strea"
@@ -307,33 +333,30 @@ void protobuf_AddDesc_config_2eproto() {
     "\020\002B\017\n\rdevice_config", 1219);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "config.proto", &protobuf_RegisterTypes);
-  Stream::default_instance_ = new Stream();
-  Stream_default_oneof_instance_ = new StreamOneofInstance;
-  Stream_Serial::default_instance_ = new Stream_Serial();
-  Stream_Tcp::default_instance_ = new Stream_Tcp();
-  Stream_Udp::default_instance_ = new Stream_Udp();
-  Stream_Ntrip::default_instance_ = new Stream_Ntrip();
-  NovatelConfig::default_instance_ = new NovatelConfig();
-  UbloxConfig::default_instance_ = new UbloxConfig();
-  Config::default_instance_ = new Config();
-  Config_default_oneof_instance_ = new ConfigOneofInstance;
-  Stream::default_instance_->InitAsDefaultInstance();
-  Stream_Serial::default_instance_->InitAsDefaultInstance();
-  Stream_Tcp::default_instance_->InitAsDefaultInstance();
-  Stream_Udp::default_instance_->InitAsDefaultInstance();
-  Stream_Ntrip::default_instance_->InitAsDefaultInstance();
-  NovatelConfig::default_instance_->InitAsDefaultInstance();
-  UbloxConfig::default_instance_->InitAsDefaultInstance();
-  Config::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_config_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_config_2eproto_once_);
+void protobuf_AddDesc_config_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_config_2eproto_once_,
+                 &protobuf_AddDesc_config_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_config_2eproto {
   StaticDescriptorInitializer_config_2eproto() {
     protobuf_AddDesc_config_2eproto();
   }
 } static_descriptor_initializer_config_2eproto_;
+
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
 
 // ===================================================================
 
@@ -342,7 +365,7 @@ const ::google::protobuf::EnumDescriptor* Stream_Format_descriptor() {
   return Stream_Format_descriptor_;
 }
 bool Stream_Format_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 0:
     case 1:
     case 2:
@@ -357,7 +380,7 @@ bool Stream_Format_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const Stream_Format Stream::UNKNOWN;
 const Stream_Format Stream::NMEA;
 const Stream_Format Stream::RTCM_V2;
@@ -369,14 +392,15 @@ const Stream_Format Stream::UBLOX_BINARY;
 const Stream_Format Stream::Format_MIN;
 const Stream_Format Stream::Format_MAX;
 const int Stream::Format_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stream_Serial::kDeviceFieldNumber;
 const int Stream_Serial::kBaudRateFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stream_Serial::Stream_Serial()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Stream.Serial)
 }
@@ -385,18 +409,17 @@ void Stream_Serial::InitAsDefaultInstance() {
 }
 
 Stream_Serial::Stream_Serial(const Stream_Serial& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Stream.Serial)
 }
 
 void Stream_Serial::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  device_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  device_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   baud_rate_ = 9600;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Stream_Serial::~Stream_Serial() {
@@ -405,11 +428,7 @@ Stream_Serial::~Stream_Serial() {
 }
 
 void Stream_Serial::SharedDtor() {
-  if (device_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete device_;
-  }
-  if (this != default_instance_) {
-  }
+  device_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Stream_Serial::SetCachedSize(int size) const {
@@ -423,32 +442,37 @@ const ::google::protobuf::Descriptor* Stream_Serial::descriptor() {
 }
 
 const Stream_Serial& Stream_Serial::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-Stream_Serial* Stream_Serial::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Stream_Serial> Stream_Serial_default_instance_;
 
-Stream_Serial* Stream_Serial::New() const {
-  return new Stream_Serial;
+Stream_Serial* Stream_Serial::New(::google::protobuf::Arena* arena) const {
+  Stream_Serial* n = new Stream_Serial;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Stream_Serial::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Stream.Serial)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_device()) {
-      if (device_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        device_->clear();
-      }
+      device_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     baud_rate_ = 9600;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Stream_Serial::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Stream.Serial)
   for (;;) {
@@ -472,10 +496,10 @@ bool Stream_Serial::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_baud_rate:
+          set_has_baud_rate();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &baud_rate_)));
-          set_has_baud_rate();
         } else {
           goto handle_unusual;
         }
@@ -519,15 +543,16 @@ void Stream_Serial::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->baud_rate(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Stream.Serial)
 }
 
-::google::protobuf::uint8* Stream_Serial::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Stream_Serial::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Stream.Serial)
   // optional bytes device = 1;
   if (has_device()) {
@@ -541,7 +566,7 @@ void Stream_Serial::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->baud_rate(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -549,10 +574,11 @@ void Stream_Serial::SerializeWithCachedSizes(
   return target;
 }
 
-int Stream_Serial::ByteSize() const {
-  int total_size = 0;
+size_t Stream_Serial::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Stream.Serial)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional bytes device = 1;
     if (has_device()) {
       total_size += 1 +
@@ -568,52 +594,71 @@ int Stream_Serial::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Stream_Serial::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Stream.Serial)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Stream_Serial* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Stream_Serial*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Stream_Serial>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Stream.Serial)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Stream.Serial)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Stream_Serial::MergeFrom(const Stream_Serial& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Stream.Serial)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Stream_Serial::UnsafeMergeFrom(const Stream_Serial& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_device()) {
-      set_device(from.device());
+      set_has_device();
+      device_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.device_);
     }
     if (from.has_baud_rate()) {
       set_baud_rate(from.baud_rate());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Stream_Serial::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Stream.Serial)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Stream_Serial::CopyFrom(const Stream_Serial& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Stream.Serial)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Stream_Serial::IsInitialized() const {
@@ -622,13 +667,15 @@ bool Stream_Serial::IsInitialized() const {
 }
 
 void Stream_Serial::Swap(Stream_Serial* other) {
-  if (other != this) {
-    std::swap(device_, other->device_);
-    std::swap(baud_rate_, other->baud_rate_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Stream_Serial::InternalSwap(Stream_Serial* other) {
+  device_.Swap(&other->device_);
+  std::swap(baud_rate_, other->baud_rate_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Stream_Serial::GetMetadata() const {
@@ -642,13 +689,14 @@ void Stream_Serial::Swap(Stream_Serial* other) {
 
 // -------------------------------------------------------------------
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stream_Tcp::kAddressFieldNumber;
 const int Stream_Tcp::kPortFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stream_Tcp::Stream_Tcp()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Stream.Tcp)
 }
@@ -657,18 +705,17 @@ void Stream_Tcp::InitAsDefaultInstance() {
 }
 
 Stream_Tcp::Stream_Tcp(const Stream_Tcp& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Stream.Tcp)
 }
 
 void Stream_Tcp::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  address_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   port_ = 3001;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Stream_Tcp::~Stream_Tcp() {
@@ -677,11 +724,7 @@ Stream_Tcp::~Stream_Tcp() {
 }
 
 void Stream_Tcp::SharedDtor() {
-  if (address_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete address_;
-  }
-  if (this != default_instance_) {
-  }
+  address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Stream_Tcp::SetCachedSize(int size) const {
@@ -695,32 +738,37 @@ const ::google::protobuf::Descriptor* Stream_Tcp::descriptor() {
 }
 
 const Stream_Tcp& Stream_Tcp::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-Stream_Tcp* Stream_Tcp::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Stream_Tcp> Stream_Tcp_default_instance_;
 
-Stream_Tcp* Stream_Tcp::New() const {
-  return new Stream_Tcp;
+Stream_Tcp* Stream_Tcp::New(::google::protobuf::Arena* arena) const {
+  Stream_Tcp* n = new Stream_Tcp;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Stream_Tcp::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Stream.Tcp)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_address()) {
-      if (address_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        address_->clear();
-      }
+      address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     port_ = 3001;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Stream_Tcp::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Stream.Tcp)
   for (;;) {
@@ -744,10 +792,10 @@ bool Stream_Tcp::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_port:
+          set_has_port();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &port_)));
-          set_has_port();
         } else {
           goto handle_unusual;
         }
@@ -791,15 +839,16 @@ void Stream_Tcp::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->port(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Stream.Tcp)
 }
 
-::google::protobuf::uint8* Stream_Tcp::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Stream_Tcp::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Stream.Tcp)
   // optional bytes address = 1;
   if (has_address()) {
@@ -813,7 +862,7 @@ void Stream_Tcp::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->port(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -821,10 +870,11 @@ void Stream_Tcp::SerializeWithCachedSizes(
   return target;
 }
 
-int Stream_Tcp::ByteSize() const {
-  int total_size = 0;
+size_t Stream_Tcp::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Stream.Tcp)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional bytes address = 1;
     if (has_address()) {
       total_size += 1 +
@@ -840,52 +890,71 @@ int Stream_Tcp::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Stream_Tcp::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Stream.Tcp)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Stream_Tcp* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Stream_Tcp*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Stream_Tcp>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Stream.Tcp)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Stream.Tcp)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Stream_Tcp::MergeFrom(const Stream_Tcp& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Stream.Tcp)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Stream_Tcp::UnsafeMergeFrom(const Stream_Tcp& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_address()) {
-      set_address(from.address());
+      set_has_address();
+      address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
     }
     if (from.has_port()) {
       set_port(from.port());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Stream_Tcp::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Stream.Tcp)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Stream_Tcp::CopyFrom(const Stream_Tcp& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Stream.Tcp)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Stream_Tcp::IsInitialized() const {
@@ -894,13 +963,15 @@ bool Stream_Tcp::IsInitialized() const {
 }
 
 void Stream_Tcp::Swap(Stream_Tcp* other) {
-  if (other != this) {
-    std::swap(address_, other->address_);
-    std::swap(port_, other->port_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Stream_Tcp::InternalSwap(Stream_Tcp* other) {
+  address_.Swap(&other->address_);
+  std::swap(port_, other->port_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Stream_Tcp::GetMetadata() const {
@@ -914,13 +985,14 @@ void Stream_Tcp::Swap(Stream_Tcp* other) {
 
 // -------------------------------------------------------------------
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stream_Udp::kAddressFieldNumber;
 const int Stream_Udp::kPortFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stream_Udp::Stream_Udp()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Stream.Udp)
 }
@@ -929,18 +1001,17 @@ void Stream_Udp::InitAsDefaultInstance() {
 }
 
 Stream_Udp::Stream_Udp(const Stream_Udp& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Stream.Udp)
 }
 
 void Stream_Udp::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  address_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   port_ = 3001;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Stream_Udp::~Stream_Udp() {
@@ -949,11 +1020,7 @@ Stream_Udp::~Stream_Udp() {
 }
 
 void Stream_Udp::SharedDtor() {
-  if (address_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete address_;
-  }
-  if (this != default_instance_) {
-  }
+  address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Stream_Udp::SetCachedSize(int size) const {
@@ -967,32 +1034,37 @@ const ::google::protobuf::Descriptor* Stream_Udp::descriptor() {
 }
 
 const Stream_Udp& Stream_Udp::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-Stream_Udp* Stream_Udp::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Stream_Udp> Stream_Udp_default_instance_;
 
-Stream_Udp* Stream_Udp::New() const {
-  return new Stream_Udp;
+Stream_Udp* Stream_Udp::New(::google::protobuf::Arena* arena) const {
+  Stream_Udp* n = new Stream_Udp;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Stream_Udp::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Stream.Udp)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_address()) {
-      if (address_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        address_->clear();
-      }
+      address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     port_ = 3001;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Stream_Udp::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Stream.Udp)
   for (;;) {
@@ -1016,10 +1088,10 @@ bool Stream_Udp::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_port:
+          set_has_port();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &port_)));
-          set_has_port();
         } else {
           goto handle_unusual;
         }
@@ -1063,15 +1135,16 @@ void Stream_Udp::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->port(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Stream.Udp)
 }
 
-::google::protobuf::uint8* Stream_Udp::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Stream_Udp::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Stream.Udp)
   // optional bytes address = 1;
   if (has_address()) {
@@ -1085,7 +1158,7 @@ void Stream_Udp::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->port(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1093,10 +1166,11 @@ void Stream_Udp::SerializeWithCachedSizes(
   return target;
 }
 
-int Stream_Udp::ByteSize() const {
-  int total_size = 0;
+size_t Stream_Udp::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Stream.Udp)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional bytes address = 1;
     if (has_address()) {
       total_size += 1 +
@@ -1112,52 +1186,71 @@ int Stream_Udp::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Stream_Udp::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Stream.Udp)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Stream_Udp* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Stream_Udp*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Stream_Udp>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Stream.Udp)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Stream.Udp)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Stream_Udp::MergeFrom(const Stream_Udp& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Stream.Udp)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Stream_Udp::UnsafeMergeFrom(const Stream_Udp& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_address()) {
-      set_address(from.address());
+      set_has_address();
+      address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
     }
     if (from.has_port()) {
       set_port(from.port());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Stream_Udp::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Stream.Udp)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Stream_Udp::CopyFrom(const Stream_Udp& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Stream.Udp)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Stream_Udp::IsInitialized() const {
@@ -1166,13 +1259,15 @@ bool Stream_Udp::IsInitialized() const {
 }
 
 void Stream_Udp::Swap(Stream_Udp* other) {
-  if (other != this) {
-    std::swap(address_, other->address_);
-    std::swap(port_, other->port_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Stream_Udp::InternalSwap(Stream_Udp* other) {
+  address_.Swap(&other->address_);
+  std::swap(port_, other->port_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Stream_Udp::GetMetadata() const {
@@ -1186,17 +1281,18 @@ void Stream_Udp::Swap(Stream_Udp* other) {
 
 // -------------------------------------------------------------------
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stream_Ntrip::kAddressFieldNumber;
 const int Stream_Ntrip::kPortFieldNumber;
 const int Stream_Ntrip::kMountPointFieldNumber;
 const int Stream_Ntrip::kUserFieldNumber;
 const int Stream_Ntrip::kPasswordFieldNumber;
 const int Stream_Ntrip::kTimeoutSFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stream_Ntrip::Stream_Ntrip()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Stream.Ntrip)
 }
@@ -1205,22 +1301,21 @@ void Stream_Ntrip::InitAsDefaultInstance() {
 }
 
 Stream_Ntrip::Stream_Ntrip(const Stream_Ntrip& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Stream.Ntrip)
 }
 
 void Stream_Ntrip::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  address_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  mount_point_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  user_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  password_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   port_ = 2101;
-  mount_point_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  user_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   timeout_s_ = 30u;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 Stream_Ntrip::~Stream_Ntrip() {
@@ -1229,20 +1324,10 @@ Stream_Ntrip::~Stream_Ntrip() {
 }
 
 void Stream_Ntrip::SharedDtor() {
-  if (address_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete address_;
-  }
-  if (mount_point_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete mount_point_;
-  }
-  if (user_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete user_;
-  }
-  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete password_;
-  }
-  if (this != default_instance_) {
-  }
+  address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  mount_point_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  user_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  password_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Stream_Ntrip::SetCachedSize(int size) const {
@@ -1256,48 +1341,47 @@ const ::google::protobuf::Descriptor* Stream_Ntrip::descriptor() {
 }
 
 const Stream_Ntrip& Stream_Ntrip::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-Stream_Ntrip* Stream_Ntrip::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Stream_Ntrip> Stream_Ntrip_default_instance_;
 
-Stream_Ntrip* Stream_Ntrip::New() const {
-  return new Stream_Ntrip;
+Stream_Ntrip* Stream_Ntrip::New(::google::protobuf::Arena* arena) const {
+  Stream_Ntrip* n = new Stream_Ntrip;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Stream_Ntrip::Clear() {
-  if (_has_bits_[0 / 32] & 63) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Stream.Ntrip)
+  if (_has_bits_[0 / 32] & 63u) {
     if (has_address()) {
-      if (address_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        address_->clear();
-      }
+      address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     port_ = 2101;
     if (has_mount_point()) {
-      if (mount_point_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        mount_point_->clear();
-      }
+      mount_point_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     if (has_user()) {
-      if (user_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        user_->clear();
-      }
+      user_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     if (has_password()) {
-      if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        password_->clear();
-      }
+      password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     timeout_s_ = 30u;
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Stream_Ntrip::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Stream.Ntrip)
   for (;;) {
@@ -1321,10 +1405,10 @@ bool Stream_Ntrip::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_port:
+          set_has_port();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &port_)));
-          set_has_port();
         } else {
           goto handle_unusual;
         }
@@ -1375,10 +1459,10 @@ bool Stream_Ntrip::MergePartialFromCodedStream(
       case 6: {
         if (tag == 48) {
          parse_timeout_s:
+          set_has_timeout_s();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &timeout_s_)));
-          set_has_timeout_s();
         } else {
           goto handle_unusual;
         }
@@ -1445,15 +1529,16 @@ void Stream_Ntrip::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->timeout_s(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Stream.Ntrip)
 }
 
-::google::protobuf::uint8* Stream_Ntrip::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Stream_Ntrip::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Stream.Ntrip)
   // optional bytes address = 1;
   if (has_address()) {
@@ -1493,7 +1578,7 @@ void Stream_Ntrip::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->timeout_s(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1501,10 +1586,11 @@ void Stream_Ntrip::SerializeWithCachedSizes(
   return target;
 }
 
-int Stream_Ntrip::ByteSize() const {
-  int total_size = 0;
+size_t Stream_Ntrip::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Stream.Ntrip)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 63u) {
     // optional bytes address = 1;
     if (has_address()) {
       total_size += 1 +
@@ -1548,64 +1634,86 @@ int Stream_Ntrip::ByteSize() const {
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Stream_Ntrip::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Stream.Ntrip)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Stream_Ntrip* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Stream_Ntrip*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Stream_Ntrip>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Stream.Ntrip)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Stream.Ntrip)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Stream_Ntrip::MergeFrom(const Stream_Ntrip& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Stream.Ntrip)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Stream_Ntrip::UnsafeMergeFrom(const Stream_Ntrip& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_address()) {
-      set_address(from.address());
+      set_has_address();
+      address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
     }
     if (from.has_port()) {
       set_port(from.port());
     }
     if (from.has_mount_point()) {
-      set_mount_point(from.mount_point());
+      set_has_mount_point();
+      mount_point_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.mount_point_);
     }
     if (from.has_user()) {
-      set_user(from.user());
+      set_has_user();
+      user_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.user_);
     }
     if (from.has_password()) {
-      set_password(from.password());
+      set_has_password();
+      password_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.password_);
     }
     if (from.has_timeout_s()) {
       set_timeout_s(from.timeout_s());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Stream_Ntrip::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Stream.Ntrip)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Stream_Ntrip::CopyFrom(const Stream_Ntrip& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Stream.Ntrip)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Stream_Ntrip::IsInitialized() const {
@@ -1614,17 +1722,19 @@ bool Stream_Ntrip::IsInitialized() const {
 }
 
 void Stream_Ntrip::Swap(Stream_Ntrip* other) {
-  if (other != this) {
-    std::swap(address_, other->address_);
-    std::swap(port_, other->port_);
-    std::swap(mount_point_, other->mount_point_);
-    std::swap(user_, other->user_);
-    std::swap(password_, other->password_);
-    std::swap(timeout_s_, other->timeout_s_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Stream_Ntrip::InternalSwap(Stream_Ntrip* other) {
+  address_.Swap(&other->address_);
+  std::swap(port_, other->port_);
+  mount_point_.Swap(&other->mount_point_);
+  user_.Swap(&other->user_);
+  password_.Swap(&other->password_);
+  std::swap(timeout_s_, other->timeout_s_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Stream_Ntrip::GetMetadata() const {
@@ -1638,38 +1748,43 @@ void Stream_Ntrip::Swap(Stream_Ntrip* other) {
 
 // -------------------------------------------------------------------
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stream::kFormatFieldNumber;
 const int Stream::kSerialFieldNumber;
 const int Stream::kTcpFieldNumber;
 const int Stream::kUdpFieldNumber;
 const int Stream::kNtripFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stream::Stream()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Stream)
 }
 
 void Stream::InitAsDefaultInstance() {
-  Stream_default_oneof_instance_->serial_ = const_cast< ::gnss_driver::pb::Stream_Serial*>(&::gnss_driver::pb::Stream_Serial::default_instance());
-  Stream_default_oneof_instance_->tcp_ = const_cast< ::gnss_driver::pb::Stream_Tcp*>(&::gnss_driver::pb::Stream_Tcp::default_instance());
-  Stream_default_oneof_instance_->udp_ = const_cast< ::gnss_driver::pb::Stream_Udp*>(&::gnss_driver::pb::Stream_Udp::default_instance());
-  Stream_default_oneof_instance_->ntrip_ = const_cast< ::gnss_driver::pb::Stream_Ntrip*>(&::gnss_driver::pb::Stream_Ntrip::default_instance());
+  Stream_default_oneof_instance_->serial_ = const_cast< ::gnss_driver::pb::Stream_Serial*>(
+      ::gnss_driver::pb::Stream_Serial::internal_default_instance());
+  Stream_default_oneof_instance_->tcp_ = const_cast< ::gnss_driver::pb::Stream_Tcp*>(
+      ::gnss_driver::pb::Stream_Tcp::internal_default_instance());
+  Stream_default_oneof_instance_->udp_ = const_cast< ::gnss_driver::pb::Stream_Udp*>(
+      ::gnss_driver::pb::Stream_Udp::internal_default_instance());
+  Stream_default_oneof_instance_->ntrip_ = const_cast< ::gnss_driver::pb::Stream_Ntrip*>(
+      ::gnss_driver::pb::Stream_Ntrip::internal_default_instance());
 }
 
 Stream::Stream(const Stream& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Stream)
 }
 
 void Stream::SharedCtor() {
   _cached_size_ = 0;
   format_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
   clear_has_type();
 }
 
@@ -1681,8 +1796,6 @@ Stream::~Stream() {
 void Stream::SharedDtor() {
   if (has_type()) {
     clear_type();
-  }
-  if (this != default_instance_) {
   }
 }
 
@@ -1697,18 +1810,23 @@ const ::google::protobuf::Descriptor* Stream::descriptor() {
 }
 
 const Stream& Stream::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-Stream* Stream::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Stream> Stream_default_instance_;
 
-Stream* Stream::New() const {
-  return new Stream;
+Stream* Stream::New(::google::protobuf::Arena* arena) const {
+  Stream* n = new Stream;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Stream::clear_type() {
-  switch(type_case()) {
+// @@protoc_insertion_point(one_of_clear_start:gnss_driver.pb.Stream)
+  switch (type_case()) {
     case kSerial: {
       delete type_.serial_;
       break;
@@ -1734,15 +1852,18 @@ void Stream::clear_type() {
 
 
 void Stream::Clear() {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Stream)
   format_ = 0;
   clear_type();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Stream::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Stream)
   for (;;) {
@@ -1778,27 +1899,25 @@ bool Stream::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_tcp;
+        goto after_ntrip;
         break;
       }
 
       // optional .gnss_driver.pb.Stream.Tcp tcp = 3;
       case 3: {
         if (tag == 26) {
-         parse_tcp:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_tcp()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_udp;
+        goto after_ntrip;
         break;
       }
 
       // optional .gnss_driver.pb.Stream.Udp udp = 4;
       case 4: {
         if (tag == 34) {
-         parse_udp:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_udp()));
         } else {
@@ -1817,6 +1936,7 @@ bool Stream::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+       after_ntrip:
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1852,39 +1972,35 @@ void Stream::SerializeWithCachedSizes(
       1, this->format(), output);
   }
 
-  // optional .gnss_driver.pb.Stream.Serial serial = 2;
-  if (has_serial()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->serial(), output);
+  switch (type_case()) {
+    case kSerial:
+      ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+        2, *type_.serial_, output);
+      break;
+    case kTcp:
+      ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+        3, *type_.tcp_, output);
+      break;
+    case kUdp:
+      ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+        4, *type_.udp_, output);
+      break;
+    case kNtrip:
+      ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+        5, *type_.ntrip_, output);
+      break;
+    default: ;
   }
-
-  // optional .gnss_driver.pb.Stream.Tcp tcp = 3;
-  if (has_tcp()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->tcp(), output);
-  }
-
-  // optional .gnss_driver.pb.Stream.Udp udp = 4;
-  if (has_udp()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->udp(), output);
-  }
-
-  // optional .gnss_driver.pb.Stream.Ntrip ntrip = 5;
-  if (has_ntrip()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->ntrip(), output);
-  }
-
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Stream)
 }
 
-::google::protobuf::uint8* Stream::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Stream::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Stream)
   // optional .gnss_driver.pb.Stream.Format format = 1;
   if (has_format()) {
@@ -1892,35 +2008,30 @@ void Stream::SerializeWithCachedSizes(
       1, this->format(), target);
   }
 
-  // optional .gnss_driver.pb.Stream.Serial serial = 2;
-  if (has_serial()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->serial(), target);
+  switch (type_case()) {
+    case kSerial:
+      target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessageNoVirtualToArray(
+          2, *type_.serial_, false, target);
+      break;
+    case kTcp:
+      target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessageNoVirtualToArray(
+          3, *type_.tcp_, false, target);
+      break;
+    case kUdp:
+      target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessageNoVirtualToArray(
+          4, *type_.udp_, false, target);
+      break;
+    case kNtrip:
+      target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessageNoVirtualToArray(
+          5, *type_.ntrip_, false, target);
+      break;
+    default: ;
   }
-
-  // optional .gnss_driver.pb.Stream.Tcp tcp = 3;
-  if (has_tcp()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->tcp(), target);
-  }
-
-  // optional .gnss_driver.pb.Stream.Udp udp = 4;
-  if (has_udp()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->udp(), target);
-  }
-
-  // optional .gnss_driver.pb.Stream.Ntrip ntrip = 5;
-  if (has_ntrip()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->ntrip(), target);
-  }
-
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1928,75 +2039,87 @@ void Stream::SerializeWithCachedSizes(
   return target;
 }
 
-int Stream::ByteSize() const {
-  int total_size = 0;
+size_t Stream::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Stream)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .gnss_driver.pb.Stream.Format format = 1;
-    if (has_format()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->format());
-    }
-
+  // optional .gnss_driver.pb.Stream.Format format = 1;
+  if (has_format()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->format());
   }
+
   switch (type_case()) {
     // optional .gnss_driver.pb.Stream.Serial serial = 2;
     case kSerial: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->serial());
+          *type_.serial_);
       break;
     }
     // optional .gnss_driver.pb.Stream.Tcp tcp = 3;
     case kTcp: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->tcp());
+          *type_.tcp_);
       break;
     }
     // optional .gnss_driver.pb.Stream.Udp udp = 4;
     case kUdp: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->udp());
+          *type_.udp_);
       break;
     }
     // optional .gnss_driver.pb.Stream.Ntrip ntrip = 5;
     case kNtrip: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->ntrip());
+          *type_.ntrip_);
       break;
     }
     case TYPE_NOT_SET: {
       break;
     }
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Stream::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Stream)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Stream* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Stream*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Stream>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Stream)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Stream)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Stream::MergeFrom(const Stream& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Stream)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Stream::UnsafeMergeFrom(const Stream& from) {
+  GOOGLE_DCHECK(&from != this);
   switch (from.type_case()) {
     case kSerial: {
       mutable_serial()->::gnss_driver::pb::Stream_Serial::MergeFrom(from.serial());
@@ -2023,19 +2146,24 @@ void Stream::MergeFrom(const Stream& from) {
       set_format(from.format());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Stream::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Stream)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Stream::CopyFrom(const Stream& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Stream)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Stream::IsInitialized() const {
@@ -2044,14 +2172,16 @@ bool Stream::IsInitialized() const {
 }
 
 void Stream::Swap(Stream* other) {
-  if (other != this) {
-    std::swap(format_, other->format_);
-    std::swap(type_, other->type_);
-    std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Stream::InternalSwap(Stream* other) {
+  std::swap(format_, other->format_);
+  std::swap(type_, other->type_);
+  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Stream::GetMetadata() const {
@@ -2062,15 +2192,775 @@ void Stream::Swap(Stream* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Stream_Serial
+
+// optional bytes device = 1;
+bool Stream_Serial::has_device() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Stream_Serial::set_has_device() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Stream_Serial::clear_has_device() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Stream_Serial::clear_device() {
+  device_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_device();
+}
+const ::std::string& Stream_Serial::device() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Serial.device)
+  return device_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Serial::set_device(const ::std::string& value) {
+  set_has_device();
+  device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Serial.device)
+}
+void Stream_Serial::set_device(const char* value) {
+  set_has_device();
+  device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Serial.device)
+}
+void Stream_Serial::set_device(const void* value, size_t size) {
+  set_has_device();
+  device_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Serial.device)
+}
+::std::string* Stream_Serial::mutable_device() {
+  set_has_device();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Serial.device)
+  return device_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Serial::release_device() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Serial.device)
+  clear_has_device();
+  return device_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Serial::set_allocated_device(::std::string* device) {
+  if (device != NULL) {
+    set_has_device();
+  } else {
+    clear_has_device();
+  }
+  device_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), device);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Serial.device)
+}
+
+// optional int32 baud_rate = 2 [default = 9600];
+bool Stream_Serial::has_baud_rate() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Stream_Serial::set_has_baud_rate() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Stream_Serial::clear_has_baud_rate() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Stream_Serial::clear_baud_rate() {
+  baud_rate_ = 9600;
+  clear_has_baud_rate();
+}
+::google::protobuf::int32 Stream_Serial::baud_rate() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Serial.baud_rate)
+  return baud_rate_;
+}
+void Stream_Serial::set_baud_rate(::google::protobuf::int32 value) {
+  set_has_baud_rate();
+  baud_rate_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Serial.baud_rate)
+}
+
+inline const Stream_Serial* Stream_Serial::internal_default_instance() {
+  return &Stream_Serial_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Stream_Tcp
+
+// optional bytes address = 1;
+bool Stream_Tcp::has_address() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Stream_Tcp::set_has_address() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Stream_Tcp::clear_has_address() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Stream_Tcp::clear_address() {
+  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_address();
+}
+const ::std::string& Stream_Tcp::address() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Tcp.address)
+  return address_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Tcp::set_address(const ::std::string& value) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Tcp.address)
+}
+void Stream_Tcp::set_address(const char* value) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Tcp.address)
+}
+void Stream_Tcp::set_address(const void* value, size_t size) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Tcp.address)
+}
+::std::string* Stream_Tcp::mutable_address() {
+  set_has_address();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Tcp.address)
+  return address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Tcp::release_address() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Tcp.address)
+  clear_has_address();
+  return address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Tcp::set_allocated_address(::std::string* address) {
+  if (address != NULL) {
+    set_has_address();
+  } else {
+    clear_has_address();
+  }
+  address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), address);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Tcp.address)
+}
+
+// optional int32 port = 2 [default = 3001];
+bool Stream_Tcp::has_port() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Stream_Tcp::set_has_port() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Stream_Tcp::clear_has_port() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Stream_Tcp::clear_port() {
+  port_ = 3001;
+  clear_has_port();
+}
+::google::protobuf::int32 Stream_Tcp::port() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Tcp.port)
+  return port_;
+}
+void Stream_Tcp::set_port(::google::protobuf::int32 value) {
+  set_has_port();
+  port_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Tcp.port)
+}
+
+inline const Stream_Tcp* Stream_Tcp::internal_default_instance() {
+  return &Stream_Tcp_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Stream_Udp
+
+// optional bytes address = 1;
+bool Stream_Udp::has_address() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Stream_Udp::set_has_address() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Stream_Udp::clear_has_address() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Stream_Udp::clear_address() {
+  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_address();
+}
+const ::std::string& Stream_Udp::address() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Udp.address)
+  return address_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Udp::set_address(const ::std::string& value) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Udp.address)
+}
+void Stream_Udp::set_address(const char* value) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Udp.address)
+}
+void Stream_Udp::set_address(const void* value, size_t size) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Udp.address)
+}
+::std::string* Stream_Udp::mutable_address() {
+  set_has_address();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Udp.address)
+  return address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Udp::release_address() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Udp.address)
+  clear_has_address();
+  return address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Udp::set_allocated_address(::std::string* address) {
+  if (address != NULL) {
+    set_has_address();
+  } else {
+    clear_has_address();
+  }
+  address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), address);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Udp.address)
+}
+
+// optional int32 port = 2 [default = 3001];
+bool Stream_Udp::has_port() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Stream_Udp::set_has_port() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Stream_Udp::clear_has_port() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Stream_Udp::clear_port() {
+  port_ = 3001;
+  clear_has_port();
+}
+::google::protobuf::int32 Stream_Udp::port() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Udp.port)
+  return port_;
+}
+void Stream_Udp::set_port(::google::protobuf::int32 value) {
+  set_has_port();
+  port_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Udp.port)
+}
+
+inline const Stream_Udp* Stream_Udp::internal_default_instance() {
+  return &Stream_Udp_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Stream_Ntrip
+
+// optional bytes address = 1;
+bool Stream_Ntrip::has_address() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Stream_Ntrip::set_has_address() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Stream_Ntrip::clear_has_address() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Stream_Ntrip::clear_address() {
+  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_address();
+}
+const ::std::string& Stream_Ntrip::address() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Ntrip.address)
+  return address_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_address(const ::std::string& value) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Ntrip.address)
+}
+void Stream_Ntrip::set_address(const char* value) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Ntrip.address)
+}
+void Stream_Ntrip::set_address(const void* value, size_t size) {
+  set_has_address();
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Ntrip.address)
+}
+::std::string* Stream_Ntrip::mutable_address() {
+  set_has_address();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Ntrip.address)
+  return address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Ntrip::release_address() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Ntrip.address)
+  clear_has_address();
+  return address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_allocated_address(::std::string* address) {
+  if (address != NULL) {
+    set_has_address();
+  } else {
+    clear_has_address();
+  }
+  address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), address);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Ntrip.address)
+}
+
+// optional int32 port = 2 [default = 2101];
+bool Stream_Ntrip::has_port() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Stream_Ntrip::set_has_port() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Stream_Ntrip::clear_has_port() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Stream_Ntrip::clear_port() {
+  port_ = 2101;
+  clear_has_port();
+}
+::google::protobuf::int32 Stream_Ntrip::port() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Ntrip.port)
+  return port_;
+}
+void Stream_Ntrip::set_port(::google::protobuf::int32 value) {
+  set_has_port();
+  port_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Ntrip.port)
+}
+
+// optional bytes mount_point = 3;
+bool Stream_Ntrip::has_mount_point() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Stream_Ntrip::set_has_mount_point() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Stream_Ntrip::clear_has_mount_point() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Stream_Ntrip::clear_mount_point() {
+  mount_point_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_mount_point();
+}
+const ::std::string& Stream_Ntrip::mount_point() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Ntrip.mount_point)
+  return mount_point_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_mount_point(const ::std::string& value) {
+  set_has_mount_point();
+  mount_point_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Ntrip.mount_point)
+}
+void Stream_Ntrip::set_mount_point(const char* value) {
+  set_has_mount_point();
+  mount_point_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Ntrip.mount_point)
+}
+void Stream_Ntrip::set_mount_point(const void* value, size_t size) {
+  set_has_mount_point();
+  mount_point_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Ntrip.mount_point)
+}
+::std::string* Stream_Ntrip::mutable_mount_point() {
+  set_has_mount_point();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Ntrip.mount_point)
+  return mount_point_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Ntrip::release_mount_point() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Ntrip.mount_point)
+  clear_has_mount_point();
+  return mount_point_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_allocated_mount_point(::std::string* mount_point) {
+  if (mount_point != NULL) {
+    set_has_mount_point();
+  } else {
+    clear_has_mount_point();
+  }
+  mount_point_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), mount_point);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Ntrip.mount_point)
+}
+
+// optional bytes user = 4;
+bool Stream_Ntrip::has_user() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Stream_Ntrip::set_has_user() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Stream_Ntrip::clear_has_user() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Stream_Ntrip::clear_user() {
+  user_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_user();
+}
+const ::std::string& Stream_Ntrip::user() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Ntrip.user)
+  return user_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_user(const ::std::string& value) {
+  set_has_user();
+  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Ntrip.user)
+}
+void Stream_Ntrip::set_user(const char* value) {
+  set_has_user();
+  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Ntrip.user)
+}
+void Stream_Ntrip::set_user(const void* value, size_t size) {
+  set_has_user();
+  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Ntrip.user)
+}
+::std::string* Stream_Ntrip::mutable_user() {
+  set_has_user();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Ntrip.user)
+  return user_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Ntrip::release_user() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Ntrip.user)
+  clear_has_user();
+  return user_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_allocated_user(::std::string* user) {
+  if (user != NULL) {
+    set_has_user();
+  } else {
+    clear_has_user();
+  }
+  user_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Ntrip.user)
+}
+
+// optional bytes password = 5;
+bool Stream_Ntrip::has_password() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Stream_Ntrip::set_has_password() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Stream_Ntrip::clear_has_password() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Stream_Ntrip::clear_password() {
+  password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_password();
+}
+const ::std::string& Stream_Ntrip::password() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Ntrip.password)
+  return password_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_password(const ::std::string& value) {
+  set_has_password();
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Ntrip.password)
+}
+void Stream_Ntrip::set_password(const char* value) {
+  set_has_password();
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Stream.Ntrip.password)
+}
+void Stream_Ntrip::set_password(const void* value, size_t size) {
+  set_has_password();
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Stream.Ntrip.password)
+}
+::std::string* Stream_Ntrip::mutable_password() {
+  set_has_password();
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.Ntrip.password)
+  return password_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Stream_Ntrip::release_password() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.Ntrip.password)
+  clear_has_password();
+  return password_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Stream_Ntrip::set_allocated_password(::std::string* password) {
+  if (password != NULL) {
+    set_has_password();
+  } else {
+    clear_has_password();
+  }
+  password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.Ntrip.password)
+}
+
+// optional uint32 timeout_s = 6 [default = 30];
+bool Stream_Ntrip::has_timeout_s() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Stream_Ntrip::set_has_timeout_s() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Stream_Ntrip::clear_has_timeout_s() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Stream_Ntrip::clear_timeout_s() {
+  timeout_s_ = 30u;
+  clear_has_timeout_s();
+}
+::google::protobuf::uint32 Stream_Ntrip::timeout_s() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.Ntrip.timeout_s)
+  return timeout_s_;
+}
+void Stream_Ntrip::set_timeout_s(::google::protobuf::uint32 value) {
+  set_has_timeout_s();
+  timeout_s_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.Ntrip.timeout_s)
+}
+
+inline const Stream_Ntrip* Stream_Ntrip::internal_default_instance() {
+  return &Stream_Ntrip_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Stream
+
+// optional .gnss_driver.pb.Stream.Format format = 1;
+bool Stream::has_format() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Stream::set_has_format() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Stream::clear_has_format() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Stream::clear_format() {
+  format_ = 0;
+  clear_has_format();
+}
+::gnss_driver::pb::Stream_Format Stream::format() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.format)
+  return static_cast< ::gnss_driver::pb::Stream_Format >(format_);
+}
+void Stream::set_format(::gnss_driver::pb::Stream_Format value) {
+  assert(::gnss_driver::pb::Stream_Format_IsValid(value));
+  set_has_format();
+  format_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Stream.format)
+}
+
+// optional .gnss_driver.pb.Stream.Serial serial = 2;
+bool Stream::has_serial() const {
+  return type_case() == kSerial;
+}
+void Stream::set_has_serial() {
+  _oneof_case_[0] = kSerial;
+}
+void Stream::clear_serial() {
+  if (has_serial()) {
+    delete type_.serial_;
+    clear_has_type();
+  }
+}
+ const ::gnss_driver::pb::Stream_Serial& Stream::serial() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.serial)
+  return has_serial()
+      ? *type_.serial_
+      : ::gnss_driver::pb::Stream_Serial::default_instance();
+}
+::gnss_driver::pb::Stream_Serial* Stream::mutable_serial() {
+  if (!has_serial()) {
+    clear_type();
+    set_has_serial();
+    type_.serial_ = new ::gnss_driver::pb::Stream_Serial;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.serial)
+  return type_.serial_;
+}
+::gnss_driver::pb::Stream_Serial* Stream::release_serial() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.serial)
+  if (has_serial()) {
+    clear_has_type();
+    ::gnss_driver::pb::Stream_Serial* temp = type_.serial_;
+    type_.serial_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Stream::set_allocated_serial(::gnss_driver::pb::Stream_Serial* serial) {
+  clear_type();
+  if (serial) {
+    set_has_serial();
+    type_.serial_ = serial;
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.serial)
+}
+
+// optional .gnss_driver.pb.Stream.Tcp tcp = 3;
+bool Stream::has_tcp() const {
+  return type_case() == kTcp;
+}
+void Stream::set_has_tcp() {
+  _oneof_case_[0] = kTcp;
+}
+void Stream::clear_tcp() {
+  if (has_tcp()) {
+    delete type_.tcp_;
+    clear_has_type();
+  }
+}
+ const ::gnss_driver::pb::Stream_Tcp& Stream::tcp() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.tcp)
+  return has_tcp()
+      ? *type_.tcp_
+      : ::gnss_driver::pb::Stream_Tcp::default_instance();
+}
+::gnss_driver::pb::Stream_Tcp* Stream::mutable_tcp() {
+  if (!has_tcp()) {
+    clear_type();
+    set_has_tcp();
+    type_.tcp_ = new ::gnss_driver::pb::Stream_Tcp;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.tcp)
+  return type_.tcp_;
+}
+::gnss_driver::pb::Stream_Tcp* Stream::release_tcp() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.tcp)
+  if (has_tcp()) {
+    clear_has_type();
+    ::gnss_driver::pb::Stream_Tcp* temp = type_.tcp_;
+    type_.tcp_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Stream::set_allocated_tcp(::gnss_driver::pb::Stream_Tcp* tcp) {
+  clear_type();
+  if (tcp) {
+    set_has_tcp();
+    type_.tcp_ = tcp;
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.tcp)
+}
+
+// optional .gnss_driver.pb.Stream.Udp udp = 4;
+bool Stream::has_udp() const {
+  return type_case() == kUdp;
+}
+void Stream::set_has_udp() {
+  _oneof_case_[0] = kUdp;
+}
+void Stream::clear_udp() {
+  if (has_udp()) {
+    delete type_.udp_;
+    clear_has_type();
+  }
+}
+ const ::gnss_driver::pb::Stream_Udp& Stream::udp() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.udp)
+  return has_udp()
+      ? *type_.udp_
+      : ::gnss_driver::pb::Stream_Udp::default_instance();
+}
+::gnss_driver::pb::Stream_Udp* Stream::mutable_udp() {
+  if (!has_udp()) {
+    clear_type();
+    set_has_udp();
+    type_.udp_ = new ::gnss_driver::pb::Stream_Udp;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.udp)
+  return type_.udp_;
+}
+::gnss_driver::pb::Stream_Udp* Stream::release_udp() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.udp)
+  if (has_udp()) {
+    clear_has_type();
+    ::gnss_driver::pb::Stream_Udp* temp = type_.udp_;
+    type_.udp_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Stream::set_allocated_udp(::gnss_driver::pb::Stream_Udp* udp) {
+  clear_type();
+  if (udp) {
+    set_has_udp();
+    type_.udp_ = udp;
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.udp)
+}
+
+// optional .gnss_driver.pb.Stream.Ntrip ntrip = 5;
+bool Stream::has_ntrip() const {
+  return type_case() == kNtrip;
+}
+void Stream::set_has_ntrip() {
+  _oneof_case_[0] = kNtrip;
+}
+void Stream::clear_ntrip() {
+  if (has_ntrip()) {
+    delete type_.ntrip_;
+    clear_has_type();
+  }
+}
+ const ::gnss_driver::pb::Stream_Ntrip& Stream::ntrip() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Stream.ntrip)
+  return has_ntrip()
+      ? *type_.ntrip_
+      : ::gnss_driver::pb::Stream_Ntrip::default_instance();
+}
+::gnss_driver::pb::Stream_Ntrip* Stream::mutable_ntrip() {
+  if (!has_ntrip()) {
+    clear_type();
+    set_has_ntrip();
+    type_.ntrip_ = new ::gnss_driver::pb::Stream_Ntrip;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Stream.ntrip)
+  return type_.ntrip_;
+}
+::gnss_driver::pb::Stream_Ntrip* Stream::release_ntrip() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Stream.ntrip)
+  if (has_ntrip()) {
+    clear_has_type();
+    ::gnss_driver::pb::Stream_Ntrip* temp = type_.ntrip_;
+    type_.ntrip_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Stream::set_allocated_ntrip(::gnss_driver::pb::Stream_Ntrip* ntrip) {
+  clear_type();
+  if (ntrip) {
+    set_has_ntrip();
+    type_.ntrip_ = ntrip;
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Stream.ntrip)
+}
+
+bool Stream::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+void Stream::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+Stream::TypeCase Stream::type_case() const {
+  return Stream::TypeCase(_oneof_case_[0]);
+}
+inline const Stream* Stream::internal_default_instance() {
+  return &Stream_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int NovatelConfig::kImuOrientationFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NovatelConfig::NovatelConfig()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.NovatelConfig)
 }
@@ -2079,16 +2969,16 @@ void NovatelConfig::InitAsDefaultInstance() {
 }
 
 NovatelConfig::NovatelConfig(const NovatelConfig& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.NovatelConfig)
 }
 
 void NovatelConfig::SharedCtor() {
   _cached_size_ = 0;
   imu_orientation_ = 5;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 NovatelConfig::~NovatelConfig() {
@@ -2097,8 +2987,6 @@ NovatelConfig::~NovatelConfig() {
 }
 
 void NovatelConfig::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void NovatelConfig::SetCachedSize(int size) const {
@@ -2112,25 +3000,32 @@ const ::google::protobuf::Descriptor* NovatelConfig::descriptor() {
 }
 
 const NovatelConfig& NovatelConfig::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-NovatelConfig* NovatelConfig::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<NovatelConfig> NovatelConfig_default_instance_;
 
-NovatelConfig* NovatelConfig::New() const {
-  return new NovatelConfig;
+NovatelConfig* NovatelConfig::New(::google::protobuf::Arena* arena) const {
+  NovatelConfig* n = new NovatelConfig;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void NovatelConfig::Clear() {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.NovatelConfig)
   imu_orientation_ = 5;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool NovatelConfig::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.NovatelConfig)
   for (;;) {
@@ -2141,10 +3036,10 @@ bool NovatelConfig::MergePartialFromCodedStream(
       // optional int32 imu_orientation = 1 [default = 5];
       case 1: {
         if (tag == 8) {
+          set_has_imu_orientation();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &imu_orientation_)));
-          set_has_imu_orientation();
         } else {
           goto handle_unusual;
         }
@@ -2182,22 +3077,23 @@ void NovatelConfig::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->imu_orientation(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.NovatelConfig)
 }
 
-::google::protobuf::uint8* NovatelConfig::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* NovatelConfig::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.NovatelConfig)
   // optional int32 imu_orientation = 1 [default = 5];
   if (has_imu_orientation()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->imu_orientation(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2205,61 +3101,78 @@ void NovatelConfig::SerializeWithCachedSizes(
   return target;
 }
 
-int NovatelConfig::ByteSize() const {
-  int total_size = 0;
+size_t NovatelConfig::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.NovatelConfig)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 imu_orientation = 1 [default = 5];
-    if (has_imu_orientation()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->imu_orientation());
-    }
-
+  // optional int32 imu_orientation = 1 [default = 5];
+  if (has_imu_orientation()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->imu_orientation());
   }
-  if (!unknown_fields().empty()) {
+
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void NovatelConfig::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.NovatelConfig)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const NovatelConfig* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const NovatelConfig*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const NovatelConfig>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.NovatelConfig)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.NovatelConfig)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void NovatelConfig::MergeFrom(const NovatelConfig& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.NovatelConfig)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void NovatelConfig::UnsafeMergeFrom(const NovatelConfig& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_imu_orientation()) {
       set_imu_orientation(from.imu_orientation());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void NovatelConfig::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.NovatelConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void NovatelConfig::CopyFrom(const NovatelConfig& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.NovatelConfig)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool NovatelConfig::IsInitialized() const {
@@ -2268,12 +3181,14 @@ bool NovatelConfig::IsInitialized() const {
 }
 
 void NovatelConfig::Swap(NovatelConfig* other) {
-  if (other != this) {
-    std::swap(imu_orientation_, other->imu_orientation_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void NovatelConfig::InternalSwap(NovatelConfig* other) {
+  std::swap(imu_orientation_, other->imu_orientation_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata NovatelConfig::GetMetadata() const {
@@ -2284,14 +3199,46 @@ void NovatelConfig::Swap(NovatelConfig* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// NovatelConfig
+
+// optional int32 imu_orientation = 1 [default = 5];
+bool NovatelConfig::has_imu_orientation() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void NovatelConfig::set_has_imu_orientation() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void NovatelConfig::clear_has_imu_orientation() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void NovatelConfig::clear_imu_orientation() {
+  imu_orientation_ = 5;
+  clear_has_imu_orientation();
+}
+::google::protobuf::int32 NovatelConfig::imu_orientation() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.NovatelConfig.imu_orientation)
+  return imu_orientation_;
+}
+void NovatelConfig::set_imu_orientation(::google::protobuf::int32 value) {
+  set_has_imu_orientation();
+  imu_orientation_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.NovatelConfig.imu_orientation)
+}
+
+inline const NovatelConfig* NovatelConfig::internal_default_instance() {
+  return &NovatelConfig_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
-#endif  // !_MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 UbloxConfig::UbloxConfig()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.UbloxConfig)
 }
@@ -2300,15 +3247,15 @@ void UbloxConfig::InitAsDefaultInstance() {
 }
 
 UbloxConfig::UbloxConfig(const UbloxConfig& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.UbloxConfig)
 }
 
 void UbloxConfig::SharedCtor() {
   _cached_size_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 UbloxConfig::~UbloxConfig() {
@@ -2317,8 +3264,6 @@ UbloxConfig::~UbloxConfig() {
 }
 
 void UbloxConfig::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void UbloxConfig::SetCachedSize(int size) const {
@@ -2332,24 +3277,31 @@ const ::google::protobuf::Descriptor* UbloxConfig::descriptor() {
 }
 
 const UbloxConfig& UbloxConfig::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-UbloxConfig* UbloxConfig::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<UbloxConfig> UbloxConfig_default_instance_;
 
-UbloxConfig* UbloxConfig::New() const {
-  return new UbloxConfig;
+UbloxConfig* UbloxConfig::New(::google::protobuf::Arena* arena) const {
+  UbloxConfig* n = new UbloxConfig;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void UbloxConfig::Clear() {
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.UbloxConfig)
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool UbloxConfig::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.UbloxConfig)
   for (;;) {
@@ -2377,17 +3329,18 @@ failure:
 void UbloxConfig::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:gnss_driver.pb.UbloxConfig)
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.UbloxConfig)
 }
 
-::google::protobuf::uint8* UbloxConfig::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* UbloxConfig::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.UbloxConfig)
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2395,47 +3348,66 @@ void UbloxConfig::SerializeWithCachedSizes(
   return target;
 }
 
-int UbloxConfig::ByteSize() const {
-  int total_size = 0;
+size_t UbloxConfig::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.UbloxConfig)
+  size_t total_size = 0;
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void UbloxConfig::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.UbloxConfig)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const UbloxConfig* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const UbloxConfig*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const UbloxConfig>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.UbloxConfig)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.UbloxConfig)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void UbloxConfig::MergeFrom(const UbloxConfig& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.UbloxConfig)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void UbloxConfig::UnsafeMergeFrom(const UbloxConfig& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void UbloxConfig::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.UbloxConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UbloxConfig::CopyFrom(const UbloxConfig& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.UbloxConfig)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool UbloxConfig::IsInitialized() const {
@@ -2444,10 +3416,12 @@ bool UbloxConfig::IsInitialized() const {
 }
 
 void UbloxConfig::Swap(UbloxConfig* other) {
-  if (other != this) {
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void UbloxConfig::InternalSwap(UbloxConfig* other) {
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata UbloxConfig::GetMetadata() const {
@@ -2458,6 +3432,13 @@ void UbloxConfig::Swap(UbloxConfig* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// UbloxConfig
+
+inline const UbloxConfig* UbloxConfig::internal_default_instance() {
+  return &UbloxConfig_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2466,7 +3447,7 @@ const ::google::protobuf::EnumDescriptor* Config_RtkSolutionType_descriptor() {
   return Config_RtkSolutionType_descriptor_;
 }
 bool Config_RtkSolutionType_IsValid(int value) {
-  switch(value) {
+  switch (value) {
     case 1:
     case 2:
       return true;
@@ -2475,14 +3456,14 @@ bool Config_RtkSolutionType_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const Config_RtkSolutionType Config::RTK_RECEIVER_SOLUTION;
 const Config_RtkSolutionType Config::RTK_SOFTWARE_SOLUTION;
 const Config_RtkSolutionType Config::RtkSolutionType_MIN;
 const Config_RtkSolutionType Config::RtkSolutionType_MAX;
 const int Config::RtkSolutionType_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Config::kDataFieldNumber;
 const int Config::kCommandFieldNumber;
 const int Config::kRtkFromFieldNumber;
@@ -2492,39 +3473,45 @@ const int Config::kLogoutCommandsFieldNumber;
 const int Config::kNovatelConfigFieldNumber;
 const int Config::kUbloxConfigFieldNumber;
 const int Config::kRtkSolutionTypeFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Config::Config()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_config_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:gnss_driver.pb.Config)
 }
 
 void Config::InitAsDefaultInstance() {
-  data_ = const_cast< ::gnss_driver::pb::Stream*>(&::gnss_driver::pb::Stream::default_instance());
-  command_ = const_cast< ::gnss_driver::pb::Stream*>(&::gnss_driver::pb::Stream::default_instance());
-  rtk_from_ = const_cast< ::gnss_driver::pb::Stream*>(&::gnss_driver::pb::Stream::default_instance());
-  rtk_to_ = const_cast< ::gnss_driver::pb::Stream*>(&::gnss_driver::pb::Stream::default_instance());
-  Config_default_oneof_instance_->novatel_config_ = const_cast< ::gnss_driver::pb::NovatelConfig*>(&::gnss_driver::pb::NovatelConfig::default_instance());
-  Config_default_oneof_instance_->ublox_config_ = const_cast< ::gnss_driver::pb::UbloxConfig*>(&::gnss_driver::pb::UbloxConfig::default_instance());
+  data_ = const_cast< ::gnss_driver::pb::Stream*>(
+      ::gnss_driver::pb::Stream::internal_default_instance());
+  command_ = const_cast< ::gnss_driver::pb::Stream*>(
+      ::gnss_driver::pb::Stream::internal_default_instance());
+  rtk_from_ = const_cast< ::gnss_driver::pb::Stream*>(
+      ::gnss_driver::pb::Stream::internal_default_instance());
+  rtk_to_ = const_cast< ::gnss_driver::pb::Stream*>(
+      ::gnss_driver::pb::Stream::internal_default_instance());
+  Config_default_oneof_instance_->novatel_config_ = const_cast< ::gnss_driver::pb::NovatelConfig*>(
+      ::gnss_driver::pb::NovatelConfig::internal_default_instance());
+  Config_default_oneof_instance_->ublox_config_ = const_cast< ::gnss_driver::pb::UbloxConfig*>(
+      ::gnss_driver::pb::UbloxConfig::internal_default_instance());
 }
 
 Config::Config(const Config& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gnss_driver.pb.Config)
 }
 
 void Config::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   data_ = NULL;
   command_ = NULL;
   rtk_from_ = NULL;
   rtk_to_ = NULL;
   rtk_solution_type_ = 1;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
   clear_has_device_config();
 }
 
@@ -2537,7 +3524,7 @@ void Config::SharedDtor() {
   if (has_device_config()) {
     clear_device_config();
   }
-  if (this != default_instance_) {
+  if (this != &Config_default_instance_.get()) {
     delete data_;
     delete command_;
     delete rtk_from_;
@@ -2556,18 +3543,23 @@ const ::google::protobuf::Descriptor* Config::descriptor() {
 }
 
 const Config& Config::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_config_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_config_2eproto();
+  return *internal_default_instance();
 }
 
-Config* Config::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<Config> Config_default_instance_;
 
-Config* Config::New() const {
-  return new Config;
+Config* Config::New(::google::protobuf::Arena* arena) const {
+  Config* n = new Config;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Config::clear_device_config() {
-  switch(device_config_case()) {
+// @@protoc_insertion_point(one_of_clear_start:gnss_driver.pb.Config)
+  switch (device_config_case()) {
     case kNovatelConfig: {
       delete device_config_.novatel_config_;
       break;
@@ -2585,7 +3577,8 @@ void Config::clear_device_config() {
 
 
 void Config::Clear() {
-  if (_has_bits_[0 / 32] & 15) {
+// @@protoc_insertion_point(message_clear_start:gnss_driver.pb.Config)
+  if (_has_bits_[0 / 32] & 15u) {
     if (has_data()) {
       if (data_ != NULL) data_->::gnss_driver::pb::Stream::Clear();
     }
@@ -2603,13 +3596,15 @@ void Config::Clear() {
   login_commands_.Clear();
   logout_commands_.Clear();
   clear_device_config();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Config::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gnss_driver.pb.Config)
   for (;;) {
@@ -2705,19 +3700,19 @@ bool Config::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(66)) goto parse_ublox_config;
+        goto after_ublox_config;
         break;
       }
 
       // optional .gnss_driver.pb.UbloxConfig ublox_config = 8;
       case 8: {
         if (tag == 66) {
-         parse_ublox_config:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_ublox_config()));
         } else {
           goto handle_unusual;
         }
+       after_ublox_config:
         if (input->ExpectTag(72)) goto parse_rtk_solution_type;
         break;
       }
@@ -2770,25 +3765,25 @@ void Config::SerializeWithCachedSizes(
   // optional .gnss_driver.pb.Stream data = 1;
   if (has_data()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->data(), output);
+      1, *this->data_, output);
   }
 
   // optional .gnss_driver.pb.Stream command = 2;
   if (has_command()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->command(), output);
+      2, *this->command_, output);
   }
 
   // optional .gnss_driver.pb.Stream rtk_from = 3;
   if (has_rtk_from()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->rtk_from(), output);
+      3, *this->rtk_from_, output);
   }
 
   // optional .gnss_driver.pb.Stream rtk_to = 4;
   if (has_rtk_to()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->rtk_to(), output);
+      4, *this->rtk_to_, output);
   }
 
   // repeated bytes login_commands = 5;
@@ -2803,60 +3798,60 @@ void Config::SerializeWithCachedSizes(
       6, this->logout_commands(i), output);
   }
 
-  // optional .gnss_driver.pb.NovatelConfig novatel_config = 7;
-  if (has_novatel_config()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->novatel_config(), output);
+  switch (device_config_case()) {
+    case kNovatelConfig:
+      ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+        7, *device_config_.novatel_config_, output);
+      break;
+    case kUbloxConfig:
+      ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+        8, *device_config_.ublox_config_, output);
+      break;
+    default: ;
   }
-
-  // optional .gnss_driver.pb.UbloxConfig ublox_config = 8;
-  if (has_ublox_config()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->ublox_config(), output);
-  }
-
   // optional .gnss_driver.pb.Config.RtkSolutionType rtk_solution_type = 9;
   if (has_rtk_solution_type()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       9, this->rtk_solution_type(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gnss_driver.pb.Config)
 }
 
-::google::protobuf::uint8* Config::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Config::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:gnss_driver.pb.Config)
   // optional .gnss_driver.pb.Stream data = 1;
   if (has_data()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->data(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->data_, false, target);
   }
 
   // optional .gnss_driver.pb.Stream command = 2;
   if (has_command()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->command(), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->command_, false, target);
   }
 
   // optional .gnss_driver.pb.Stream rtk_from = 3;
   if (has_rtk_from()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->rtk_from(), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->rtk_from_, false, target);
   }
 
   // optional .gnss_driver.pb.Stream rtk_to = 4;
   if (has_rtk_to()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->rtk_to(), target);
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->rtk_to_, false, target);
   }
 
   // repeated bytes login_commands = 5;
@@ -2871,27 +3866,26 @@ void Config::SerializeWithCachedSizes(
       WriteBytesToArray(6, this->logout_commands(i), target);
   }
 
-  // optional .gnss_driver.pb.NovatelConfig novatel_config = 7;
-  if (has_novatel_config()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        7, this->novatel_config(), target);
+  switch (device_config_case()) {
+    case kNovatelConfig:
+      target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessageNoVirtualToArray(
+          7, *device_config_.novatel_config_, false, target);
+      break;
+    case kUbloxConfig:
+      target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessageNoVirtualToArray(
+          8, *device_config_.ublox_config_, false, target);
+      break;
+    default: ;
   }
-
-  // optional .gnss_driver.pb.UbloxConfig ublox_config = 8;
-  if (has_ublox_config()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        8, this->ublox_config(), target);
-  }
-
   // optional .gnss_driver.pb.Config.RtkSolutionType rtk_solution_type = 9;
   if (has_rtk_solution_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       9, this->rtk_solution_type(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2899,56 +3893,57 @@ void Config::SerializeWithCachedSizes(
   return target;
 }
 
-int Config::ByteSize() const {
-  int total_size = 0;
+size_t Config::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:gnss_driver.pb.Config)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 15u) {
     // optional .gnss_driver.pb.Stream data = 1;
     if (has_data()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->data());
+          *this->data_);
     }
 
     // optional .gnss_driver.pb.Stream command = 2;
     if (has_command()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->command());
+          *this->command_);
     }
 
     // optional .gnss_driver.pb.Stream rtk_from = 3;
     if (has_rtk_from()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->rtk_from());
+          *this->rtk_from_);
     }
 
     // optional .gnss_driver.pb.Stream rtk_to = 4;
     if (has_rtk_to()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->rtk_to());
+          *this->rtk_to_);
     }
 
   }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // optional .gnss_driver.pb.Config.RtkSolutionType rtk_solution_type = 9;
-    if (has_rtk_solution_type()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->rtk_solution_type());
-    }
-
+  // optional .gnss_driver.pb.Config.RtkSolutionType rtk_solution_type = 9;
+  if (has_rtk_solution_type()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->rtk_solution_type());
   }
+
   // repeated bytes login_commands = 5;
-  total_size += 1 * this->login_commands_size();
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->login_commands_size());
   for (int i = 0; i < this->login_commands_size(); i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
       this->login_commands(i));
   }
 
   // repeated bytes logout_commands = 6;
-  total_size += 1 * this->logout_commands_size();
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->logout_commands_size());
   for (int i = 0; i < this->logout_commands_size(); i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
       this->logout_commands(i));
@@ -2959,47 +3954,60 @@ int Config::ByteSize() const {
     case kNovatelConfig: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->novatel_config());
+          *device_config_.novatel_config_);
       break;
     }
     // optional .gnss_driver.pb.UbloxConfig ublox_config = 8;
     case kUbloxConfig: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->ublox_config());
+          *device_config_.ublox_config_);
       break;
     }
     case DEVICE_CONFIG_NOT_SET: {
       break;
     }
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void Config::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:gnss_driver.pb.Config)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   const Config* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Config*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const Config>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gnss_driver.pb.Config)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:gnss_driver.pb.Config)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void Config::MergeFrom(const Config& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  login_commands_.MergeFrom(from.login_commands_);
-  logout_commands_.MergeFrom(from.logout_commands_);
+// @@protoc_insertion_point(class_specific_merge_from_start:gnss_driver.pb.Config)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Config::UnsafeMergeFrom(const Config& from) {
+  GOOGLE_DCHECK(&from != this);
+  login_commands_.UnsafeMergeFrom(from.login_commands_);
+  logout_commands_.UnsafeMergeFrom(from.logout_commands_);
   switch (from.device_config_case()) {
     case kNovatelConfig: {
       mutable_novatel_config()->::gnss_driver::pb::NovatelConfig::MergeFrom(from.novatel_config());
@@ -3032,19 +4040,24 @@ void Config::MergeFrom(const Config& from) {
       set_rtk_solution_type(from.rtk_solution_type());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
 }
 
 void Config::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:gnss_driver.pb.Config)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Config::CopyFrom(const Config& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:gnss_driver.pb.Config)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool Config::IsInitialized() const {
@@ -3053,20 +4066,22 @@ bool Config::IsInitialized() const {
 }
 
 void Config::Swap(Config* other) {
-  if (other != this) {
-    std::swap(data_, other->data_);
-    std::swap(command_, other->command_);
-    std::swap(rtk_from_, other->rtk_from_);
-    std::swap(rtk_to_, other->rtk_to_);
-    login_commands_.Swap(&other->login_commands_);
-    logout_commands_.Swap(&other->logout_commands_);
-    std::swap(rtk_solution_type_, other->rtk_solution_type_);
-    std::swap(device_config_, other->device_config_);
-    std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Config::InternalSwap(Config* other) {
+  std::swap(data_, other->data_);
+  std::swap(command_, other->command_);
+  std::swap(rtk_from_, other->rtk_from_);
+  std::swap(rtk_to_, other->rtk_to_);
+  login_commands_.UnsafeArenaSwap(&other->login_commands_);
+  logout_commands_.UnsafeArenaSwap(&other->logout_commands_);
+  std::swap(rtk_solution_type_, other->rtk_solution_type_);
+  std::swap(device_config_, other->device_config_);
+  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Config::GetMetadata() const {
@@ -3077,6 +4092,433 @@ void Config::Swap(Config* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Config
+
+// optional .gnss_driver.pb.Stream data = 1;
+bool Config::has_data() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Config::set_has_data() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Config::clear_has_data() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Config::clear_data() {
+  if (data_ != NULL) data_->::gnss_driver::pb::Stream::Clear();
+  clear_has_data();
+}
+const ::gnss_driver::pb::Stream& Config::data() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.data)
+  return data_ != NULL ? *data_
+                         : *::gnss_driver::pb::Stream::internal_default_instance();
+}
+::gnss_driver::pb::Stream* Config::mutable_data() {
+  set_has_data();
+  if (data_ == NULL) {
+    data_ = new ::gnss_driver::pb::Stream;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.data)
+  return data_;
+}
+::gnss_driver::pb::Stream* Config::release_data() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Config.data)
+  clear_has_data();
+  ::gnss_driver::pb::Stream* temp = data_;
+  data_ = NULL;
+  return temp;
+}
+void Config::set_allocated_data(::gnss_driver::pb::Stream* data) {
+  delete data_;
+  data_ = data;
+  if (data) {
+    set_has_data();
+  } else {
+    clear_has_data();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Config.data)
+}
+
+// optional .gnss_driver.pb.Stream command = 2;
+bool Config::has_command() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Config::set_has_command() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Config::clear_has_command() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Config::clear_command() {
+  if (command_ != NULL) command_->::gnss_driver::pb::Stream::Clear();
+  clear_has_command();
+}
+const ::gnss_driver::pb::Stream& Config::command() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.command)
+  return command_ != NULL ? *command_
+                         : *::gnss_driver::pb::Stream::internal_default_instance();
+}
+::gnss_driver::pb::Stream* Config::mutable_command() {
+  set_has_command();
+  if (command_ == NULL) {
+    command_ = new ::gnss_driver::pb::Stream;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.command)
+  return command_;
+}
+::gnss_driver::pb::Stream* Config::release_command() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Config.command)
+  clear_has_command();
+  ::gnss_driver::pb::Stream* temp = command_;
+  command_ = NULL;
+  return temp;
+}
+void Config::set_allocated_command(::gnss_driver::pb::Stream* command) {
+  delete command_;
+  command_ = command;
+  if (command) {
+    set_has_command();
+  } else {
+    clear_has_command();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Config.command)
+}
+
+// optional .gnss_driver.pb.Stream rtk_from = 3;
+bool Config::has_rtk_from() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Config::set_has_rtk_from() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Config::clear_has_rtk_from() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Config::clear_rtk_from() {
+  if (rtk_from_ != NULL) rtk_from_->::gnss_driver::pb::Stream::Clear();
+  clear_has_rtk_from();
+}
+const ::gnss_driver::pb::Stream& Config::rtk_from() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.rtk_from)
+  return rtk_from_ != NULL ? *rtk_from_
+                         : *::gnss_driver::pb::Stream::internal_default_instance();
+}
+::gnss_driver::pb::Stream* Config::mutable_rtk_from() {
+  set_has_rtk_from();
+  if (rtk_from_ == NULL) {
+    rtk_from_ = new ::gnss_driver::pb::Stream;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.rtk_from)
+  return rtk_from_;
+}
+::gnss_driver::pb::Stream* Config::release_rtk_from() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Config.rtk_from)
+  clear_has_rtk_from();
+  ::gnss_driver::pb::Stream* temp = rtk_from_;
+  rtk_from_ = NULL;
+  return temp;
+}
+void Config::set_allocated_rtk_from(::gnss_driver::pb::Stream* rtk_from) {
+  delete rtk_from_;
+  rtk_from_ = rtk_from;
+  if (rtk_from) {
+    set_has_rtk_from();
+  } else {
+    clear_has_rtk_from();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Config.rtk_from)
+}
+
+// optional .gnss_driver.pb.Stream rtk_to = 4;
+bool Config::has_rtk_to() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Config::set_has_rtk_to() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Config::clear_has_rtk_to() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Config::clear_rtk_to() {
+  if (rtk_to_ != NULL) rtk_to_->::gnss_driver::pb::Stream::Clear();
+  clear_has_rtk_to();
+}
+const ::gnss_driver::pb::Stream& Config::rtk_to() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.rtk_to)
+  return rtk_to_ != NULL ? *rtk_to_
+                         : *::gnss_driver::pb::Stream::internal_default_instance();
+}
+::gnss_driver::pb::Stream* Config::mutable_rtk_to() {
+  set_has_rtk_to();
+  if (rtk_to_ == NULL) {
+    rtk_to_ = new ::gnss_driver::pb::Stream;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.rtk_to)
+  return rtk_to_;
+}
+::gnss_driver::pb::Stream* Config::release_rtk_to() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Config.rtk_to)
+  clear_has_rtk_to();
+  ::gnss_driver::pb::Stream* temp = rtk_to_;
+  rtk_to_ = NULL;
+  return temp;
+}
+void Config::set_allocated_rtk_to(::gnss_driver::pb::Stream* rtk_to) {
+  delete rtk_to_;
+  rtk_to_ = rtk_to;
+  if (rtk_to) {
+    set_has_rtk_to();
+  } else {
+    clear_has_rtk_to();
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Config.rtk_to)
+}
+
+// repeated bytes login_commands = 5;
+int Config::login_commands_size() const {
+  return login_commands_.size();
+}
+void Config::clear_login_commands() {
+  login_commands_.Clear();
+}
+const ::std::string& Config::login_commands(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.login_commands)
+  return login_commands_.Get(index);
+}
+::std::string* Config::mutable_login_commands(int index) {
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.login_commands)
+  return login_commands_.Mutable(index);
+}
+void Config::set_login_commands(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Config.login_commands)
+  login_commands_.Mutable(index)->assign(value);
+}
+void Config::set_login_commands(int index, const char* value) {
+  login_commands_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Config.login_commands)
+}
+void Config::set_login_commands(int index, const void* value, size_t size) {
+  login_commands_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Config.login_commands)
+}
+::std::string* Config::add_login_commands() {
+  // @@protoc_insertion_point(field_add_mutable:gnss_driver.pb.Config.login_commands)
+  return login_commands_.Add();
+}
+void Config::add_login_commands(const ::std::string& value) {
+  login_commands_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Config.login_commands)
+}
+void Config::add_login_commands(const char* value) {
+  login_commands_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:gnss_driver.pb.Config.login_commands)
+}
+void Config::add_login_commands(const void* value, size_t size) {
+  login_commands_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:gnss_driver.pb.Config.login_commands)
+}
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Config::login_commands() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Config.login_commands)
+  return login_commands_;
+}
+::google::protobuf::RepeatedPtrField< ::std::string>*
+Config::mutable_login_commands() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Config.login_commands)
+  return &login_commands_;
+}
+
+// repeated bytes logout_commands = 6;
+int Config::logout_commands_size() const {
+  return logout_commands_.size();
+}
+void Config::clear_logout_commands() {
+  logout_commands_.Clear();
+}
+const ::std::string& Config::logout_commands(int index) const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.logout_commands)
+  return logout_commands_.Get(index);
+}
+::std::string* Config::mutable_logout_commands(int index) {
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.logout_commands)
+  return logout_commands_.Mutable(index);
+}
+void Config::set_logout_commands(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Config.logout_commands)
+  logout_commands_.Mutable(index)->assign(value);
+}
+void Config::set_logout_commands(int index, const char* value) {
+  logout_commands_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:gnss_driver.pb.Config.logout_commands)
+}
+void Config::set_logout_commands(int index, const void* value, size_t size) {
+  logout_commands_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:gnss_driver.pb.Config.logout_commands)
+}
+::std::string* Config::add_logout_commands() {
+  // @@protoc_insertion_point(field_add_mutable:gnss_driver.pb.Config.logout_commands)
+  return logout_commands_.Add();
+}
+void Config::add_logout_commands(const ::std::string& value) {
+  logout_commands_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:gnss_driver.pb.Config.logout_commands)
+}
+void Config::add_logout_commands(const char* value) {
+  logout_commands_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:gnss_driver.pb.Config.logout_commands)
+}
+void Config::add_logout_commands(const void* value, size_t size) {
+  logout_commands_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:gnss_driver.pb.Config.logout_commands)
+}
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Config::logout_commands() const {
+  // @@protoc_insertion_point(field_list:gnss_driver.pb.Config.logout_commands)
+  return logout_commands_;
+}
+::google::protobuf::RepeatedPtrField< ::std::string>*
+Config::mutable_logout_commands() {
+  // @@protoc_insertion_point(field_mutable_list:gnss_driver.pb.Config.logout_commands)
+  return &logout_commands_;
+}
+
+// optional .gnss_driver.pb.NovatelConfig novatel_config = 7;
+bool Config::has_novatel_config() const {
+  return device_config_case() == kNovatelConfig;
+}
+void Config::set_has_novatel_config() {
+  _oneof_case_[0] = kNovatelConfig;
+}
+void Config::clear_novatel_config() {
+  if (has_novatel_config()) {
+    delete device_config_.novatel_config_;
+    clear_has_device_config();
+  }
+}
+ const ::gnss_driver::pb::NovatelConfig& Config::novatel_config() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.novatel_config)
+  return has_novatel_config()
+      ? *device_config_.novatel_config_
+      : ::gnss_driver::pb::NovatelConfig::default_instance();
+}
+::gnss_driver::pb::NovatelConfig* Config::mutable_novatel_config() {
+  if (!has_novatel_config()) {
+    clear_device_config();
+    set_has_novatel_config();
+    device_config_.novatel_config_ = new ::gnss_driver::pb::NovatelConfig;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.novatel_config)
+  return device_config_.novatel_config_;
+}
+::gnss_driver::pb::NovatelConfig* Config::release_novatel_config() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Config.novatel_config)
+  if (has_novatel_config()) {
+    clear_has_device_config();
+    ::gnss_driver::pb::NovatelConfig* temp = device_config_.novatel_config_;
+    device_config_.novatel_config_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Config::set_allocated_novatel_config(::gnss_driver::pb::NovatelConfig* novatel_config) {
+  clear_device_config();
+  if (novatel_config) {
+    set_has_novatel_config();
+    device_config_.novatel_config_ = novatel_config;
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Config.novatel_config)
+}
+
+// optional .gnss_driver.pb.UbloxConfig ublox_config = 8;
+bool Config::has_ublox_config() const {
+  return device_config_case() == kUbloxConfig;
+}
+void Config::set_has_ublox_config() {
+  _oneof_case_[0] = kUbloxConfig;
+}
+void Config::clear_ublox_config() {
+  if (has_ublox_config()) {
+    delete device_config_.ublox_config_;
+    clear_has_device_config();
+  }
+}
+ const ::gnss_driver::pb::UbloxConfig& Config::ublox_config() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.ublox_config)
+  return has_ublox_config()
+      ? *device_config_.ublox_config_
+      : ::gnss_driver::pb::UbloxConfig::default_instance();
+}
+::gnss_driver::pb::UbloxConfig* Config::mutable_ublox_config() {
+  if (!has_ublox_config()) {
+    clear_device_config();
+    set_has_ublox_config();
+    device_config_.ublox_config_ = new ::gnss_driver::pb::UbloxConfig;
+  }
+  // @@protoc_insertion_point(field_mutable:gnss_driver.pb.Config.ublox_config)
+  return device_config_.ublox_config_;
+}
+::gnss_driver::pb::UbloxConfig* Config::release_ublox_config() {
+  // @@protoc_insertion_point(field_release:gnss_driver.pb.Config.ublox_config)
+  if (has_ublox_config()) {
+    clear_has_device_config();
+    ::gnss_driver::pb::UbloxConfig* temp = device_config_.ublox_config_;
+    device_config_.ublox_config_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void Config::set_allocated_ublox_config(::gnss_driver::pb::UbloxConfig* ublox_config) {
+  clear_device_config();
+  if (ublox_config) {
+    set_has_ublox_config();
+    device_config_.ublox_config_ = ublox_config;
+  }
+  // @@protoc_insertion_point(field_set_allocated:gnss_driver.pb.Config.ublox_config)
+}
+
+// optional .gnss_driver.pb.Config.RtkSolutionType rtk_solution_type = 9;
+bool Config::has_rtk_solution_type() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void Config::set_has_rtk_solution_type() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void Config::clear_has_rtk_solution_type() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void Config::clear_rtk_solution_type() {
+  rtk_solution_type_ = 1;
+  clear_has_rtk_solution_type();
+}
+::gnss_driver::pb::Config_RtkSolutionType Config::rtk_solution_type() const {
+  // @@protoc_insertion_point(field_get:gnss_driver.pb.Config.rtk_solution_type)
+  return static_cast< ::gnss_driver::pb::Config_RtkSolutionType >(rtk_solution_type_);
+}
+void Config::set_rtk_solution_type(::gnss_driver::pb::Config_RtkSolutionType value) {
+  assert(::gnss_driver::pb::Config_RtkSolutionType_IsValid(value));
+  set_has_rtk_solution_type();
+  rtk_solution_type_ = value;
+  // @@protoc_insertion_point(field_set:gnss_driver.pb.Config.rtk_solution_type)
+}
+
+bool Config::has_device_config() const {
+  return device_config_case() != DEVICE_CONFIG_NOT_SET;
+}
+void Config::clear_has_device_config() {
+  _oneof_case_[0] = DEVICE_CONFIG_NOT_SET;
+}
+Config::DeviceConfigCase Config::device_config_case() const {
+  return Config::DeviceConfigCase(_oneof_case_[0]);
+}
+inline const Config* Config::internal_default_instance() {
+  return &Config_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
