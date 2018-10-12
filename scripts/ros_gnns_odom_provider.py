@@ -9,10 +9,13 @@ import math
 import tf_conversions
 import tf2_ros
 import geometry_msgs.msg
+from geographic_msgs.msg import GeoPoint
+from geodesy.utm import UTMPoint
+from sensor_msgs.msg import NavSatFix
 
 
 def gnss_odom_provider():
-    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist
+    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos
 
     hasFirstOdom = False
     firstPosition = geometry_msgs.msg.Vector3()
@@ -88,10 +91,34 @@ def gnss_odom_provider():
 
 
     pubOdom = rospy.Publisher('/odometry/gnss', Odometry, queue_size = 10)
+    # pubOdomV = rospy.Publisher('/odometry/vehicle', Odometry, queue_size = 10)
     pubTwist = rospy.Publisher('/odometry/twist', geometry_msgs.msg.TwistWithCovarianceStamped, queue_size = 10)
+    pubOrigin = rospy.Publisher('/localization/map_origin', GeoPoint, queue_size = 10)
+    pubPos = rospy.Publisher('/localization/gnss_fix', NavSatFix, queue_size = 10)
+
+    rospy.Timer(rospy.Duration(.1), publishOrigin)
 
     while not rospy.is_shutdown():
         rate.sleep()
+
+def publishOrigin(timerStats):
+    global pubOrigin, pubPos
+    if hasFirstOdom:
+        pUtm = UTMPoint(easting=firstPosition.x, northing=firstPosition.y, altitude=firstPosition.z, zone=11, band='S')
+        pubOrigin.publish( pUtm.toMsg())
+    pUtm = UTMPoint(easting= lastOdom.pose.pose.position.x + firstPosition.x, northing= lastOdom.pose.pose.position.y + firstPosition.y, altitude= lastOdom.pose.pose.position.z + firstPosition.z, zone=11, band='S')
+    gp = pUtm.toMsg()
+    fix = NavSatFix()
+    fix.latitude = gp.latitude
+    fix.longitude = gp.longitude
+    fix.altitude = gp.altitude
+    pubPos.publish(fix)
+
+    # conv = getMeridianConvergence(gp.latitude, gp.longitude)
+    # print("meridian convergence: " + str(conv))
+
+
+
 
 def callbackTwist(twist):
     global pubTwist
@@ -102,7 +129,7 @@ def callbackTwist(twist):
 
 
 def callbackGnssOdom(gpsOdom):
-    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom
+    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubOrigin
 
     odom = Odometry()
 
@@ -127,8 +154,17 @@ def callbackGnssOdom(gpsOdom):
         gpsOdom.localization.orientation.qz,
         gpsOdom.localization.orientation.qw)
     euler = tf_conversions.transformations.euler_from_quaternion(quaternion)
-    q = tf_conversions.transformations.quaternion_from_euler(euler[0], euler[1], euler[2] + math.pi/2)
 
+    pUtm = UTMPoint(easting=gpsOdom.localization.position.x, northing=gpsOdom.localization.position.y, altitude=gpsOdom.localization.position.z, zone=11, band='S')
+    gp = pUtm.toMsg()
+    fix = NavSatFix()
+    fix.latitude = gp.latitude
+    fix.longitude = gp.longitude
+    fix.altitude = gp.altitude
+    conv = getMeridianConvergence(gp.latitude, gp.longitude)
+    # print("meridian convergence: " + str(conv))
+
+    q = tf_conversions.transformations.quaternion_from_euler(euler[0], euler[1], euler[2] + math.pi/2 - conv)
     odom.pose.pose.orientation.x = q[0]
     odom.pose.pose.orientation.y = q[1]
     odom.pose.pose.orientation.z = q[2]
@@ -213,6 +249,52 @@ def callbackGnssOdom(gpsOdom):
     # g = Gps()
     # g.localization.linear_velocity
 
+def getMeridianConvergence(longitude, latitude):
+    lambda_ = longitude
+    phi = latitude
+
+    latId  = int(math.floor(phi))
+    longId = int(math.floor(lambda_))
+
+    lambda_0 = float(longId / 6) * 6.0
+
+    #west of zero meridian
+    if longitude < 0.0:
+        lambda_0 -= 3.0
+    #east of zero meridian
+    else:
+        lambda_0 += 3.0
+
+    #exception for Norway
+    if latId >= 56 and latId < 64:
+        #sea area west of Norway
+        if longId >= 0 and longId < 3:
+            lambda_0 = 1.5
+        #Norway
+        elif longId >= 3 and longId < 12:
+            lambda_0 = 7.5
+
+    #exception for Svalbard
+    elif latId >= 72:  
+        #sea area west of Svalbard
+        if longId >= 0 and longId < 9:     
+            lambda_0 = 4.5      
+        #western Svalbard
+        elif longId >= 9 and longId < 21:     
+            lambda_0 = 15.0      
+        #eastern Svalbard
+        elif longId >= 21 and longId < 33:     
+            lambda_0 = 27.0      
+        #sea area east of Svalbard
+        elif longId >= 33 and longId < 42:      
+            lambda_0 = 37.5
+      
+    phi = phi * math.pi / 180.0
+    lambda_ = lambda_ * math.pi / 180.0
+    lambda_0 = lambda_0 * math.pi / 180.0
+
+    return math.atan(math.tan(lambda_ - lambda_0) * math.sin(phi))
+  
 
 if __name__ == '__main__':
     try:
