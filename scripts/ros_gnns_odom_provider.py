@@ -31,7 +31,7 @@ def gnss_odom_provider():
     rospy.Subscriber('/gnss_driver/odometry', Gps, callbackGnssOdom)
     rospy.Subscriber('/vehicle/twist', geometry_msgs.msg.TwistStamped, callbackTwist)
 
-    rospy.Subscriber('/planning/dist2lane', geometry_msgs.msg.Vector3, callbackOffset)
+    rospy.Subscriber('/planning/closest_point_on_lane', geometry_msgs.msg.Vector3, callbackOffset)
    
 #     ---
 # header: 
