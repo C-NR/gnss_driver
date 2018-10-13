@@ -15,12 +15,13 @@ from sensor_msgs.msg import NavSatFix
 
 
 def gnss_odom_provider():
-    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos
+    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos, pubOdomRel, offset
 
     hasFirstOdom = False
     firstPosition = geometry_msgs.msg.Vector3()
     lastOdom = Odometry()
     eulerFirst = [0,0,0]
+    offset = [0, 0 ,0]
 
     rospy.init_node('gnss_odom_provider', anonymous=True)
     rate = rospy.Rate(100) # hz
@@ -29,6 +30,9 @@ def gnss_odom_provider():
 
     rospy.Subscriber('/gnss_driver/odometry', Gps, callbackGnssOdom)
     rospy.Subscriber('/vehicle/twist', geometry_msgs.msg.TwistStamped, callbackTwist)
+
+    rospy.Subscriber('/planning/dist2lane', geometry_msgs.msg.Vector3, callbackOffset)
+   
 #     ---
 # header: 
 #   seq: 37415
@@ -91,6 +95,7 @@ def gnss_odom_provider():
 
 
     pubOdom = rospy.Publisher('/odometry/gnss', Odometry, queue_size = 10)
+    pubOdomRel = rospy.Publisher('/odometry/gnss_relative', Odometry, queue_size = 10)
     # pubOdomV = rospy.Publisher('/odometry/vehicle', Odometry, queue_size = 10)
     pubTwist = rospy.Publisher('/odometry/twist', geometry_msgs.msg.TwistWithCovarianceStamped, queue_size = 10)
     pubOrigin = rospy.Publisher('/localization/map_origin', GeoPoint, queue_size = 10)
@@ -117,8 +122,10 @@ def publishOrigin(timerStats):
     # conv = getMeridianConvergence(gp.latitude, gp.longitude)
     # print("meridian convergence: " + str(conv))
 
-
-
+def callbackOffset(closestLanePoint):
+    global offset
+    diff = lastOdom.pose.pose.position.y - closestLanePoint.y
+    offset[1] = offset[1] - diff
 
 def callbackTwist(twist):
     global pubTwist
@@ -129,32 +136,9 @@ def callbackTwist(twist):
 
 
 def callbackGnssOdom(gpsOdom):
-    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubOrigin
+    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubOrigin, offset
 
     odom = Odometry()
-
-    if hasFirstOdom:
-        #Position
-        odom.pose.pose.position.x = gpsOdom.localization.position.x - firstPosition.x
-        odom.pose.pose.position.y = gpsOdom.localization.position.y - firstPosition.y
-        odom.pose.pose.position.z = gpsOdom.localization.position.z - firstPosition.z
-    else:
-        firstPosition.x = gpsOdom.localization.position.x
-        firstPosition.y = gpsOdom.localization.position.y
-        firstPosition.z = gpsOdom.localization.position.z
-        odom.pose.pose.position.x = 0
-        odom.pose.pose.position.y = 0
-        odom.pose.pose.position.z = 0
-        hasFirstOdom = True
-
-    #Orientation
-    quaternion = (
-        gpsOdom.localization.orientation.qx,
-        gpsOdom.localization.orientation.qy,
-        gpsOdom.localization.orientation.qz,
-        gpsOdom.localization.orientation.qw)
-    euler = tf_conversions.transformations.euler_from_quaternion(quaternion)
-
     pUtm = UTMPoint(easting=gpsOdom.localization.position.x, northing=gpsOdom.localization.position.y, altitude=gpsOdom.localization.position.z, zone=11, band='S')
     gp = pUtm.toMsg()
     fix = NavSatFix()
@@ -164,11 +148,59 @@ def callbackGnssOdom(gpsOdom):
     conv = getMeridianConvergence(gp.latitude, gp.longitude)
     # print("meridian convergence: " + str(conv))
 
-    q = tf_conversions.transformations.quaternion_from_euler(euler[0], euler[1], euler[2] + math.pi/2 - conv)
-    odom.pose.pose.orientation.x = q[0]
-    odom.pose.pose.orientation.y = q[1]
-    odom.pose.pose.orientation.z = q[2]
-    odom.pose.pose.orientation.w = q[3]
+    # offset[0] = offset[0] + 0.005
+    # offset[1] = offset[1] + 0.005
+    gpsOdom.localization.position.x = gpsOdom.localization.position.x + offset[0]
+    gpsOdom.localization.position.y = gpsOdom.localization.position.y + offset[1]
+    gpsOdom.localization.position.z = gpsOdom.localization.position.z + offset[2]
+
+    if hasFirstOdom:
+        #Position
+        odom.pose.pose.position.x = gpsOdom.localization.position.x - firstPosition.x
+        odom.pose.pose.position.y = gpsOdom.localization.position.y - firstPosition.y
+        odom.pose.pose.position.z = gpsOdom.localization.position.z - firstPosition.z
+        #Orientation
+        quaternion = (
+            gpsOdom.localization.orientation.qx,
+            gpsOdom.localization.orientation.qy,
+            gpsOdom.localization.orientation.qz,
+            gpsOdom.localization.orientation.qw)
+        euler = tf_conversions.transformations.euler_from_quaternion(quaternion)
+        q = tf_conversions.transformations.quaternion_from_euler(euler[0], euler[1], euler[2] + math.pi/2 - conv)       
+        odom.pose.pose.orientation.x = q[0]
+        odom.pose.pose.orientation.y = q[1]
+        odom.pose.pose.orientation.z = q[2]
+        odom.pose.pose.orientation.w = q[3]
+    else:
+        firstPosition.x = gpsOdom.localization.position.x
+        firstPosition.y = gpsOdom.localization.position.y
+        firstPosition.z = gpsOdom.localization.position.z
+        odom.pose.pose.position.x = 0
+        odom.pose.pose.position.y = 0
+        odom.pose.pose.position.z = 0
+        q = tf_conversions.transformations.quaternion_from_euler(0, 0, math.pi/2 - conv)       
+        odom.pose.pose.orientation.x = q[0]
+        odom.pose.pose.orientation.y = q[1]
+        odom.pose.pose.orientation.z = q[2]
+        odom.pose.pose.orientation.w = q[3]
+        hasFirstOdom = True
+
+
+    relOdom = Odometry() #odom
+    relOdom.pose.pose.position.x = 0#relOdom.pose.pose.position.x - lastOdom.pose.pose.position.x
+    relOdom.pose.pose.position.y = 0#relOdom.pose.pose.position.y - lastOdom.pose.pose.position.y
+    relOdom.pose.pose.position.z = 0#relOdom.pose.pose.position.z - lastOdom.pose.pose.position.z
+    q = tf_conversions.transformations.quaternion_from_euler(0, 0, 0)       
+    relOdom.pose.pose.orientation.x = q[0]
+    relOdom.pose.pose.orientation.y = q[1]
+    relOdom.pose.pose.orientation.z = q[2]
+    relOdom.pose.pose.orientation.w = q[3]
+    relOdom.header = gpsOdom.header
+    relOdom.header.frame_id = "odom"
+    relOdom.child_frame_id = "base_footprint"
+
+    pubOdomRel.publish(relOdom)
+
     #Twist | Linear Velocity
     odom.twist.twist.linear.x = gpsOdom.localization.linear_velocity.x
     odom.twist.twist.linear.y = gpsOdom.localization.linear_velocity.y
@@ -181,8 +213,11 @@ def callbackGnssOdom(gpsOdom):
     odom.header = gpsOdom.header
     odom.header.frame_id = "map"
     odom.child_frame_id = "base_footprint"
-
     pubOdom.publish(odom)
+
+    lastOdom = odom
+
+
     # if hasFirstOdom:
     #     brMap = tf2_ros.TransformBroadcaster()
     #     tMap = geometry_msgs.msg.TransformStamped()
