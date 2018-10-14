@@ -15,13 +15,14 @@ from sensor_msgs.msg import NavSatFix
 
 
 def gnss_odom_provider():
-    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos, pubOdomRel, offset
+    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos, pubOdomRel, offset, lastDiff
 
     hasFirstOdom = False
     firstPosition = geometry_msgs.msg.Vector3()
     lastOdom = Odometry()
     eulerFirst = [0,0,0]
     offset = [0, 0 ,0]
+    lastDiff = 0
 
     rospy.init_node('gnss_odom_provider', anonymous=True)
     rate = rospy.Rate(100) # hz
@@ -123,9 +124,15 @@ def publishOrigin(timerStats):
     # print("meridian convergence: " + str(conv))
 
 def callbackOffset(closestLanePoint):
-    global offset
+    global offset, lastDiff, diff
+    f = 0.1
     diff = lastOdom.pose.pose.position.y - closestLanePoint.y
-    offset[1] = offset[1] - diff
+    if diff > 0.1:
+        f = 0.00001
+        #diff = 0
+    offset[1] = offset[1] - f * diff
+    # offset[1] = offset[1] - (f * diff + (1.0 - f) * lastDiff)
+    lastDiff = diff
 
 def callbackTwist(twist):
     global pubTwist
