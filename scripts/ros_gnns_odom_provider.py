@@ -12,10 +12,10 @@ import geometry_msgs.msg
 from geographic_msgs.msg import GeoPoint
 from geodesy.utm import UTMPoint
 from sensor_msgs.msg import NavSatFix
-
+from minisim_msgs.msg import LocalizationEstimate
 
 def gnss_odom_provider():
-    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos, pubOdomRel, offset, lastDiff
+    global pubOdom, hasFirstOdom, firstPosition, eulerFirst, lastOdom, pubTwist, pubOrigin, pubOdomV, pubPos, pubOdomRel, offset, lastDiff, pubLocEst
 
     hasFirstOdom = False
     firstPosition = geometry_msgs.msg.Vector3()
@@ -33,6 +33,7 @@ def gnss_odom_provider():
     rospy.Subscriber('/vehicle/twist', geometry_msgs.msg.TwistStamped, callbackTwist)
 
     rospy.Subscriber('/planning/closest_point_on_lane', geometry_msgs.msg.Vector3, callbackOffset)
+
    
 #     ---
 # header: 
@@ -96,6 +97,8 @@ def gnss_odom_provider():
 
 
     pubOdom = rospy.Publisher('/odometry/gnss', Odometry, queue_size = 10)
+    pubLocEst = rospy.Publisher('/localization/position_estimate', LocalizationEstimate, queue_size = 10)
+
     pubOdomRel = rospy.Publisher('/odometry/gnss_relative', Odometry, queue_size = 10)
     # pubOdomV = rospy.Publisher('/odometry/vehicle', Odometry, queue_size = 10)
     pubTwist = rospy.Publisher('/odometry/twist', geometry_msgs.msg.TwistWithCovarianceStamped, queue_size = 10)
@@ -156,11 +159,11 @@ def callbackGnssOdom(gpsOdom):
     # print("meridian convergence: " + str(conv))
 
     # offset[0] = offset[0] + 0.005
-    # offset[1] = offset[1] + 0.005
+    # offset[1] = offset[1] + 0.0095
     gpsOdom.localization.position.x = gpsOdom.localization.position.x + offset[0]
     gpsOdom.localization.position.y = gpsOdom.localization.position.y + offset[1]
     gpsOdom.localization.position.z = gpsOdom.localization.position.z + offset[2]
-
+    heading = 0
     if hasFirstOdom:
         #Position
         odom.pose.pose.position.x = gpsOdom.localization.position.x - firstPosition.x
@@ -173,7 +176,8 @@ def callbackGnssOdom(gpsOdom):
             gpsOdom.localization.orientation.qz,
             gpsOdom.localization.orientation.qw)
         euler = tf_conversions.transformations.euler_from_quaternion(quaternion)
-        q = tf_conversions.transformations.quaternion_from_euler(euler[0], euler[1], euler[2] + math.pi/2 - conv)       
+        q = tf_conversions.transformations.quaternion_from_euler(euler[0], euler[1], euler[2] + math.pi/2 - conv)
+        heading = euler[2]
         odom.pose.pose.orientation.x = q[0]
         odom.pose.pose.orientation.y = q[1]
         odom.pose.pose.orientation.z = q[2]
@@ -186,6 +190,7 @@ def callbackGnssOdom(gpsOdom):
         odom.pose.pose.position.y = 0
         odom.pose.pose.position.z = 0
         q = tf_conversions.transformations.quaternion_from_euler(0, 0, math.pi/2 - conv)       
+        heading = 0
         odom.pose.pose.orientation.x = q[0]
         odom.pose.pose.orientation.y = q[1]
         odom.pose.pose.orientation.z = q[2]
@@ -194,9 +199,9 @@ def callbackGnssOdom(gpsOdom):
 
 
     relOdom = Odometry() #odom
-    relOdom.pose.pose.position.x = 0#relOdom.pose.pose.position.x - lastOdom.pose.pose.position.x
-    relOdom.pose.pose.position.y = 0#relOdom.pose.pose.position.y - lastOdom.pose.pose.position.y
-    relOdom.pose.pose.position.z = 0#relOdom.pose.pose.position.z - lastOdom.pose.pose.position.z
+    relOdom.pose.pose.position.x = 0 #offset[0] #relOdom.pose.pose.position.x - lastOdom.pose.pose.position.x
+    relOdom.pose.pose.position.y = 0 #offset[1] #relOdom.pose.pose.position.y - lastOdom.pose.pose.position.y
+    relOdom.pose.pose.position.z = 0 #offset[2] #relOdom.pose.pose.position.z - lastOdom.pose.pose.position.z
     q = tf_conversions.transformations.quaternion_from_euler(0, 0, 0)       
     relOdom.pose.pose.orientation.x = q[0]
     relOdom.pose.pose.orientation.y = q[1]
@@ -221,6 +226,15 @@ def callbackGnssOdom(gpsOdom):
     odom.header.frame_id = "map"
     odom.child_frame_id = "base_footprint"
     pubOdom.publish(odom)
+
+    posEst = LocalizationEstimate()
+    posEst.pose.pose.pose.position.x = odom.pose.pose.position.x
+    posEst.pose.pose.pose.position.y = odom.pose.pose.position.y
+    posEst.pose.pose.pose.position.z = odom.pose.pose.position.z
+    posEst.heading.data = heading
+    posEst.header = gpsOdom.header
+    posEst.header.frame_id = "map"
+    pubLocEst.publish(posEst)
 
     lastOdom = odom
 
